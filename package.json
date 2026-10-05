@@ -1,0 +1,28 @@
+{
+  "name": "pw-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node scripts/run-tests.cjs all",
+    "test:auth": "node scripts/run-tests.cjs auth",
+    "test:products": "node scripts/run-tests.cjs products",
+    "test:cart": "node scripts/run-tests.cjs cart",
+    "test:api": "node scripts/run-tests.cjs api",
+    "test:api-web": "node scripts/run-tests.cjs api-web",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "report": "logbook report && open .logbook/report/index.html",
+    "report:playwright": "playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.3",
+    "playwright-logbook": "file:vendor/playwright-logbook-0.2.0.tgz",
+    "typescript": "^7.0.2"
+  }
+}
