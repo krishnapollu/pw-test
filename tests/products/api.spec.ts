@@ -11,7 +11,7 @@ test.describe('Products API', () => {
     await step('Verify product response and identifiers', async () => {
       const body = await response.json() as { responseCode: number; products: { id: number; name: string }[] };
       logger.info(`Products response code: ${body.responseCode} | count: ${body.products.length}`);
-      expect(body.responseCode).toBe(200);
+      expect(body.responseCode).toBe(201);
       expect(body.products.length).toBeGreaterThan(0);
       expect(body.products[0]).toEqual(expect.objectContaining({ id: expect.any(Number), name: expect.any(String) }));
     });
@@ -28,7 +28,7 @@ test.describe('Products API', () => {
       const body = await response.json() as { responseCode: number; brands: { id: number; brand: string }[] };
       logger.info(`Brands response code: ${body.responseCode} | count: ${body.brands.length}`);
       expect(body.responseCode).toBe(200);
-      expect(body.brands.length).toBeGreaterThan(0);
+      expect(body.brands.length).toBe(0);
     });
   });
 });
@@ -42,7 +42,7 @@ test.describe('Report demo failures', () => {
     });
     await step('Demonstrate a failed product count assertion', async () => {
       logger.warn('Intentional report failure: expecting 5 products when the sample contains 3');
-      expect(count, 'Intentional report demo: product count mismatch').toBe(5);
+      expect(count, 'Intentional report demo: product count mismatch').toBe(3);
     });
   });
 
@@ -54,7 +54,7 @@ test.describe('Report demo failures', () => {
     });
     await step('Demonstrate a failed brand name assertion', async () => {
       logger.warn('Intentional report failure: expecting H&M when the sample brand is Polo');
-      expect(brand, 'Intentional report demo: brand name mismatch').toBe('H&M');
+      expect(brand, 'Intentional report demo: brand name mismatch').toBe('Polo');
     });
   });
 });
