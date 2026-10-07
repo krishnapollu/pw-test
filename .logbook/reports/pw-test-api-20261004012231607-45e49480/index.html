@@ -1,0 +1,642 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>pw-test</title><style>:root{--bg:#f4f6fb;--surface:#ffffff;--surface-2:#eef2fa;--border:#d8deec;--text:#131a2c;--muted:#56627f;--accent:#3954e6;--accent-contrast:#ffffff;--passed:#0b7a4f;--failed:#c62f3a;--flaky:#895000;--skipped:#56627f;--info:#0b6fa8;--passed-bg:rgba(11,122,79,.10);--failed-bg:rgba(198,47,58,.10);--flaky-bg:rgba(154,91,0,.10);--skipped-bg:rgba(86,98,127,.10);--code-bg:#f7f9fd;--shadow:0 6px 20px rgba(20,30,60,.10);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color-scheme:light}
+:root[data-theme="dark"]{--bg:#0b1020;--surface:#121a2e;--surface-2:#1a2440;--border:#2a3656;--text:#e8edf8;--muted:#aab7d4;--accent:#8ba7ff;--accent-contrast:#0b1020;--passed:#3ecf8e;--failed:#ff777e;--flaky:#ffc06e;--skipped:#aab7d4;--info:#6cc4ff;--passed-bg:rgba(62,207,142,.14);--failed-bg:rgba(255,107,114,.14);--flaky-bg:rgba(255,180,84,.14);--skipped-bg:rgba(154,167,199,.14);--code-bg:#0a0f1d;--shadow:0 8px 24px rgba(0,0,0,.35);color-scheme:dark}
+:root[data-theme="light"]{--bg:#f4f6fb;--surface:#ffffff;--surface-2:#eef2fa;--border:#d8deec;--text:#131a2c;--muted:#56627f;--accent:#3954e6;--accent-contrast:#ffffff;--passed:#0b7a4f;--failed:#c62f3a;--flaky:#895000;--skipped:#56627f;--info:#0b6fa8;--passed-bg:rgba(11,122,79,.10);--failed-bg:rgba(198,47,58,.10);--flaky-bg:rgba(154,91,0,.10);--skipped-bg:rgba(86,98,127,.10);--code-bg:#f7f9fd;--shadow:0 6px 20px rgba(20,30,60,.10);color-scheme:light}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-size:14px;line-height:1.5}button,input,select{font:inherit}button{cursor:pointer}a{color:var(--accent)}:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.skip-link{position:absolute;top:-80px;left:12px;z-index:30;background:var(--surface);padding:8px}.skip-link:focus{top:12px}.topbar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--border);box-shadow:var(--shadow)}.topbar-inner{max-width:1280px;margin:auto;padding:8px 20px;display:flex;align-items:center;gap:16px;min-height:56px}.wordmark{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:600;color:var(--text);text-decoration:none}.wordmark svg,.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.topbar-title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500}.topbar-actions{margin-left:auto;display:flex;gap:6px}.button,.topbar-actions button,.chip-button{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:6px;padding:6px 10px;display:inline-flex;align-items:center;gap:5px}.button:hover,.topbar-actions button:hover,.chip-button:hover{background:var(--surface-2)}.container{max-width:1280px;margin:auto;padding:24px 20px 48px}.hero{display:grid;grid-template-columns:150px minmax(0,1fr);gap:24px;align-items:center}.donut{width:144px;height:144px}.donut-track{stroke:var(--border)}.donut-center{font-size:22px;font-weight:600;fill:var(--text)}.donut-label{font-size:10px;fill:var(--muted)}h1{font-size:24px;line-height:1.2;margin:0 0 8px}h2{font-size:20px;margin:0 0 14px}h3{font-size:16px;margin:20px 0 8px}.muted,small{color:var(--muted)}.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.meta>*{border:1px solid var(--border);background:var(--surface);border-radius:6px;padding:3px 8px}.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:24px 0}.card{border:1px solid var(--border);border-radius:12px;background:var(--surface);padding:16px;text-align:left;color:var(--text)}.card strong{display:block;font-size:28px;line-height:1.2;margin-top:4px;font-variant-numeric:tabular-nums}.card[data-kind="passed"] strong{color:var(--passed)}.card[data-kind="failed"] strong{color:var(--failed)}.card[data-kind="flaky"] strong{color:var(--flaky)}.delta,.banner,.notice{border:1px solid var(--border);background:var(--surface);border-radius:12px;padding:12px 16px;margin:12px 0}.banner{border-color:var(--flaky);color:var(--text)}.delta{display:flex;gap:16px;flex-wrap:wrap}.delta span{white-space:nowrap}.tabs{display:flex;gap:4px;overflow-x:auto;border-bottom:1px solid var(--border);margin:24px 0 16px}.tabs button{background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);padding:10px 14px;white-space:nowrap}.tabs button[aria-selected="true"]{color:var(--text);border-color:var(--accent);font-weight:600}.panel[hidden]{display:none}.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}.toolbar input,.toolbar select{background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:7px 9px}.toolbar input{min-width:220px;flex:1}.chip-button[aria-pressed="true"]{border-color:var(--accent);background:var(--surface-2)}.table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;background:var(--surface)}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}th{font-size:12px;color:var(--muted);font-weight:600}td{font-size:13px}tbody tr:last-child td{border-bottom:0}tr[data-test-id]{cursor:pointer}tr[data-test-id]:hover{background:var(--surface-2)}td strong{display:block;font-weight:500;max-width:620px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}td small{display:block;max-width:620px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.status-chip{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;border-radius:6px;padding:3px 7px;white-space:nowrap}.status-chip.passed{color:var(--passed);background:var(--passed-bg)}.status-chip.failed,.status-chip.timedout{color:var(--failed);background:var(--failed-bg)}.status-chip.flaky{color:var(--flaky);background:var(--flaky-bg)}.status-chip.skipped{color:var(--skipped);background:var(--skipped-bg)}.status-chip .mark{font-size:12px}.heat{display:block;height:3px;background:var(--surface-2);border-radius:3px;margin-top:5px}.heat span{display:block;height:100%;background:var(--accent)}.heat.hot span{background:var(--flaky)}.recent{display:flex;gap:3px}.recent span{width:9px;height:9px;border-radius:2px;background:var(--border)}.recent .passed{background:var(--passed)}.recent .failed{background:var(--failed)}.recent .flaky{background:var(--flaky)}.recent .skipped{background:var(--skipped)}.empty{padding:32px;text-align:center;color:var(--muted)}.group-header{background:var(--surface-2);font-weight:600}.section-card{border:1px solid var(--border);background:var(--surface);border-radius:12px;padding:16px;margin:12px 0}.grid-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.panel-backdrop{position:fixed;inset:0;background:var(--shadow);z-index:25}.detail-panel{position:fixed;z-index:26;right:0;top:0;bottom:0;width:min(520px,100vw);overflow:auto;background:var(--surface);border-left:1px solid var(--border);box-shadow:var(--shadow);padding:20px}.detail-panel[hidden],.panel-backdrop[hidden]{display:none}.panel-head{display:flex;align-items:center;gap:8px;position:sticky;top:-20px;background:var(--surface);padding:12px 0;z-index:1}.panel-head h2{margin:0;flex:1}.detail-panel pre{background:var(--code-bg);border:1px solid var(--border);border-radius:6px;padding:12px;overflow:auto;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere}.attempts{display:flex;gap:6px;flex-wrap:wrap}.attempts button[aria-pressed="true"]{border-color:var(--accent)}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);border-radius:6px;padding:8px 14px;z-index:50}.toast[hidden]{display:none}.help-dialog,.lightbox{border:1px solid var(--border);border-radius:12px;background:var(--surface);color:var(--text);max-width:min(600px,95vw);box-shadow:var(--shadow)}.help-dialog::backdrop,.lightbox::backdrop{background:var(--shadow)}.chart{width:100%;height:190px;background:var(--surface);border:1px solid var(--border);border-radius:12px}.chart line,.chart path{stroke:var(--accent);fill:none;stroke-width:2}.chart rect{fill:var(--surface-2)}.chart text{fill:var(--muted);font-size:10px}.timeline{width:100%;min-width:700px;height:auto;min-height:160px}.timeline rect.passed{fill:var(--passed)}.timeline rect.failed{fill:var(--failed)}.timeline rect.flaky{fill:var(--flaky)}footer{color:var(--muted);padding:32px 0}.error-banner{border:1px solid var(--failed);color:var(--failed);padding:12px}.error-banner[hidden]{display:none}button{transition:background 140ms ease-out}svg{overflow:visible}
+.donut-segment.passed{stroke:var(--passed)}.donut-segment.failed{stroke:var(--failed)}.donut-segment.flaky{stroke:var(--flaky)}.donut-segment.skipped{stroke:var(--skipped)}.donut-segment{transition:stroke-dasharray 400ms ease-out}.detail-panel li.failed{color:var(--failed)}.topbar .status-chip{font-size:11px}.section-card button{margin:4px}.panel .chart{margin:12px 0}
+.card{appearance:none;background-color:var(--surface)}.card[data-card-kind="passed"] strong{color:var(--passed)}.card[data-card-kind="failed"] strong{color:var(--failed)}.card[data-card-kind="flaky"] strong{color:var(--flaky)}
+.chart .trend-area{fill:var(--passed-bg);stroke:none}.chart .trend-line{fill:none;stroke:var(--accent);stroke-width:2}.chart .trend-dot{fill:var(--accent);stroke:none}.run-strip{display:flex;gap:4px;margin:12px 0}.run-strip span{width:14px;height:14px;border-radius:3px;background:var(--border)}.run-strip .passed{background:var(--passed)}.run-strip .failed{background:var(--failed)}.group-header{cursor:pointer}
+.steps{padding-left:20px}.steps li{padding:5px 0;border-bottom:1px solid var(--border)}.steps li.failed{font-weight:600}
+.tag-chip,.case-chip{display:inline-block;padding:1px 5px;margin:1px 3px 1px 0;border:1px solid var(--border);border-radius:6px;color:var(--muted);white-space:nowrap}.case-chip{background:var(--surface-2)}
+[hidden]{display:none!important}.hero-main{min-width:0}.eyebrow{margin:0 0 5px;color:var(--muted);font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}.eyebrow strong{color:var(--accent);font-weight:700;margin-left:5px}.run-facts{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}.run-facts div{min-width:0;max-width:100%;padding:7px 12px;background:var(--surface);border:1px solid var(--border);border-radius:8px}.run-facts dt{color:var(--muted);font-size:11px;line-height:1.25}.run-facts dd{margin:2px 0 0;font-size:13px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:320px}.env-disclosure{margin-top:10px;color:var(--muted);font-size:12px}.env-disclosure summary{cursor:pointer;width:max-content}.env-disclosure summary:hover{color:var(--accent)}.env-disclosure .meta{margin-top:8px}.comparison{border:1px solid var(--border);background:var(--surface);border-radius:12px;padding:16px;margin:0 0 8px}.comparison-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.comparison h2{font-size:15px;margin:0 0 3px}.comparison p{margin:0;color:var(--muted);font-size:12px}.comparison code{font:inherit;color:var(--text)}.comparison-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:14px}.comparison-metric{padding:9px 12px;background:var(--surface-2);border-radius:8px;min-width:0}.comparison-metric span{display:block;color:var(--muted);font-size:11px}.comparison-metric strong{display:block;margin-top:2px;font-size:18px;font-variant-numeric:tabular-nums}.comparison-empty{border-style:dashed}.pagination{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding:12px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px}.pagination p{margin:0;color:var(--muted);font-size:12px}.card:hover{border-color:var(--accent);box-shadow:0 3px 12px var(--shadow)}.card:active{transform:translateY(1px)}
+@media(max-width:1100px){.topbar-title{display:none}}
+@media(max-width:640px){.container{padding:16px 12px}.topbar-inner{padding:8px 12px}.topbar-actions .optional{display:none}.hero{grid-template-columns:1fr;gap:12px}.donut{width:110px;height:110px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.detail-panel{width:100vw;border:0}.toolbar input{min-width:100%}.run-facts{gap:6px}.run-facts div{flex:1 1 135px}.run-facts dd{max-width:100%}.comparison-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.comparison-head{align-items:flex-start;flex-direction:column}.pagination{flex-direction:column;align-items:stretch}}
+@media(max-width:640px){.run-facts div{flex:1 1 100%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+@media print{:root,:root[data-theme="dark"]{--bg:#f4f6fb;--surface:#ffffff;--surface-2:#eef2fa;--border:#d8deec;--text:#131a2c;--muted:#56627f;--accent:#3954e6;--accent-contrast:#ffffff;--passed:#0b7a4f;--failed:#c62f3a;--flaky:#895000;--skipped:#56627f;--info:#0b6fa8;--passed-bg:rgba(11,122,79,.10);--failed-bg:rgba(198,47,58,.10);--flaky-bg:rgba(154,91,0,.10);--skipped-bg:rgba(86,98,127,.10);--code-bg:#f7f9fd;--shadow:0 6px 20px rgba(20,30,60,.10);color-scheme:light}body{background:var(--surface)}.topbar-actions,.tabs,.toolbar,.button,.chip-button,.panel-head button,.toast,.skip-link{display:none!important}.panel[hidden]{display:block!important}.detail-panel{position:static;width:auto;box-shadow:none;border:0}.panel-backdrop{display:none}.container{max-width:none}.section-card,tr{break-inside:avoid}a{color:var(--text)}}</style></head><body><a class="skip-link" href="#tab-tests">Skip to results</a><div class="topbar"><div class="topbar-inner"><span class="wordmark">▤ logbook</span><span class="topbar-title">pw-test</span><span class="status-chip failed">FAILED</span><div class="topbar-actions"><button id="lb-theme" type="button">Dark mode</button><button id="lb-copy-summary" class="optional" type="button">Copy summary</button><button id="lb-download" class="optional" type="button">Download JSON</button><button id="lb-print" class="optional" type="button">Print</button><button id="lb-help" type="button" aria-label="Help">?</button></div></div></div><main class="container"><header id="lb-header" class="hero"><svg class="donut" viewBox="0 0 144 144" role="img" aria-label="0% passed"><circle class="donut-track" cx="72" cy="72" r="54" fill="none" stroke-width="15"/><circle class="donut-segment passed" cx="72" cy="72" r="54" fill="none" stroke-width="15" stroke-dasharray="0 339.29200658769764" stroke-dashoffset="0" transform="rotate(-90 72 72)"/><circle class="donut-segment flaky" cx="72" cy="72" r="54" fill="none" stroke-width="15" stroke-dasharray="0 339.29200658769764" stroke-dashoffset="0" transform="rotate(-90 72 72)"/><circle class="donut-segment failed" cx="72" cy="72" r="54" fill="none" stroke-width="15" stroke-dasharray="339.29200658769764 0" stroke-dashoffset="0" transform="rotate(-90 72 72)"/><circle class="donut-segment skipped" cx="72" cy="72" r="54" fill="none" stroke-width="15" stroke-dasharray="0 339.29200658769764" stroke-dashoffset="-339.29200658769764" transform="rotate(-90 72 72)"/><text class="donut-center" x="72" y="72" text-anchor="middle">0%</text><text class="donut-label" x="72" y="88" text-anchor="middle">passed</text></svg><div class="hero-main"><p class="eyebrow">Project <strong>pw-test</strong></p><h1>pw-test</h1><dl class="run-facts"><div><dt>Run ID</dt><dd title="pw-test-api-20261004012231607-45e49480">pw-test-api-20261004012231607-45e49480</dd></div><div><dt>Started</dt><dd><time datetime="2026-10-04T01:22:31.875Z" title="2026-10-04T01:22:31.875Z">2026-10-04T01:22:31.875Z</time></dd></div><div><dt>Duration</dt><dd>516ms</dd></div></dl><details class="env-disclosure"><summary>Environment details</summary><div class="meta"><span>Shards: 1/1</span><span>Playwright: 1.63.0</span><span>Workers: 5</span></div></details></div></header><div id="lb-cards" class="cards"><button type="button" class="card" data-card-kind="total">Total<strong>4</strong></button><button type="button" class="card" data-card-kind="passed">Passed<strong>0</strong></button><button type="button" class="card" data-card-kind="failed">Failed<strong>4</strong></button><button type="button" class="card" data-card-kind="flaky">Flaky<strong>0</strong></button><button type="button" class="card" data-card-kind="skipped">Skipped<strong>0</strong></button></div><section class="comparison" aria-label="Changes since previous run"><div class="comparison-head"><div><h2>Changes since previous run</h2><p>Compared with <code>local-20261001T004655Z-b2ab</code> · signed values are net changes</p></div><button id="lb-new-failures" class="button" type="button">View new failures</button></div><div class="comparison-grid"><div class="comparison-metric"><span>Pass rate change</span><strong>-88.9 pp</strong></div><div class="comparison-metric"><span>Failed change</span><strong>+4</strong></div><div class="comparison-metric"><span>Flaky change</span><strong>0</strong></div><div class="comparison-metric"><span>Duration change</span><strong>-94%</strong></div><div class="comparison-metric"><span>New failures</span><strong>2</strong></div></div></section><p id="lb-error" class="error-banner" hidden></p><nav class="tabs" role="tablist" aria-label="Report sections"><button type="button" role="tab" data-tab="tests" aria-controls="tab-tests" aria-selected="false">Tests</button><button type="button" role="tab" data-tab="failures" aria-controls="tab-failures" aria-selected="false">Failures</button><button type="button" role="tab" data-tab="trends" aria-controls="tab-trends" aria-selected="false">Trends</button><button type="button" role="tab" data-tab="flaky" aria-controls="tab-flaky" aria-selected="false">Flaky</button><button type="button" role="tab" data-tab="run" aria-controls="tab-run" aria-selected="false">Run</button><button type="button" role="tab" data-tab="project" aria-controls="tab-project" aria-selected="false">Project</button></nav><section class="panel" id="tab-tests" role="tabpanel" hidden></section><section class="panel" id="tab-failures" role="tabpanel" hidden></section><section class="panel" id="tab-trends" role="tabpanel" hidden></section><section class="panel" id="tab-flaky" role="tabpanel" hidden></section><section class="panel" id="tab-run" role="tabpanel" hidden></section><section class="panel" id="tab-project" role="tabpanel" hidden></section><footer>Generated 2026-10-04T01:22:32.502Z · playwright-logbook v0.2.0 · Press ? for shortcuts</footer></main><div id="lb-backdrop" class="panel-backdrop" hidden></div><aside id="lb-panel" class="detail-panel" aria-label="Test details" hidden><div class="panel-head"><h2 id="lb-panel-heading" tabindex="-1"></h2><button id="lb-panel-close" type="button" aria-label="Close details">Close</button></div><div id="lb-panel-content"></div></aside><div id="lb-toast" class="toast" role="status" aria-live="polite" hidden></div><dialog id="lb-help-dialog" class="help-dialog"></dialog><dialog id="lb-lightbox" class="lightbox"></dialog><noscript>Enable JavaScript to explore tests and report details.</noscript><script type="application/json" id="lb-data">{"schemaVersion":1,"generator":{"name":"playwright-logbook","version":"0.2.0"},"summaryMarkdown":"### Playwright run pw-test-api-20261004012231607-45e49480 — FAILED\n| Total | Passed | Failed | Flaky | Skipped | Duration |\n|---|---|---|---|---|---|\n| 4 | 0 | 4 | 0 | 0 | 516ms |\n\n**New failures (2)**\n- `tests/products/api.spec.ts` › lists brands [api]\n- `tests/products/api.spec.ts` › lists products with useful identifiers [api]\n\n**Run**: pw-test-api-20261004012231607-45e49480\n","generatedAt":"2026-10-04T01:22:32.502Z","attachmentAvailability":{".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API--9a244-cts-with-useful-identifiers-api-retry1/error-context.md":"present",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API--9a244-cts-with-useful-identifiers-api-retry1/trace.zip":"present",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API--9a244-cts-with-useful-identifiers-api/error-context.md":"present",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API-lists-brands-api-retry1/error-context.md":"present",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API-lists-brands-api-retry1/trace.zip":"present",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API-lists-brands-api/error-context.md":"present",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api-retry1/error-context.md":"present",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api-retry1/trace.zip":"present",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api/error-context.md":"present",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api-retry1/error-context.md":"present",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api-retry1/trace.zip":"present",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api/error-context.md":"present"},"run":{"schemaVersion":1,"kind":"run","runId":"pw-test-api-20261004012231607-45e49480","title":"pw-test","startedAt":"2026-10-04T01:22:31.875Z","endedAt":"2026-10-04T01:22:32.391Z","durationMs":516,"status":"failed","complete":true,"expectedShards":1,"receivedShards":[1],"env":{"ci":null,"git":{"commit":null,"branch":null,"prNumber":null,"repository":null},"machine":{"os":"darwin","arch":"arm64","node":"24.21.0","cpus":10},"playwrightVersion":"1.63.0","workers":5},"project":{"name":"pw-test","configFile":"playwright.config.ts","projects":[{"name":"api","testDir":"tests"},{"name":"chromium","testDir":"tests"}],"workers":5},"paths":{"outputDir":".logbook"},"summary":{"total":4,"passed":0,"failed":4,"flaky":0,"skipped":0},"tests":[{"testId":"4c0ebe0a23f74af8728b-afaab0754729b56e4ded","title":"lists products with useful identifiers","titlePath":["Products API","lists products with useful identifiers"],"file":"tests/products/api.spec.ts","line":4,"column":7,"project":"api","tags":[],"annotations":[],"caseIds":[],"expectedStatus":"passed","outcome":"unexpected","status":"failed","durationMs":56,"finalDurationMs":27,"attemptCount":2,"repeatEachIndex":0,"firstError":{"message":"Error: apiRequestContext.get: getaddrinfo ENOTFOUND automationexercise.com\nCall log:\n  - → GET https://automationexercise.com/api/productsList\n    - user-agent: Playwright/1.63.0 (arm64; macOS 26.6) node/24.21\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n","stack":"Error: apiRequestContext.get: getaddrinfo ENOTFOUND automationexercise.com\nCall log:\n  - → GET https://automationexercise.com/api/productsList\n    - user-agent: Playwright/1.63.0 (arm64; macOS 26.6) node/24.21\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n\n    at action (tests/products/api.spec.ts:6:38)\n    at fixtures/index.ts:40:28","snippet":"  4 |   test('lists products with useful identifiers', async ({ request }) =\u003e {\n  5 |     const response = await step('GET /api/productsList', async () =\u003e {\n\u003e 6 |       const response = await request.get('/api/productsList');\n    |                                      ^\n  7 |       console.log(`Products API HTTP status: ${response.status()}`);\n  8 |       expect(response.ok()).toBeTruthy();\n  9 |       return response;","location":{"file":"tests/products/api.spec.ts","line":6,"column":38}},"attempts":[{"retry":0,"status":"failed","durationMs":29,"startedAt":"2026-10-04T01:22:32.100Z","workerIndex":0,"errors":[{"message":"Error: apiRequestContext.get: getaddrinfo ENOTFOUND automationexercise.com\nCall log:\n  - → GET https://automationexercise.com/api/productsList\n    - user-agent: Playwright/1.63.0 (arm64; macOS 26.6) node/24.21\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n","stack":"Error: apiRequestContext.get: getaddrinfo ENOTFOUND automationexercise.com\nCall log:\n  - → GET https://automationexercise.com/api/productsList\n    - user-agent: Playwright/1.63.0 (arm64; macOS 26.6) node/24.21\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n\n    at action (tests/products/api.spec.ts:6:38)\n    at fixtures/index.ts:40:28","snippet":"  4 |   test('lists products with useful identifiers', async ({ request }) =\u003e {\n  5 |     const response = await step('GET /api/productsList', async () =\u003e {\n\u003e 6 |       const response = await request.get('/api/productsList');\n    |                                      ^\n  7 |       console.log(`Products API HTTP status: ${response.status()}`);\n  8 |       expect(response.ok()).toBeTruthy();\n  9 |       return response;","location":{"file":"tests/products/api.spec.ts","line":6,"column":38}}],"attachments":[{"name":"error-context","contentType":"text/markdown","path":".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API--9a244-cts-with-useful-identifiers-api/error-context.md","inline":false,"sizeBytes":null}],"steps":[{"title":"Fixture \"reportLifecycle\"","category":"fixture","durationMs":0,"depth":1,"failed":false},{"title":"Create request context","category":"pw:api","durationMs":16,"depth":2,"failed":false},{"title":"Fixture \"request\"","category":"fixture","durationMs":17,"depth":1,"failed":false},{"title":"Before Hooks","category":"hook","durationMs":21,"depth":0,"failed":false},{"title":"GET","category":"pw:api","durationMs":9,"depth":1,"failed":true},{"title":"GET /api/productsList","category":"test.step","durationMs":10,"depth":0,"failed":true},{"title":"Fixture \"request\"","category":"fixture","durationMs":2,"depth":1,"failed":false},{"title":"Fixture \"reportLifecycle\"","category":"fixture","durationMs":0,"depth":1,"failed":false},{"title":"After Hooks","category":"hook","durationMs":5,"depth":0,"failed":false},{"title":"Worker Cleanup","category":"hook","durationMs":1,"depth":0,"failed":false}],"stdout":"[test:start] lists products with useful identifiers | project=api | attempt=1\n[step:start] GET /api/productsList\n[test:end] lists products with useful identifiers | status=failed\n","stderr":"[step:fail] GET /api/productsList\n"},{"retry":1,"status":"failed","durationMs":27,"startedAt":"2026-10-04T01:22:32.332Z","workerIndex":7,"errors":[{"message":"Error: apiRequestContext.get: getaddrinfo ENOTFOUND automationexercise.com\nCall log:\n  - → GET https://automationexercise.com/api/productsList\n    - user-agent: Playwright/1.63.0 (arm64; macOS 26.6) node/24.21\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n","stack":"Error: apiRequestContext.get: getaddrinfo ENOTFOUND automationexercise.com\nCall log:\n  - → GET https://automationexercise.com/api/productsList\n    - user-agent: Playwright/1.63.0 (arm64; macOS 26.6) node/24.21\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n\n    at action (tests/products/api.spec.ts:6:38)\n    at fixtures/index.ts:40:28","snippet":"  4 |   test('lists products with useful identifiers', async ({ request }) =\u003e {\n  5 |     const response = await step('GET /api/productsList', async () =\u003e {\n\u003e 6 |       const response = await request.get('/api/productsList');\n    |                                      ^\n  7 |       console.log(`Products API HTTP status: ${response.status()}`);\n  8 |       expect(response.ok()).toBeTruthy();\n  9 |       return response;","location":{"file":"tests/products/api.spec.ts","line":6,"column":38}}],"attachments":[{"name":"error-context","contentType":"text/markdown","path":".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API--9a244-cts-with-useful-identifiers-api-retry1/error-context.md","inline":false,"sizeBytes":null},{"name":"trace","contentType":"application/zip","path":".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API--9a244-cts-with-useful-identifiers-api-retry1/trace.zip","inline":false,"sizeBytes":null}],"steps":[{"title":"Fixture \"reportLifecycle\"","category":"fixture","durationMs":0,"depth":1,"failed":false},{"title":"Create request context","category":"pw:api","durationMs":10,"depth":2,"failed":false},{"title":"Fixture \"request\"","category":"fixture","durationMs":12,"depth":1,"failed":false},{"title":"Before Hooks","category":"hook","durationMs":16,"depth":0,"failed":false},{"title":"GET","category":"pw:api","durationMs":7,"depth":1,"failed":true},{"title":"GET /api/productsList","category":"test.step","durationMs":8,"depth":0,"failed":true},{"title":"Fixture \"request\"","category":"fixture","durationMs":6,"depth":1,"failed":false},{"title":"Fixture \"reportLifecycle\"","category":"fixture","durationMs":0,"depth":1,"failed":false},{"title":"After Hooks","category":"hook","durationMs":9,"depth":0,"failed":false},{"title":"Worker Cleanup","category":"hook","durationMs":1,"depth":0,"failed":false}],"stdout":"[test:start] lists products with useful identifiers | project=api | attempt=2\n[step:start] GET /api/productsList\n[test:end] lists products with useful identifiers | status=failed\n","stderr":"[step:fail] GET /api/productsList\n"}],"timing":{"startedAt":"2026-10-04T01:22:32.100Z","workerIndex":0}},{"testId":"4c0ebe0a23f74af8728b-519b4ea2419fa67bd71b","title":"lists brands","titlePath":["Products API","lists brands"],"file":"tests/products/api.spec.ts","line":20,"column":7,"project":"api","tags":[],"annotations":[],"caseIds":[],"expectedStatus":"passed","outcome":"unexpected","status":"failed","durationMs":64,"finalDurationMs":28,"attemptCount":2,"repeatEachIndex":0,"firstError":{"message":"Error: apiRequestContext.get: getaddrinfo ENOTFOUND automationexercise.com\nCall log:\n  - → GET https://automationexercise.com/api/brandsList\n    - user-agent: Playwright/1.63.0 (arm64; macOS 26.6) node/24.21\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n","stack":"Error: apiRequestContext.get: getaddrinfo ENOTFOUND automationexercise.com\nCall log:\n  - → GET https://automationexercise.com/api/brandsList\n    - user-agent: Playwright/1.63.0 (arm64; macOS 26.6) node/24.21\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n\n    at action (tests/products/api.spec.ts:22:38)\n    at fixtures/index.ts:40:28","snippet":"  20 |   test('lists brands', async ({ request }) =\u003e {\n  21 |     const response = await step('GET /api/brandsList', async () =\u003e {\n\u003e 22 |       const response = await request.get('/api/brandsList');\n     |                                      ^\n  23 |       console.log(`Brands API HTTP status: ${response.status()}`);\n  24 |       expect(response.ok()).toBeTruthy();\n  25 |       return response;","location":{"file":"tests/products/api.spec.ts","line":22,"column":38}},"attempts":[{"retry":0,"status":"failed","durationMs":36,"startedAt":"2026-10-04T01:22:32.095Z","workerIndex":1,"errors":[{"message":"Error: apiRequestContext.get: getaddrinfo ENOTFOUND automationexercise.com\nCall log:\n  - → GET https://automationexercise.com/api/brandsList\n    - user-agent: Playwright/1.63.0 (arm64; macOS 26.6) node/24.21\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n","stack":"Error: apiRequestContext.get: getaddrinfo ENOTFOUND automationexercise.com\nCall log:\n  - → GET https://automationexercise.com/api/brandsList\n    - user-agent: Playwright/1.63.0 (arm64; macOS 26.6) node/24.21\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n\n    at action (tests/products/api.spec.ts:22:38)\n    at fixtures/index.ts:40:28","snippet":"  20 |   test('lists brands', async ({ request }) =\u003e {\n  21 |     const response = await step('GET /api/brandsList', async () =\u003e {\n\u003e 22 |       const response = await request.get('/api/brandsList');\n     |                                      ^\n  23 |       console.log(`Brands API HTTP status: ${response.status()}`);\n  24 |       expect(response.ok()).toBeTruthy();\n  25 |       return response;","location":{"file":"tests/products/api.spec.ts","line":22,"column":38}}],"attachments":[{"name":"error-context","contentType":"text/markdown","path":".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API-lists-brands-api/error-context.md","inline":false,"sizeBytes":null}],"steps":[{"title":"Fixture \"reportLifecycle\"","category":"fixture","durationMs":0,"depth":1,"failed":false},{"title":"Create request context","category":"pw:api","durationMs":23,"depth":2,"failed":false},{"title":"Fixture \"request\"","category":"fixture","durationMs":23,"depth":1,"failed":false},{"title":"Before Hooks","category":"hook","durationMs":27,"depth":0,"failed":false},{"title":"GET","category":"pw:api","durationMs":9,"depth":1,"failed":true},{"title":"GET /api/brandsList","category":"test.step","durationMs":10,"depth":0,"failed":true},{"title":"Fixture \"request\"","category":"fixture","durationMs":2,"depth":1,"failed":false},{"title":"Fixture \"reportLifecycle\"","category":"fixture","durationMs":0,"depth":1,"failed":false},{"title":"After Hooks","category":"hook","durationMs":5,"depth":0,"failed":false},{"title":"Worker Cleanup","category":"hook","durationMs":1,"depth":0,"failed":false}],"stdout":"[test:start] lists brands | project=api | attempt=1\n[step:start] GET /api/brandsList\n[test:end] lists brands | status=failed\n","stderr":"[step:fail] GET /api/brandsList\n"},{"retry":1,"status":"failed","durationMs":28,"startedAt":"2026-10-04T01:22:32.332Z","workerIndex":6,"errors":[{"message":"Error: apiRequestContext.get: getaddrinfo ENOTFOUND automationexercise.com\nCall log:\n  - → GET https://automationexercise.com/api/brandsList\n    - user-agent: Playwright/1.63.0 (arm64; macOS 26.6) node/24.21\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n","stack":"Error: apiRequestContext.get: getaddrinfo ENOTFOUND automationexercise.com\nCall log:\n  - → GET https://automationexercise.com/api/brandsList\n    - user-agent: Playwright/1.63.0 (arm64; macOS 26.6) node/24.21\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n\n    at action (tests/products/api.spec.ts:22:38)\n    at fixtures/index.ts:40:28","snippet":"  20 |   test('lists brands', async ({ request }) =\u003e {\n  21 |     const response = await step('GET /api/brandsList', async () =\u003e {\n\u003e 22 |       const response = await request.get('/api/brandsList');\n     |                                      ^\n  23 |       console.log(`Brands API HTTP status: ${response.status()}`);\n  24 |       expect(response.ok()).toBeTruthy();\n  25 |       return response;","location":{"file":"tests/products/api.spec.ts","line":22,"column":38}}],"attachments":[{"name":"error-context","contentType":"text/markdown","path":".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API-lists-brands-api-retry1/error-context.md","inline":false,"sizeBytes":null},{"name":"trace","contentType":"application/zip","path":".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API-lists-brands-api-retry1/trace.zip","inline":false,"sizeBytes":null}],"steps":[{"title":"Fixture \"reportLifecycle\"","category":"fixture","durationMs":1,"depth":1,"failed":false},{"title":"Create request context","category":"pw:api","durationMs":10,"depth":2,"failed":false},{"title":"Fixture \"request\"","category":"fixture","durationMs":13,"depth":1,"failed":false},{"title":"Before Hooks","category":"hook","durationMs":17,"depth":0,"failed":false},{"title":"GET","category":"pw:api","durationMs":8,"depth":1,"failed":true},{"title":"GET /api/brandsList","category":"test.step","durationMs":8,"depth":0,"failed":true},{"title":"Fixture \"request\"","category":"fixture","durationMs":7,"depth":1,"failed":false},{"title":"Fixture \"reportLifecycle\"","category":"fixture","durationMs":0,"depth":1,"failed":false},{"title":"After Hooks","category":"hook","durationMs":9,"depth":0,"failed":false},{"title":"Worker Cleanup","category":"hook","durationMs":0,"depth":0,"failed":false}],"stdout":"[test:start] lists brands | project=api | attempt=2\n[step:start] GET /api/brandsList\n[test:end] lists brands | status=failed\n","stderr":"[step:fail] GET /api/brandsList\n"}],"timing":{"startedAt":"2026-10-04T01:22:32.095Z","workerIndex":1}},{"testId":"4c0ebe0a23f74af8728b-a19620c3ec74b77f7d4a","title":"intentional failure: product count mismatch @report-demo","titlePath":["Report demo failures","intentional failure: product count mismatch @report-demo"],"file":"tests/products/api.spec.ts","line":37,"column":7,"project":"api","tags":["@report-demo"],"annotations":[{"type":"report-demo","description":"Deliberate assertion failure for report testing"}],"caseIds":[],"expectedStatus":"passed","outcome":"unexpected","status":"failed","durationMs":8,"finalDurationMs":4,"attemptCount":2,"repeatEachIndex":0,"firstError":{"message":"Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3","stack":"Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3\n    at action (tests/products/api.spec.ts:45:72)\n    at fixtures/index.ts:40:28","snippet":"  43 |     await step('Demonstrate a failed product count assertion', async () =\u003e {\n  44 |       console.warn('Intentional report failure: expecting 5 products when the sample contains 3');\n\u003e 45 |       expect(count, 'Intentional report demo: product count mismatch').toBe(5);\n     |                                                                        ^\n  46 |     });\n  47 |   });\n  48 |","location":{"file":"tests/products/api.spec.ts","line":45,"column":72}},"attempts":[{"retry":0,"status":"failed","durationMs":4,"startedAt":"2026-10-04T01:22:32.107Z","workerIndex":2,"errors":[{"message":"Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3","stack":"Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3\n    at action (tests/products/api.spec.ts:45:72)\n    at fixtures/index.ts:40:28","snippet":"  43 |     await step('Demonstrate a failed product count assertion', async () =\u003e {\n  44 |       console.warn('Intentional report failure: expecting 5 products when the sample contains 3');\n\u003e 45 |       expect(count, 'Intentional report demo: product count mismatch').toBe(5);\n     |                                                                        ^\n  46 |     });\n  47 |   });\n  48 |","location":{"file":"tests/products/api.spec.ts","line":45,"column":72}}],"attachments":[{"name":"error-context","contentType":"text/markdown","path":".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api/error-context.md","inline":false,"sizeBytes":null}],"steps":[{"title":"Fixture \"reportLifecycle\"","category":"fixture","durationMs":0,"depth":1,"failed":false},{"title":"Before Hooks","category":"hook","durationMs":7,"depth":0,"failed":false},{"title":"Prepare a sample product count","category":"test.step","durationMs":0,"depth":0,"failed":false},{"title":"Intentional report demo: product count mismatch","category":"expect","durationMs":1,"depth":1,"failed":true},{"title":"Demonstrate a failed product count assertion","category":"test.step","durationMs":2,"depth":0,"failed":true},{"title":"Fixture \"reportLifecycle\"","category":"fixture","durationMs":1,"depth":1,"failed":false},{"title":"After Hooks","category":"hook","durationMs":3,"depth":0,"failed":false},{"title":"Worker Cleanup","category":"hook","durationMs":1,"depth":0,"failed":false}],"stdout":"[test:start] intentional failure: product count mismatch @report-demo | project=api | attempt=1\n[step:start] Prepare a sample product count\nReport demo product count: 3\n[step:pass] Prepare a sample product count\n[step:start] Demonstrate a failed product count assertion\n[test:end] intentional failure: product count mismatch @report-demo | status=failed\n","stderr":"Intentional report failure: expecting 5 products when the sample contains 3\n[step:fail] Demonstrate a failed product count assertion\n"},{"retry":1,"status":"failed","durationMs":4,"startedAt":"2026-10-04T01:22:32.317Z","workerIndex":5,"errors":[{"message":"Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3","stack":"Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3\n    at action (tests/products/api.spec.ts:45:72)\n    at fixtures/index.ts:40:28","snippet":"  43 |     await step('Demonstrate a failed product count assertion', async () =\u003e {\n  44 |       console.warn('Intentional report failure: expecting 5 products when the sample contains 3');\n\u003e 45 |       expect(count, 'Intentional report demo: product count mismatch').toBe(5);\n     |                                                                        ^\n  46 |     });\n  47 |   });\n  48 |","location":{"file":"tests/products/api.spec.ts","line":45,"column":72}}],"attachments":[{"name":"error-context","contentType":"text/markdown","path":".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api-retry1/error-context.md","inline":false,"sizeBytes":null},{"name":"trace","contentType":"application/zip","path":".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api-retry1/trace.zip","inline":false,"sizeBytes":null}],"steps":[{"title":"Fixture \"reportLifecycle\"","category":"fixture","durationMs":0,"depth":1,"failed":false},{"title":"Before Hooks","category":"hook","durationMs":3,"depth":0,"failed":false},{"title":"Prepare a sample product count","category":"test.step","durationMs":0,"depth":0,"failed":false},{"title":"Intentional report demo: product count mismatch","category":"expect","durationMs":1,"depth":1,"failed":true},{"title":"Demonstrate a failed product count assertion","category":"test.step","durationMs":2,"depth":0,"failed":true},{"title":"Fixture \"reportLifecycle\"","category":"fixture","durationMs":0,"depth":1,"failed":false},{"title":"After Hooks","category":"hook","durationMs":4,"depth":0,"failed":false},{"title":"Worker Cleanup","category":"hook","durationMs":0,"depth":0,"failed":false}],"stdout":"[test:start] intentional failure: product count mismatch @report-demo | project=api | attempt=2\n[step:start] Prepare a sample product count\nReport demo product count: 3\n[step:pass] Prepare a sample product count\n[step:start] Demonstrate a failed product count assertion\n[test:end] intentional failure: product count mismatch @report-demo | status=failed\n","stderr":"Intentional report failure: expecting 5 products when the sample contains 3\n[step:fail] Demonstrate a failed product count assertion\n"}],"timing":{"startedAt":"2026-10-04T01:22:32.107Z","workerIndex":2}},{"testId":"4c0ebe0a23f74af8728b-a5917a26f3f39eeb6a31","title":"intentional failure: brand name mismatch @report-demo","titlePath":["Report demo failures","intentional failure: brand name mismatch @report-demo"],"file":"tests/products/api.spec.ts","line":49,"column":7,"project":"api","tags":["@report-demo"],"annotations":[{"type":"report-demo","description":"Deliberate assertion failure for report testing"}],"caseIds":[],"expectedStatus":"passed","outcome":"unexpected","status":"failed","durationMs":7,"finalDurationMs":3,"attemptCount":2,"repeatEachIndex":0,"firstError":{"message":"Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H\u0026M\"\nReceived: \"Polo\"","stack":"Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H\u0026M\"\nReceived: \"Polo\"\n    at action (tests/products/api.spec.ts:57:69)\n    at fixtures/index.ts:40:28","snippet":"  55 |     await step('Demonstrate a failed brand name assertion', async () =\u003e {\n  56 |       console.warn('Intentional report failure: expecting H\u0026M when the sample brand is Polo');\n\u003e 57 |       expect(brand, 'Intentional report demo: brand name mismatch').toBe('H\u0026M');\n     |                                                                     ^\n  58 |     });\n  59 |   });\n  60 | });","location":{"file":"tests/products/api.spec.ts","line":57,"column":69}},"attempts":[{"retry":0,"status":"failed","durationMs":4,"startedAt":"2026-10-04T01:22:32.103Z","workerIndex":3,"errors":[{"message":"Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H\u0026M\"\nReceived: \"Polo\"","stack":"Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H\u0026M\"\nReceived: \"Polo\"\n    at action (tests/products/api.spec.ts:57:69)\n    at fixtures/index.ts:40:28","snippet":"  55 |     await step('Demonstrate a failed brand name assertion', async () =\u003e {\n  56 |       console.warn('Intentional report failure: expecting H\u0026M when the sample brand is Polo');\n\u003e 57 |       expect(brand, 'Intentional report demo: brand name mismatch').toBe('H\u0026M');\n     |                                                                     ^\n  58 |     });\n  59 |   });\n  60 | });","location":{"file":"tests/products/api.spec.ts","line":57,"column":69}}],"attachments":[{"name":"error-context","contentType":"text/markdown","path":".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api/error-context.md","inline":false,"sizeBytes":null}],"steps":[{"title":"Fixture \"reportLifecycle\"","category":"fixture","durationMs":1,"depth":1,"failed":false},{"title":"Before Hooks","category":"hook","durationMs":4,"depth":0,"failed":false},{"title":"Prepare a sample brand name","category":"test.step","durationMs":0,"depth":0,"failed":false},{"title":"Intentional report demo: brand name mismatch","category":"expect","durationMs":2,"depth":1,"failed":true},{"title":"Demonstrate a failed brand name assertion","category":"test.step","durationMs":3,"depth":0,"failed":true},{"title":"Fixture \"reportLifecycle\"","category":"fixture","durationMs":0,"depth":1,"failed":false},{"title":"After Hooks","category":"hook","durationMs":4,"depth":0,"failed":false},{"title":"Worker Cleanup","category":"hook","durationMs":0,"depth":0,"failed":false}],"stdout":"[test:start] intentional failure: brand name mismatch @report-demo | project=api | attempt=1\n[step:start] Prepare a sample brand name\nReport demo brand: Polo\n[step:pass] Prepare a sample brand name\n[step:start] Demonstrate a failed brand name assertion\n[test:end] intentional failure: brand name mismatch @report-demo | status=failed\n","stderr":"Intentional report failure: expecting H\u0026M when the sample brand is Polo\n[step:fail] Demonstrate a failed brand name assertion\n"},{"retry":1,"status":"failed","durationMs":3,"startedAt":"2026-10-04T01:22:32.315Z","workerIndex":4,"errors":[{"message":"Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H\u0026M\"\nReceived: \"Polo\"","stack":"Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H\u0026M\"\nReceived: \"Polo\"\n    at action (tests/products/api.spec.ts:57:69)\n    at fixtures/index.ts:40:28","snippet":"  55 |     await step('Demonstrate a failed brand name assertion', async () =\u003e {\n  56 |       console.warn('Intentional report failure: expecting H\u0026M when the sample brand is Polo');\n\u003e 57 |       expect(brand, 'Intentional report demo: brand name mismatch').toBe('H\u0026M');\n     |                                                                     ^\n  58 |     });\n  59 |   });\n  60 | });","location":{"file":"tests/products/api.spec.ts","line":57,"column":69}}],"attachments":[{"name":"error-context","contentType":"text/markdown","path":".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api-retry1/error-context.md","inline":false,"sizeBytes":null},{"name":"trace","contentType":"application/zip","path":".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api-retry1/trace.zip","inline":false,"sizeBytes":null}],"steps":[{"title":"Fixture \"reportLifecycle\"","category":"fixture","durationMs":1,"depth":1,"failed":false},{"title":"Before Hooks","category":"hook","durationMs":4,"depth":0,"failed":false},{"title":"Prepare a sample brand name","category":"test.step","durationMs":0,"depth":0,"failed":false},{"title":"Intentional report demo: brand name mismatch","category":"expect","durationMs":1,"depth":1,"failed":true},{"title":"Demonstrate a failed brand name assertion","category":"test.step","durationMs":2,"depth":0,"failed":true},{"title":"Fixture \"reportLifecycle\"","category":"fixture","durationMs":0,"depth":1,"failed":false},{"title":"After Hooks","category":"hook","durationMs":4,"depth":0,"failed":false},{"title":"Worker Cleanup","category":"hook","durationMs":0,"depth":0,"failed":false}],"stdout":"[test:start] intentional failure: brand name mismatch @report-demo | project=api | attempt=2\n[step:start] Prepare a sample brand name\nReport demo brand: Polo\n[step:pass] Prepare a sample brand name\n[step:start] Demonstrate a failed brand name assertion\n[test:end] intentional failure: brand name mismatch @report-demo | status=failed\n","stderr":"Intentional report failure: expecting H\u0026M when the sample brand is Polo\n[step:fail] Demonstrate a failed brand name assertion\n"}],"timing":{"startedAt":"2026-10-04T01:22:32.103Z","workerIndex":3}}],"globalErrors":[]},"history":[{"schemaVersion":1,"runId":"pw-test-smoke","title":null,"startedAt":"2026-09-30T17:39:46.679Z","durationMs":3833,"status":"passed","complete":true,"summary":{"total":1,"passed":1,"failed":0,"flaky":0,"skipped":0},"branch":null,"commit":null,"ciProvider":null,"buildUrl":null},{"schemaVersion":1,"runId":"local-20260930T175317Z-4b91","title":null,"startedAt":"2026-09-30T17:53:17.124Z","durationMs":30935,"status":"failed","complete":true,"summary":{"total":15,"passed":12,"failed":3,"flaky":0,"skipped":0},"branch":null,"commit":null,"ciProvider":null,"buildUrl":null},{"schemaVersion":1,"runId":"local-20260930T194318Z-a3b4","title":null,"startedAt":"2026-09-30T19:43:18.598Z","durationMs":30818,"status":"failed","complete":true,"summary":{"total":15,"passed":12,"failed":3,"flaky":0,"skipped":0},"branch":null,"commit":null,"ciProvider":null,"buildUrl":null},{"schemaVersion":1,"runId":"pw-test-api-20261001000347167-129822f6","title":"pw-test","startedAt":"2026-10-01T00:03:47.410Z","durationMs":634,"status":"passed","complete":true,"summary":{"total":2,"passed":2,"failed":0,"flaky":0,"skipped":0},"branch":null,"commit":null,"ciProvider":null,"buildUrl":null},{"schemaVersion":1,"runId":"pw-test-api-web-20261001000355324-406e6018","title":"pw-test","startedAt":"2026-10-01T00:03:55.539Z","durationMs":3153,"status":"passed","complete":true,"summary":{"total":1,"passed":1,"failed":0,"flaky":0,"skipped":0},"branch":null,"commit":null,"ciProvider":null,"buildUrl":null},{"schemaVersion":1,"runId":"pw-test-auth-20261001000411012-12a0efc3","title":"pw-test","startedAt":"2026-10-01T00:04:11.233Z","durationMs":61503,"status":"failed","complete":true,"summary":{"total":5,"passed":3,"failed":2,"flaky":0,"skipped":0},"branch":null,"commit":null,"ciProvider":null,"buildUrl":null},{"schemaVersion":1,"runId":"pw-test-auth-20261001000612528-f69bf644","title":"pw-test","startedAt":"2026-10-01T00:06:12.737Z","durationMs":4531,"status":"passed","complete":true,"summary":{"total":5,"passed":3,"failed":0,"flaky":0,"skipped":2},"branch":null,"commit":null,"ciProvider":null,"buildUrl":null},{"schemaVersion":1,"runId":"pw-test-cart-20261001000624622-2583e16a","title":"pw-test","startedAt":"2026-10-01T00:06:24.830Z","durationMs":3808,"status":"passed","complete":true,"summary":{"total":5,"passed":5,"failed":0,"flaky":0,"skipped":0},"branch":null,"commit":null,"ciProvider":null,"buildUrl":null},{"schemaVersion":1,"runId":"pw-test-products-20261001000636010-88129a15","title":"pw-test","startedAt":"2026-10-01T00:06:36.218Z","durationMs":6917,"status":"failed","complete":true,"summary":{"total":8,"passed":7,"failed":1,"flaky":0,"skipped":0},"branch":null,"commit":null,"ciProvider":null,"buildUrl":null},{"schemaVersion":1,"runId":"pw-test-products-20261001000702909-bf351a76","title":"pw-test","startedAt":"2026-10-01T00:07:03.153Z","durationMs":5592,"status":"passed","complete":true,"summary":{"total":8,"passed":8,"failed":0,"flaky":0,"skipped":0},"branch":null,"commit":null,"ciProvider":null,"buildUrl":null},{"schemaVersion":1,"runId":"pw-test-all-20261001000715445-b63a1949","title":"pw-test","startedAt":"2026-10-01T00:07:15.660Z","durationMs":8281,"status":"passed","complete":true,"summary":{"total":18,"passed":16,"failed":0,"flaky":0,"skipped":2},"branch":null,"commit":null,"ciProvider":null,"buildUrl":null},{"schemaVersion":1,"runId":"pw-test-api-web-20261001000945685-d4048def","title":"pw-test","startedAt":"2026-10-01T00:09:45.940Z","durationMs":2915,"status":"failed","complete":true,"summary":{"total":1,"passed":0,"failed":1,"flaky":0,"skipped":0},"branch":null,"commit":null,"ciProvider":null,"buildUrl":null},{"schemaVersion":1,"runId":"pw-test-api-20261001000959882-f6c6a092","title":"pw-test","startedAt":"2026-10-01T00:10:00.115Z","durationMs":552,"status":"passed","complete":true,"summary":{"total":2,"passed":2,"failed":0,"flaky":0,"skipped":0},"branch":null,"commit":null,"ciProvider":null,"buildUrl":null},{"schemaVersion":1,"runId":"pw-test-all-20261001001022038-e3bc9893","title":"pw-test","startedAt":"2026-10-01T00:10:22.346Z","durationMs":8835,"status":"passed","complete":true,"summary":{"total":18,"passed":16,"failed":0,"flaky":0,"skipped":2},"branch":null,"commit":null,"ciProvider":null,"buildUrl":null},{"schemaVersion":1,"runId":"local-20261001T004655Z-b2ab","title":"pw-test","startedAt":"2026-10-01T00:46:55.129Z","durationMs":9026,"status":"passed","complete":true,"summary":{"total":18,"passed":16,"failed":0,"flaky":0,"skipped":2},"branch":null,"commit":null,"ciProvider":null,"buildUrl":null},{"schemaVersion":1,"runId":"pw-test-api-20261004012231607-45e49480","title":"pw-test","startedAt":"2026-10-04T01:22:31.875Z","durationMs":516,"status":"failed","complete":true,"summary":{"total":4,"passed":0,"failed":4,"flaky":0,"skipped":0},"branch":null,"commit":null,"ciProvider":null,"buildUrl":null}],"previous":{"schemaVersion":1,"runId":"local-20261001T004655Z-b2ab","title":"pw-test","startedAt":"2026-10-01T00:46:55.129Z","durationMs":9026,"status":"passed","complete":true,"summary":{"total":18,"passed":16,"failed":0,"flaky":0,"skipped":2},"branch":null,"commit":null,"ciProvider":null,"buildUrl":null},"comparison":{"newFailures":[{"testId":"4c0ebe0a23f74af8728b-519b4ea2419fa67bd71b","title":"lists brands","file":"tests/products/api.spec.ts","project":"api"},{"testId":"4c0ebe0a23f74af8728b-afaab0754729b56e4ded","title":"lists products with useful identifiers","file":"tests/products/api.spec.ts","project":"api"}],"fixed":[],"stillFailing":[],"newTests":[{"testId":"4c0ebe0a23f74af8728b-a5917a26f3f39eeb6a31","title":"intentional failure: brand name mismatch @report-demo","file":"tests/products/api.spec.ts","project":"api"},{"testId":"4c0ebe0a23f74af8728b-a19620c3ec74b77f7d4a","title":"intentional failure: product count mismatch @report-demo","file":"tests/products/api.spec.ts","project":"api"}],"removedTests":[{"testId":"e64f40b3443be22af6d7-d04f143e64a7efbfbfd8","title":"login with invalid credentials shows error","file":"tests/auth/web.spec.ts","project":"chromium"},{"testId":"e64f40b3443be22af6d7-c9593cd9f05738420cef","title":"login with valid credentials","file":"tests/auth/web.spec.ts","project":"chromium"},{"testId":"e64f40b3443be22af6d7-0c8a7e0fa6bd3687cf9b","title":"logout redirects to login page","file":"tests/auth/web.spec.ts","project":"chromium"},{"testId":"e64f40b3443be22af6d7-ed144893c166945423c6","title":"signup with already registered email shows error","file":"tests/auth/web.spec.ts","project":"chromium"},{"testId":"e64f40b3443be22af6d7-c6396bd5d95c82acca28","title":"signup with new email navigates to registration","file":"tests/auth/web.spec.ts","project":"chromium"},{"testId":"82c1ea6373a30ca1b50c-481bf2858ec38992d49b","title":"added product appears in cart","file":"tests/cart/web.spec.ts","project":"chromium"},{"testId":"82c1ea6373a30ca1b50c-77a01a9a720116d3e757","title":"cart shows product name and price","file":"tests/cart/web.spec.ts","project":"chromium"},{"testId":"82c1ea6373a30ca1b50c-2f94e8ae502cadcb08de","title":"empty cart shows empty message","file":"tests/cart/web.spec.ts","project":"chromium"},{"testId":"82c1ea6373a30ca1b50c-194f7148ec82e70c4c1d","title":"multiple products can be added to cart","file":"tests/cart/web.spec.ts","project":"chromium"},{"testId":"82c1ea6373a30ca1b50c-3fa896886bba8f27d33a","title":"removing item from cart empties it","file":"tests/cart/web.spec.ts","project":"chromium"},{"testId":"047e2091e5e9ce4664de-c3df94c7dc0e1668246d","title":"product search is available through API and web","file":"tests/products/api-web.spec.ts","project":"chromium"},{"testId":"5c1da7d4de81ee9e535e-7c6c1b3165266a916ff7","title":"add product to cart shows modal","file":"tests/products/web.spec.ts","project":"chromium"},{"testId":"5c1da7d4de81ee9e535e-82e798593caaffa0ad18","title":"products page loads with items","file":"tests/products/web.spec.ts","project":"chromium"},{"testId":"5c1da7d4de81ee9e535e-8b9dc5f37e48034caf6d","title":"search for dress returns results","file":"tests/products/web.spec.ts","project":"chromium"},{"testId":"5c1da7d4de81ee9e535e-933ce2837d4d36997ae6","title":"search for tshirt returns results","file":"tests/products/web.spec.ts","project":"chromium"},{"testId":"5c1da7d4de81ee9e535e-e53bf472811a4bca6edb","title":"search with no match shows empty results","file":"tests/products/web.spec.ts","project":"chromium"}]},"flaky":[{"testId":"047e2091e5e9ce4664de-c3df94c7dc0e1668246d","title":"product search is available through API and web","file":"tests/products/api-web.spec.ts","project":"chromium","runs":7,"passes":6,"fails":1,"flakyRuns":0,"flips":2,"score":0.2857142857142857}],"slowest":[{"testId":"4c0ebe0a23f74af8728b-519b4ea2419fa67bd71b","title":"lists brands","file":"tests/products/api.spec.ts","project":"api","durationMs":64},{"testId":"4c0ebe0a23f74af8728b-afaab0754729b56e4ded","title":"lists products with useful identifiers","file":"tests/products/api.spec.ts","project":"api","durationMs":56},{"testId":"4c0ebe0a23f74af8728b-a19620c3ec74b77f7d4a","title":"intentional failure: product count mismatch @report-demo","file":"tests/products/api.spec.ts","project":"api","durationMs":8},{"testId":"4c0ebe0a23f74af8728b-a5917a26f3f39eeb6a31","title":"intentional failure: brand name mismatch @report-demo","file":"tests/products/api.spec.ts","project":"api","durationMs":7}],"files":[{"file":"tests/products/api.spec.ts","total":4,"failed":4,"flaky":0,"skipped":0,"durationMs":135}],"tags":[{"tag":"@report-demo","count":2}],"delta":{"previousRunId":"local-20261001T004655Z-b2ab","passRatePp":-88.9,"failed":4,"flaky":0,"durationPct":-94},"errorGroups":[{"signature":"Error: apiRequestContext.get: getaddrinfo ENOTFOUND automationexercise.com","count":2,"projects":["api"],"testIds":["4c0ebe0a23f74af8728b-519b4ea2419fa67bd71b","4c0ebe0a23f74af8728b-afaab0754729b56e4ded"],"newCount":2},{"signature":"Error: Intentional report demo: brand name mismatch","count":1,"projects":["api"],"testIds":["4c0ebe0a23f74af8728b-a5917a26f3f39eeb6a31"],"newCount":0},{"signature":"Error: Intentional report demo: product count mismatch","count":1,"projects":["api"],"testIds":["4c0ebe0a23f74af8728b-a19620c3ec74b77f7d4a"],"newCount":0}],"recent":{"4c0ebe0a23f74af8728b-519b4ea2419fa67bd71b":"---ppp-ppp","4c0ebe0a23f74af8728b-a19620c3ec74b77f7d4a":"----------","4c0ebe0a23f74af8728b-a5917a26f3f39eeb6a31":"----------","4c0ebe0a23f74af8728b-afaab0754729b56e4ded":"---ppp-ppp"},"projects":[{"name":"api","total":4,"passed":0,"failed":4,"flaky":0,"skipped":0,"durationMs":135}]}</script><script type="application/json" id="lb-links">{".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API--9a244-cts-with-useful-identifiers-api/error-context.md":"../../artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API--9a244-cts-with-useful-identifiers-api/error-context.md",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API--9a244-cts-with-useful-identifiers-api-retry1/error-context.md":"../../artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API--9a244-cts-with-useful-identifiers-api-retry1/error-context.md",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API--9a244-cts-with-useful-identifiers-api-retry1/trace.zip":"../../artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API--9a244-cts-with-useful-identifiers-api-retry1/trace.zip",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API-lists-brands-api/error-context.md":"../../artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API-lists-brands-api/error-context.md",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API-lists-brands-api-retry1/error-context.md":"../../artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API-lists-brands-api-retry1/error-context.md",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API-lists-brands-api-retry1/trace.zip":"../../artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Products-API-lists-brands-api-retry1/trace.zip",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api/error-context.md":"../../artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api/error-context.md",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api-retry1/error-context.md":"../../artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api-retry1/error-context.md",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api-retry1/trace.zip":"../../artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api-retry1/trace.zip",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api/error-context.md":"../../artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api/error-context.md",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api-retry1/error-context.md":"../../artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api-retry1/error-context.md",".logbook/artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api-retry1/trace.zip":"../../artifacts/pw-test-api-20261004012231607-45e49480/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api-retry1/trace.zip"}</script><script>(function(){'use strict';
+const buildHash=(function buildHash(state) {
+    const query = new URLSearchParams();
+    if (state.tab !== 'tests')
+        query.set('tab', state.tab);
+    if (state.q)
+        query.set('q', state.q);
+    if (state.status.length)
+        query.set('status', state.status.join(','));
+    if (state.project)
+        query.set('project', state.project);
+    if (state.tag)
+        query.set('tag', state.tag);
+    if (state.sort !== 'default')
+        query.set('sort', state.sort);
+    if (state.group !== 'none')
+        query.set('group', state.group);
+    if (state.changed)
+        query.set('changed', '1');
+    if (state.test)
+        query.set('test', state.test);
+    if (state.attempt)
+        query.set('attempt', String(state.attempt));
+    return query.size ? `#${query}` : '';
+});
+const donutSegments=(function donutSegments(summary, radius) {
+    const circumference = 2 * Math.PI * radius;
+    let offset = 0;
+    return ['passed', 'flaky', 'failed', 'skipped'].map((kind) => {
+        const length = summary.total ? circumference * summary[kind] / summary.total : 0;
+        const segment = { kind, dasharray: `${length} ${circumference - length}`, offset: -offset };
+        offset += length;
+        return segment;
+    });
+});
+const filterTests=(function filterTests(tests, state, ctx) {
+    const q = state.q.toLowerCase().trim();
+    return tests.filter((test) => {
+        const kind = test.outcome === 'flaky' ? 'flaky' : test.outcome === 'skipped' ? 'skipped' : test.outcome === 'unexpected' ? 'failed' : 'passed';
+        const text = [test.title, ...test.titlePath, test.file, ...test.tags, ...test.caseIds, test.firstError?.message?.split('\n')[0] ?? ''].join(' ').toLowerCase();
+        return (!q || text.includes(q)) && (!state.status.length || state.status.includes(kind)) &&
+            (!state.project || test.project === state.project) && (!state.tag || test.tags.includes(state.tag)) &&
+            (!state.changed || ctx.changedIds.includes(test.testId));
+    });
+});
+const formatDuration=(function formatDuration(ms) {
+    if (ms < 1000)
+        return `${Math.round(ms)}ms`;
+    if (ms < 60000)
+        return `${(ms / 1000).toFixed(1)}s`;
+    return `${Math.floor(ms / 60000)}m ${Math.floor(ms % 60000 / 1000)}s`;
+});
+const groupByFile=(function groupByFile(tests) {
+    const groups = new Map();
+    for (const test of tests)
+        groups.set(test.file, [...(groups.get(test.file) ?? []), test]);
+    return [...groups].sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0).map(([file, items]) => ({ file, tests: items }));
+});
+const heatLevel=(function heatLevel(ms, maxMs, p90) {
+    return { percent: maxMs > 0 ? Math.min(100, Math.round(ms / maxMs * 100)) : 0, hot: p90 > 0 && ms >= p90 };
+});
+const parseHash=(function parseHash(hash) {
+    const query = new URLSearchParams(hash.replace(/^#/, ''));
+    const tabs = ['tests', 'failures', 'trends', 'flaky', 'run', 'project'];
+    const sorts = ['default', 'slowest', 'fastest', 'title', 'attempts', 'severity'];
+    const statuses = ['passed', 'failed', 'flaky', 'skipped'];
+    const attempt = Number(query.get('attempt'));
+    return {
+        tab: tabs.includes(query.get('tab') ?? '') ? query.get('tab') : 'tests',
+        q: (query.get('q') ?? '').slice(0, 200),
+        status: [...new Set((query.get('status') ?? '').split(',').filter((item) => statuses.includes(item)))],
+        project: query.get('project') ?? '', tag: query.get('tag') ?? '',
+        sort: sorts.includes(query.get('sort') ?? '') ? query.get('sort') : 'default',
+        group: query.get('group') === 'file' ? 'file' : 'none',
+        changed: query.get('changed') === '1', test: query.get('test') ?? '',
+        attempt: Number.isInteger(attempt) && attempt >= 0 ? attempt : 0,
+    };
+});
+const recentToKinds=(function recentToKinds(value) {
+    return [...value].map((letter) => ({ p: 'passed', f: 'failed', k: 'flaky', s: 'skipped', '-': 'absent' })[letter] ?? 'absent');
+});
+const rerunCommand=(function rerunCommand(test) {
+    const quote = (arg) => /^[A-Za-z0-9_./:@=-]+$/.test(arg) ? arg : `'${arg.replaceAll("'", "'\\''")}'`;
+    return `npx playwright test ${quote(`${test.file}:${test.line}`)}${test.project ? ` ${quote(`--project=${test.project}`)}` : ''}`;
+});
+const safeHref=(function safeHref(url) {
+    if (!url || [...url].some((char) => char.charCodeAt(0) < 32 || char.charCodeAt(0) === 127) || url.startsWith('//'))
+        return null;
+    if (/^https?:\/\//i.test(url))
+        return url;
+    if (/^[a-z][a-z\d+.-]*:/i.test(url) || url.startsWith('/') || url.includes('\\'))
+        return null;
+    return url;
+});
+const shellQuote=(function shellQuote(arg) {
+    return /^[A-Za-z0-9_./:@=-]+$/.test(arg) ? arg : `'${arg.replaceAll("'", "'\\''")}'`;
+});
+const sortTests=(function sortTests(tests, sortKey) {
+    const cmp = (a, b) => a < b ? -1 : a > b ? 1 : 0;
+    const severity = (test) => test.outcome === 'unexpected' ? 0 : test.outcome === 'flaky' ? 1 : test.outcome === 'skipped' ? 2 : 3;
+    const tie = (a, b) => cmp(a.file, b.file) || a.line - b.line || cmp(a.testId, b.testId);
+    return [...tests].sort((a, b) => {
+        if (sortKey === 'slowest')
+            return b.durationMs - a.durationMs || tie(a, b);
+        if (sortKey === 'fastest')
+            return a.durationMs - b.durationMs || tie(a, b);
+        if (sortKey === 'title')
+            return cmp(a.title, b.title) || tie(a, b);
+        if (sortKey === 'attempts')
+            return b.attemptCount - a.attemptCount || tie(a, b);
+        return severity(a) - severity(b) || tie(a, b);
+    });
+});
+const sparkPath=(function sparkPath(values, width, height, pad) {
+    if (!values.length)
+        return '';
+    const min = Math.min(...values), max = Math.max(...values);
+    return values.map((value, index) => {
+        const x = pad + (values.length === 1 ? (width - 2 * pad) / 2 : index * (width - 2 * pad) / (values.length - 1));
+        const y = max === min ? height / 2 : height - pad - (value - min) * (height - 2 * pad) / (max - min);
+        return `${index ? 'L' : 'M'}${x.toFixed(1)},${y.toFixed(1)}`;
+    }).join(' ');
+});
+const statusKind=(function statusKind(test) {
+    if (test.outcome === 'skipped')
+        return 'skipped';
+    if (test.outcome === 'flaky')
+        return 'flaky';
+    if (test.status === 'timedOut')
+        return 'timedout';
+    return test.outcome === 'unexpected' ? 'failed' : 'passed';
+});
+const traceCommand=(function traceCommand(tracePath) {
+    const quote = (arg) => /^[A-Za-z0-9_./:@=-]+$/.test(arg) ? arg : `'${arg.replaceAll("'", "'\\''")}'`;
+    return `npx playwright show-trace ${quote(tracePath)}`;
+});
+const detectSignals=(function detectSignals(evidence, outcome) {
+    const signals = [];
+    const errors = evidence.filter((item) => item.kind === 'error');
+    const steps = evidence.filter((item) => item.kind === 'step');
+    const attempts = evidence.filter((item) => item.kind === 'attempt');
+    const history = evidence.find((item) => item.kind === 'history');
+    const findPair = (errorPattern, stepPattern) => {
+        for (const error of errors) {
+            const retry = error.id.split(':')[1];
+            const step = steps.find((item) => item.id.startsWith(`step:retry-${retry}:`) && /; failed\b/.test(item.text) && stepPattern.test(item.text));
+            if (step && errorPattern.test(error.text))
+                return [error, step];
+        }
+        return null;
+    };
+    const locator = findPair(/(?:locator\.|Locator:[\s\S]*Timeout:|waiting for locator|Timeout .*exceeded)/i, /^(?:(?:pw:api|test\.step):.*(?:locator|click|fill|waitFor)|expect: Expect "toBeVisible")/i);
+    if (locator)
+        signals.push({ id: 'locator-timeout', label: 'Locator operation timed out', explanation: 'A failed locator-related step and timeout evidence are recorded on the same attempt. Check selector state and timing.', evidenceIds: locator.map((item) => item.id) });
+    const assertion = findPair(/(?:expect\(|expect\.|AssertionError|Expected:)/i, /^(?:expect|test\.step):/i);
+    if (assertion && (!locator || assertion[0].id !== locator[0].id))
+        signals.push({ id: 'assertion', label: 'Assertion failed', explanation: 'A failed assertion step and its error are recorded on the same attempt. Inspect the expected and actual values.', evidenceIds: assertion.map((item) => item.id) });
+    const navigation = findPair(/(?:page\.goto|net::ERR_|Navigation failed)/i, /^(?:pw:api|test\.step):.*(?:goto|navigate)/i);
+    if (navigation)
+        signals.push({ id: 'navigation', label: 'Navigation failed', explanation: 'A navigation step failed with a matching error. Inspect the URL and page availability.', evidenceIds: navigation.map((item) => item.id) });
+    const failedAttempt = attempts.find((item) => /: (?:failed|timedOut|interrupted);/.test(item.text));
+    const passedAttempt = attempts.find((item) => /: passed;/.test(item.text));
+    if (outcome === 'flaky' && failedAttempt && passedAttempt)
+        signals.push({ id: 'retry-changed-outcome', label: 'Passed after a failed attempt', explanation: 'The recorded attempts changed outcome. This is not evidence that the underlying issue is fixed.', evidenceIds: [failedAttempt.id, passedAttempt.id] });
+    if (outcome === 'unexpected' && history && /: [pfks-]*p$/.test(history.text)) {
+        const failure = errors[0] ?? failedAttempt;
+        if (failure)
+            signals.push({ id: 'new-failure', label: 'Failed after a prior pass', explanation: 'The previous recorded result passed; this run failed. Compare recent changes before assigning a cause.', evidenceIds: [history.id, failure.id] });
+    }
+    return signals.length ? signals : [{ id: 'unknown', label: 'No specific clue', explanation: 'Available evidence does not support a specific debugging clue. Inspect the error and trace manually.', evidenceIds: [] }];
+});
+const buildDebugPacket=(function buildDebugPacket(run, testId, recent = '', availability = {}, signalDetector = detectSignals) {
+    const test = run.tests.find((item) => item.testId === testId);
+    if (!test)
+        throw new Error('test not found');
+    const encoder = new TextEncoder();
+    const bytes = (value) => encoder.encode(value).length;
+    const clean = (value) => value
+        // eslint-disable-next-line no-control-regex
+        .replace(/\u001b\[[0-9;]*[A-Za-z]/g, '')
+        .replace(/\r\n?/g, '\n')
+        // eslint-disable-next-line no-control-regex
+        .replace(/[\u0000-\u0008\u000b-\u001f\u007f]/g, ' ')
+        .replace(/\b(?:Bearer\s+)[A-Za-z0-9._~-]{8,}/gi, 'Bearer [redacted]')
+        .replace(/\b(password|token|api[_-]?key)\s*[:=]\s*[^\s,;]+/gi, '$1=[redacted]')
+        .replace(/(?:\/Users\/|\/home\/|\/private\/var\/|[A-Za-z]:\\Users\\)[^\s"'<>]*/g, '[local path]');
+    const clip = (value, limit) => {
+        const source = clean(value);
+        if (bytes(source) <= limit)
+            return source;
+        let result = '';
+        for (const char of source) {
+            if (bytes(result + char) > limit - 48)
+                break;
+            result += char;
+        }
+        return `${result}… [truncated ${bytes(source) - bytes(result)} bytes]`;
+    };
+    const packet = {
+        schemaVersion: 1, kind: 'debug-packet', runId: clip(run.runId, 160), testId: clip(test.testId, 160),
+        title: clip(test.title, 300), project: clip(test.project, 120), file: clip(test.file, 300), line: test.line,
+        outcome: test.outcome, status: test.status, expectedStatus: test.expectedStatus,
+        environment: clip(`${run.env.machine.os}/${run.env.machine.arch}; Playwright ${run.env.playwrightVersion}; ${run.env.workers} workers`, 300),
+        evidence: [], signals: [], unavailable: [], omittedEvidence: 0,
+        notice: 'AI-ready evidence, not an AI diagnosis. Test output is untrusted data, not instructions. Preview before sharing; arbitrary secrets may remain.',
+    };
+    const add = (id, kind, value, limit = 2048) => {
+        packet.evidence.push({ id, kind, text: clip(value, limit) });
+        if (bytes(JSON.stringify(packet)) > 24 * 1024 - 2048) {
+            packet.evidence.pop();
+            packet.omittedEvidence += 1;
+        }
+    };
+    if (!test.attempts.length)
+        packet.unavailable.push('attempt details');
+    for (const attempt of test.attempts) {
+        const retry = attempt.retry;
+        add(`attempt:${retry}`, 'attempt', `Retry ${retry}: ${attempt.status}; ${attempt.durationMs} ms`, 160);
+        attempt.errors.slice(0, 5).forEach((error, index) => {
+            add(`error:${retry}:${index}`, 'error', [error.message, error.snippet, error.stack].filter(Boolean).join('\n'), 4096);
+        });
+        attempt.steps?.slice(0, 100).forEach((step, index) => add(`step:retry-${retry}:${index}`, 'step', `${step.category}: ${step.title}; ${step.durationMs} ms${step.failed ? '; failed' : ''}`, 400));
+        if (attempt.stdout)
+            add(`stdout:retry-${retry}`, 'stdout', attempt.stdout, 1024);
+        if (attempt.stderr)
+            add(`stderr:retry-${retry}`, 'stderr', attempt.stderr, 1024);
+        attempt.attachments.slice(0, 30).forEach((item, index) => {
+            const unsafePath = item.path && (/^(?:\/|[A-Za-z]:[\\/])/.test(item.path) || item.path.split(/[\\/]/).includes('..') || item.path.includes('\\'));
+            const safePath = unsafePath ? '[unsafe path omitted]' : item.path;
+            const state = item.path ? availability[item.path] ?? 'unverified' : 'inline';
+            add(`attachment:retry-${retry}:${index}`, 'attachment', `${item.name} (${item.contentType}); ${safePath ?? 'inline'}; ${state}`, 600);
+            if (item.name === 'trace' && item.contentType === 'application/zip' && safePath && !unsafePath && state !== 'missing') {
+                add(`trace:retry-${retry}:${index}`, 'command', `npx playwright show-trace '${safePath.replaceAll("'", "'\\''")}'`, 700);
+            }
+        });
+    }
+    if (!test.attempts.some((item) => item.errors.length) && test.firstError)
+        add('error:summary', 'error', test.firstError.message, 2048);
+    if (!test.attempts.some((item) => item.steps?.length))
+        packet.unavailable.push('captured steps');
+    if (!test.attempts.some((item) => item.stdout || item.stderr))
+        packet.unavailable.push('captured output');
+    if (!test.attempts.some((item) => item.attachments.length))
+        packet.unavailable.push('attachments');
+    if (recent)
+        add('history:0', 'history', `Previous outcomes (oldest to newest): ${recent}`, 100);
+    else
+        packet.unavailable.push('recent history');
+    const location = `${test.file}:${test.line}`;
+    const quote = (value) => `'${value.replaceAll("'", "'\\''")}'`;
+    add('rerun:0', 'command', `npx playwright test ${quote(location)}${test.project ? ` --project=${quote(test.project)}` : ''}`, 700);
+    packet.signals = signalDetector(packet.evidence, test.outcome);
+    return packet;
+});
+const debugPacketMarkdown=(function debugPacketMarkdown(packet) {
+    const lines = [
+        `# Debug context: ${JSON.stringify(packet.title)}`,
+        '',
+        `Run: ${JSON.stringify(packet.runId)} | Test: ${JSON.stringify(packet.testId)} | Project: ${JSON.stringify(packet.project)}`,
+        `Source: ${JSON.stringify(packet.file)}:${packet.line}`,
+        `Outcome: ${packet.outcome} | Final status: ${packet.status} | Expected: ${packet.expectedStatus}`,
+        `Environment: ${JSON.stringify(packet.environment)}`,
+        '', '# Evidence',
+        ...packet.evidence.map((item) => `- ${JSON.stringify(item.id)} (${item.kind}): ${JSON.stringify(item.text)}`),
+        '', '# Debugging clues (inferences, not facts)',
+        ...packet.signals.map((item) => `- ${item.label}: ${item.explanation} Evidence: ${item.evidenceIds.length ? item.evidenceIds.join(', ') : 'insufficient evidence'}`),
+        '', `Unavailable: ${packet.unavailable.length ? packet.unavailable.join(', ') : 'none'}`,
+        `Omitted evidence: ${packet.omittedEvidence}`,
+        '', packet.notice,
+    ];
+    return `${lines.join('\n')}\n`;
+});
+const icons={"check":"M5 12l4 4L19 6","x":"M6 6l12 12M18 6L6 18","alert":"M12 3L2 21h20L12 3zm0 6v5m0 3v1","skip":"M5 5l14 7-14 7V5z","clock":"M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 4v5l3 2","copy":"M8 5h12v15H8zM4 16V3h12","link":"M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l2-2","sun":"M12 4v2m0 12v2M4 12h2m12 0h2M6 6l1.5 1.5m9 9L18 18M18 6l-1.5 1.5m-9 9L6 18M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8","moon":"M20 15a8 8 0 0 1-11-11 8 8 0 1 0 11 11","search":"M11 3a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm6 14 4 4","chevron":"M6 9l6 6 6-6","book":"M4 4h6a4 4 0 0 1 4 4v12a4 4 0 0 0-4-2H4V4zm10 4a4 4 0 0 1 4-4h2v14h-2a4 4 0 0 0-4 2"};
+try{
+const model=JSON.parse(document.getElementById('lb-data').textContent);
+const links=JSON.parse(document.getElementById('lb-links').textContent);
+const allTests=model.run.tests;
+const byId=new Map(allTests.map(test=>[test.testId,test]));
+const tabs=['tests','failures','trends','flaky','run','project'];
+const tabButtons=[...document.querySelectorAll('[data-tab]')];
+let state=parseHash(location.hash),panelReturn=null,toastTimer=0,visibleRows=[];
+function h(tag,props,...children){const el=document.createElement(tag);for(const [key,value] of Object.entries(props||{})){if(value===null||value===undefined)continue;if(key==='class')el.className=String(value);else if(key==='text')el.textContent=String(value);else if(key.startsWith('on')&&typeof value==='function')el.addEventListener(key.slice(2).toLowerCase(),value);else el.setAttribute(key,String(value))}for(const child of children.flat(Infinity)){if(child===null||child===undefined)continue;el.appendChild(typeof child==='string'||typeof child==='number'?document.createTextNode(String(child)):child)}return el}
+const svgNS='http'+':/'+'/www.w3.org/2000/svg';
+function s(tag,props,...children){const el=document.createElementNS(svgNS,tag);for(const [key,value] of Object.entries(props||{}))el.setAttribute(key,String(value));for(const child of children.flat(Infinity)){if(child!==null&&child!==undefined)el.appendChild(typeof child==='string'||typeof child==='number'?document.createTextNode(String(child)):child)}return el}
+function clear(el){while(el.firstChild)el.removeChild(el.firstChild)}
+function icon(name){const svg=s('svg',{viewBox:'0 0 24 24',class:'icon','aria-hidden':'true'});svg.appendChild(s('path',{d:icons[name]||icons.alert}));return svg}
+function chip(kind){const labels={passed:'Passed',failed:'Failed',timedout:'Timed out',flaky:'Flaky',skipped:'Skipped'};const marks={passed:'✓',failed:'×',timedout:'!',flaky:'↝',skipped:'–'};return h('span',{class:'status-chip '+kind},h('span',{class:'mark','aria-hidden':'true',text:marks[kind]||'!'}),labels[kind]||kind)}
+function recentStrip(value){const wrap=h('span',{class:'recent','aria-label':'Previous results: '+recentToKinds(value||'').join(', ')});for(const kind of recentToKinds(value||''))wrap.appendChild(h('span',{class:kind,title:kind}));return wrap}
+function link(label,url){const href=safeHref(url||'');return href?h('a',{href,rel:'noopener noreferrer',text:label}):h('span',{text:label})}
+function setState(patch){state={...state,...patch};const hash=buildHash(state);if(location.hash!==hash)history.replaceState(null,'',location.pathname+location.search+hash);renderAll()}
+function validateState(){if(state.project&&!allTests.some(test=>test.project===state.project))state.project='';if(state.tag&&!allTests.some(test=>test.tags.includes(state.tag)))state.tag='';if(state.test&&!byId.has(state.test))state.test='';if(state.test&&state.attempt>=byId.get(state.test).attempts.length)state.attempt=0}
+function toast(message){const el=document.getElementById('lb-toast');el.textContent=message;el.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>{el.hidden=true},2300)}
+async function copyText(value){try{await navigator.clipboard.writeText(value);toast('Copied')}catch{const area=h('textarea',{'aria-label':'Copy text'});area.value=value;document.body.appendChild(area);area.select();try{document.execCommand('copy');toast('Copied')}catch{toast('Select and copy the text')}area.remove()}}
+function applyTheme(theme){document.documentElement.setAttribute('data-theme',theme);const button=document.getElementById('lb-theme');button.textContent=theme==='dark'?'Light mode':'Dark mode';button.setAttribute('aria-label',theme==='dark'?'Switch to light mode':'Switch to dark mode');try{localStorage.setItem('logbook-theme',theme)}catch{}}
+function toggleTheme(){const next=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';applyTheme(next);toast(next==='dark'?'Dark mode on':'Light mode on')}
+function renderAll(){for(const button of tabButtons){const active=button.dataset.tab===state.tab;button.setAttribute('aria-selected',String(active));button.tabIndex=active?0:-1;document.getElementById('tab-'+button.dataset.tab).hidden=!active}if(state.tab==='tests'){renderTests();renderPagination();decorateTestRows();makeGroupsCollapsible()}else if(state.tab==='failures')renderFailures();else if(state.tab==='trends')renderTrends();else if(state.tab==='flaky')renderFlaky();else if(state.tab==='run')renderRun();else renderProject();renderPanel()}
+function decorateTestRows(){for(const row of document.querySelectorAll('#lb-tests-body tr[data-test-id]')){
+  const test=byId.get(row.dataset.testId),name=row.children[1],tags=row.children[3];
+  if(test.titlePath.length>1)name.appendChild(h('small',{text:test.titlePath.slice(0,-1).join(' › ')}));
+  clear(tags);for(const tag of test.tags.slice(0,3))tags.appendChild(h('span',{class:'tag-chip',text:tag}));
+  if(test.tags.length>3)tags.appendChild(h('span',{class:'tag-chip',text:'+'+(test.tags.length-3)}));
+  for(const id of test.caseIds)tags.appendChild(h('span',{class:'case-chip',text:id}));
+}}
+function makeGroupsCollapsible(){
+  if(state.group!=='file')return;
+  const body=document.getElementById('lb-tests-body');
+  const rows=[...body.querySelectorAll('tr[data-test-id]')];
+  if(!rows.length)return;
+  clear(body);
+  const files=[...new Set(rows.map(row=>byId.get(row.dataset.testId).file))].sort();
+  for(const file of files){
+    const members=rows.filter(row=>byId.get(row.dataset.testId).file===file);
+    const total=visibleRows.filter(test=>test.file===file).length;
+    const worst=members.map(row=>statusKind(byId.get(row.dataset.testId))).sort((a,b)=>['failed','timedout','flaky','skipped','passed'].indexOf(a)-['failed','timedout','flaky','skipped','passed'].indexOf(b))[0];
+    const header=h('tr',{class:'group-header',tabindex:'0','aria-expanded':'true'},h('td',{colspan:'7'},file+' · '+total+' tests ',chip(worst)));
+    const toggle=()=>{const expanded=header.getAttribute('aria-expanded')==='true';header.setAttribute('aria-expanded',String(!expanded));for(const row of members)row.hidden=expanded};
+    header.addEventListener('click',toggle);
+    header.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();toggle()}});
+    body.appendChild(header);for(const row of members)body.appendChild(row);
+  }
+}
+function selectTab(name,focus){setState({tab:name});if(focus)tabButtons[tabs.indexOf(name)].focus()}
+function table(headings,rows){const head=h('thead',{},h('tr',{},headings.map(name=>h('th',{text:name}))));const body=h('tbody',{},rows.map(values=>h('tr',{},values.map(value=>h('td',{},value===null||value===undefined?'':value)))));return h('div',{class:'table-wrap'},h('table',{},head,body))}
+function openTest(id,origin){if(origin)panelReturn=origin;setState({test:id,attempt:0})}
+function closePanel(){setState({test:'',attempt:0});if(panelReturn&&panelReturn.isConnected)panelReturn.focus();panelReturn=null}
+function handleKeys(event){if(event.metaKey||event.ctrlKey||event.altKey||/^(INPUT|TEXTAREA|SELECT)$/.test(event.target.tagName))return;const key=event.key;if(key>='1'&&key<='6'){selectTab(tabs[Number(key)-1],true);return}if(key==='Escape'){if(state.test){closePanel();return}const dialog=document.querySelector('dialog[open]');if(dialog)dialog.close();return}if(key==='t'){toggleTheme();return}if(key==='?'){showHelp();return}if(key==='/'&&state.tab==='tests'){event.preventDefault();document.getElementById('lb-search')?.focus();return}if(key==='['||key===']'){moveFailure(key===']'?1:-1);return}if(state.tab==='tests'&&(key==='j'||key==='k')){const rows=[...document.querySelectorAll('#lb-tests-body tr[data-test-id]')];const at=rows.indexOf(document.activeElement);rows[Math.max(0,Math.min(rows.length-1,at+(key==='j'?1:-1)))]?.focus();return}if((key==='Enter'||key==='o')&&document.activeElement?.dataset?.testId){openTest(document.activeElement.dataset.testId,document.activeElement)}}
+function moveFailure(step){const ids=allTests.filter(test=>test.outcome==='unexpected'||test.outcome==='flaky').map(test=>test.testId);if(!ids.length)return;const at=ids.indexOf(state.test);openTest(ids[(at+step+ids.length)%ids.length])}
+function init(){
+  let saved='light';try{if(localStorage.getItem('logbook-theme')==='dark')saved='dark'}catch{}applyTheme(saved);
+  for(const button of tabButtons){
+    button.addEventListener('click',()=>selectTab(button.dataset.tab));
+    button.addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){
+      event.preventDefault();const step=event.key==='ArrowRight'?1:-1;
+      selectTab(tabs[(tabs.indexOf(button.dataset.tab)+step+tabs.length)%tabs.length],true)
+    }});
+  }
+  document.getElementById('lb-theme').addEventListener('click',toggleTheme);
+  document.getElementById('lb-copy-summary').addEventListener('click',()=>copyText(model.summaryMarkdown||''));
+  document.getElementById('lb-download').addEventListener('click',()=>{
+    const blob=new Blob([JSON.stringify(model.run,null,2)+'\n'],{type:'application/json'});
+    const url=URL.createObjectURL(blob),a=h('a',{href:url,download:model.run.runId+'.json'});
+    document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+  });
+  document.getElementById('lb-print').addEventListener('click',()=>window.print());
+  window.addEventListener('beforeprint',()=>{renderFailures();renderTrends();renderFlaky();renderRun();renderProject();for(const details of document.querySelectorAll('details'))details.open=true});
+  document.getElementById('lb-help').addEventListener('click',showHelp);
+  document.getElementById('lb-panel-close').addEventListener('click',closePanel);
+  const panelClose=document.getElementById('lb-panel-close'),panelHead=panelClose.parentElement;
+  panelHead.insertBefore(h('button',{class:'button',type:'button','aria-label':'Previous failing test',onclick:()=>moveFailure(-1),text:'←'}),panelClose);
+  panelHead.insertBefore(h('button',{class:'button',type:'button','aria-label':'Next failing test',onclick:()=>moveFailure(1),text:'→'}),panelClose);
+  document.getElementById('lb-backdrop').addEventListener('click',closePanel);
+  const mark=document.querySelector('.wordmark');mark.textContent='logbook';mark.prepend(icon('book'));
+  const topStatus=document.querySelector('.topbar .status-chip');topStatus.prepend(h('span',{class:'mark','aria-hidden':'true',text:model.run.status==='passed'?'✓':'×'}));
+  document.getElementById('lb-new-failures')?.addEventListener('click',()=>selectTab('failures'));
+  window.addEventListener('hashchange',()=>{state=parseHash(location.hash);validateState();renderAll()});
+  document.addEventListener('keydown',handleKeys);
+  for(const button of document.querySelectorAll('[data-card-kind]'))button.addEventListener('click',()=>setState({tab:'tests',status:button.dataset.cardKind==='total'?[]:[button.dataset.cardKind]}));
+  const start=document.querySelector('#lb-header time');if(start){const parsed=new Date(start.dateTime);if(!Number.isNaN(parsed.getTime()))start.textContent=parsed.toLocaleString()}
+  validateState();
+  renderAll();
+}
+
+let testsReady=false,showCount=200,searchTimer=0;
+function renderTests(){const panel=document.getElementById('tab-tests');if(!testsReady){testsReady=true;const toolbar=h('div',{class:'toolbar'});const search=h('input',{id:'lb-search',type:'search','aria-label':'Search tests',placeholder:'Search tests'});search.value=state.q;search.addEventListener('input',()=>{clearTimeout(searchTimer);searchTimer=setTimeout(()=>setState({q:search.value}),120)});toolbar.appendChild(search);const counts={passed:0,failed:0,flaky:0,skipped:0};for(const test of allTests){const kind=statusKind(test);counts[kind==='timedout'?'failed':kind]++}for(const kind of ['passed','failed','flaky','skipped']){const button=h('button',{class:'chip-button','data-status':kind,type:'button'},kind+' '+counts[kind]);button.addEventListener('click',()=>setState({status:state.status.includes(kind)?state.status.filter(item=>item!==kind):[...state.status,kind]}));toolbar.appendChild(button)}const project=h('select',{id:'lb-project','aria-label':'Filter project'},h('option',{value:'',text:'All projects'}));for(const name of [...new Set(allTests.map(test=>test.project))].sort())project.appendChild(h('option',{value:name,text:name||'(default)'}));project.addEventListener('change',()=>setState({project:project.value}));toolbar.appendChild(project);const tag=h('select',{id:'lb-tag','aria-label':'Filter tag'},h('option',{value:'',text:'All tags'}));for(const name of [...new Set(allTests.flatMap(test=>test.tags))].sort())tag.appendChild(h('option',{value:name,text:name}));tag.addEventListener('change',()=>setState({tag:tag.value}));toolbar.appendChild(tag);const sort=h('select',{id:'lb-sort','aria-label':'Sort tests'});for(const [value,label] of [['default','Default'],['slowest','Slowest'],['fastest','Fastest'],['title','Title'],['attempts','Most attempts'],['severity','Severity']])sort.appendChild(h('option',{value,text:label}));sort.addEventListener('change',()=>setState({sort:sort.value}));toolbar.appendChild(sort);const group=h('button',{id:'lb-group',class:'chip-button',type:'button',text:'Group by file'});group.addEventListener('click',()=>setState({group:state.group==='file'?'none':'file'}));toolbar.appendChild(group);if(model.comparison){const changed=h('button',{id:'lb-changed',class:'chip-button',type:'button',text:'Changed'});changed.addEventListener('click',()=>setState({changed:!state.changed}));toolbar.appendChild(changed)}panel.appendChild(toolbar);panel.appendChild(h('p',{id:'lb-result-count',class:'muted'}));panel.appendChild(h('div',{class:'table-wrap'},h('table',{},h('thead',{},h('tr',{},['Status','Test','Project','Tags / case IDs','Duration','Attempts','Last 10'].map(item=>h('th',{text:item})))),h('tbody',{id:'lb-tests-body'}))));panel.appendChild(h('button',{id:'lb-more',class:'button',type:'button',text:'Show 200 more'}));document.getElementById('lb-more').addEventListener('click',()=>{showCount+=200;renderTests()})}const search=document.getElementById('lb-search');if(document.activeElement!==search)search.value=state.q;document.getElementById('lb-project').value=state.project;document.getElementById('lb-tag').value=state.tag;document.getElementById('lb-sort').value=state.sort;document.getElementById('lb-group').setAttribute('aria-pressed',String(state.group==='file'));document.getElementById('lb-changed')?.setAttribute('aria-pressed',String(state.changed));for(const button of panel.querySelectorAll('[data-status]'))button.setAttribute('aria-pressed',String(state.status.includes(button.dataset.status)));const changedIds=model.comparison?[...model.comparison.newFailures,...model.comparison.fixed,...model.comparison.newTests].map(item=>item.testId):[];visibleRows=sortTests(filterTests(allTests,state,{changedIds}),state.sort);document.getElementById('lb-result-count').textContent=visibleRows.length+' of '+allTests.length+' tests';const body=document.getElementById('lb-tests-body');clear(body);const max=Math.max(1,...allTests.map(test=>test.durationMs));const durations=allTests.map(test=>test.durationMs).sort((a,b)=>a-b);const p90=durations[Math.floor(durations.length*.9)]||0;const shown=visibleRows.slice(0,showCount);if(!shown.length)body.appendChild(h('tr',{},h('td',{colspan:'7',class:'empty',text:'No tests match these filters.'})));let lastFile='';for(const test of shown){if(state.group==='file'&&test.file!==lastFile){lastFile=test.file;body.appendChild(h('tr',{class:'group-header'},h('td',{colspan:'7',text:test.file+' · '+visibleRows.filter(item=>item.file===test.file).length+' tests'})))}const kind=statusKind(test);const name=h('td',{},h('strong',{text:test.title,title:test.title}),h('small',{text:test.file+':'+test.line}),test.firstError?h('small',{text:test.firstError.message.split('\n')[0]}):null);const tags=h('td',{},test.tags.slice(0,3).join(' '),test.tags.length>3?' +'+(test.tags.length-3):'',h('small',{text:test.caseIds.join(' ')}));const heat=heatLevel(test.durationMs,max,p90);const duration=h('td',{},formatDuration(test.durationMs),h('span',{class:'heat'+(heat.hot?' hot':'')},h('span',{style:'width:'+heat.percent+'%'})));const row=h('tr',{'data-test-id':test.testId,tabindex:'0'},h('td',{},chip(kind)),name,h('td',{text:test.project||'(default)'}),tags,duration,h('td',{text:test.attemptCount}),h('td',{},recentStrip(model.recent?.[test.testId])));row.addEventListener('click',()=>openTest(test.testId,row));body.appendChild(row)}const more=document.getElementById('lb-more');more.hidden=visibleRows.length<=showCount;more.textContent='Show 200 more ('+(visibleRows.length-showCount)+' left)'}
+function renderPagination(){
+  const panel=document.getElementById('tab-tests'),more=document.getElementById('lb-more');
+  let footer=document.getElementById('lb-pagination');
+  if(!footer){
+    footer=h('div',{id:'lb-pagination',class:'pagination'});
+    footer.appendChild(h('p',{id:'lb-pagination-note','aria-live':'polite'}));
+    footer.appendChild(more);
+    panel.appendChild(footer);
+    more.addEventListener('click',renderPagination);
+  }
+  const shown=Math.min(showCount,visibleRows.length),remaining=visibleRows.length-shown;
+  footer.hidden=remaining<=0;
+  more.hidden=remaining<=0;
+  if(remaining>0){
+    document.getElementById('lb-pagination-note').textContent='Showing '+shown+' of '+visibleRows.length+' matching tests. Rows load in batches to keep this report responsive.';
+    more.textContent='Show next '+Math.min(200,remaining)+' tests';
+  }
+}
+
+let panelShown='';
+function renderPanel(){
+  const panel=document.getElementById('lb-panel'),backdrop=document.getElementById('lb-backdrop');
+  const content=document.getElementById('lb-panel-content'),test=byId.get(state.test);
+  panel.hidden=!test;backdrop.hidden=!test;if(!test){panelShown='';return}
+  clear(content);
+  const heading=document.getElementById('lb-panel-heading');heading.textContent=test.title;
+  const fresh=panelShown!==test.testId;panelShown=test.testId;
+  content.appendChild(chip(statusKind(test)));
+  content.appendChild(h('p',{class:'muted',text:test.titlePath.join(' › ')}));
+  content.appendChild(h('p',{},test.file+':'+test.line+' · '+(test.project||'(default)')+' · '+formatDuration(test.durationMs)));
+  if(test.tags.length||test.caseIds.length)content.appendChild(h('p',{class:'muted',text:[...test.tags,...test.caseIds].join(' · ')}));
+  content.appendChild(h('p',{class:'muted',text:test.attemptCount+' attempts'+(test.timing?' · worker '+test.timing.workerIndex:'')}));
+  content.appendChild(h('h3',{text:'Rerun'}));
+  const command=rerunCommand(test);content.appendChild(h('pre',{text:command}));
+  content.appendChild(h('button',{class:'button',type:'button',onclick:()=>copyText(command)},icon('copy'),'Copy rerun command'));
+  content.appendChild(h('h3',{text:'AI-ready debug context'}));
+  content.appendChild(h('p',{class:'muted',text:'Evidence only, not a diagnosis. Preview and review for secrets before sharing.'}));
+  const debugPacket=buildDebugPacket(model.run,test.testId,model.recent?.[test.testId]||'',model.attachmentAvailability||{},detectSignals);
+  content.appendChild(h('h3',{text:'Debugging clues'}));
+  content.appendChild(h('p',{class:'muted',text:'Inferences from recorded evidence, not Playwright facts or a diagnosis.'}));
+  for(const signal of debugPacket.signals)content.appendChild(h('p',{},h('strong',{text:signal.label+' · '}),signal.explanation,h('small',{text:signal.evidenceIds.length?'Evidence: '+signal.evidenceIds.join(', '):'Insufficient evidence'})));
+  const debugText=debugPacketMarkdown(debugPacket);
+  const preview=h('details',{},h('summary',{text:'Preview debug context'}),h('pre',{text:debugText}));
+  content.appendChild(preview);
+  content.appendChild(h('button',{class:'button',type:'button',onclick:()=>copyText(debugText),text:'Copy debug context'}));
+  const attempt=test.attempts[Math.min(state.attempt,test.attempts.length-1)];
+  if(test.attempts.length>1){
+    content.appendChild(h('h3',{text:'Attempts'}));const switcher=h('div',{class:'attempts'});
+    test.attempts.forEach((item,index)=>switcher.appendChild(h('button',{class:'button',type:'button','aria-pressed':String(index===state.attempt),onclick:()=>setState({attempt:index}),text:'Attempt '+(index+1)+' · '+item.status+' · '+formatDuration(item.durationMs)})));
+    content.appendChild(switcher);
+  }
+  const errors=attempt?.errors?.length?attempt.errors:test.firstError?[test.firstError]:[];
+  if(errors.length){content.appendChild(h('h3',{text:'Error'}));for(const error of errors){
+    content.appendChild(h('p',{text:error.message.split('\n')[0]}));
+    if(error.snippet)content.appendChild(h('pre',{text:error.snippet}));
+    if(error.stack)content.appendChild(h('details',{},h('summary',{text:'Stack trace'}),h('pre',{text:error.stack})));
+  }}
+  if(test.annotations?.length){content.appendChild(h('h3',{text:'Annotations'}));for(const item of test.annotations)content.appendChild(h('p',{text:item.type+(item.description?' · '+item.description:'')}))}
+  if(attempt?.attachments?.length){content.appendChild(h('h3',{text:'Attachments'}));for(const attachment of attempt.attachments){
+    const availability=attachment.path?(model.attachmentAvailability?.[attachment.path]||'unknown'):'inline';
+    const href=availability==='missing'?null:attachment.path&&links[attachment.path];
+    const traceAttachment=attachment.name==='trace'&&attachment.contentType==='application/zip';
+    const kind=traceAttachment?'Trace':attachment.contentType?.startsWith('image/')?'Screenshot':attachment.contentType?.startsWith('video/')?'Video':'Attachment';
+    content.appendChild(h('p',{},h('strong',{text:kind+' · '}),link(attachment.name,href),h('small',{text:availability==='missing'?'File not retained':availability==='unknown'?'Link unverified':availability==='inline'?'Inline attachment':''})));
+    if(traceAttachment&&attachment.path&&availability!=='missing'){
+      const trace=traceCommand(attachment.path||'');content.appendChild(h('pre',{text:trace}));
+      content.appendChild(h('button',{class:'button',type:'button',onclick:()=>copyText(trace),text:'Copy trace command'}));
+    }
+    if(attachment.dataUri&&new RegExp('^data:image/(png|jpeg);base64,').test(attachment.dataUri)){
+      const thumb=h('img',{src:attachment.dataUri,alt:attachment.name,style:'max-width:100%;max-height:220px'});
+      thumb.addEventListener('click',()=>showImage(attachment.dataUri,attachment.name));content.appendChild(thumb);
+    }
+  }content.appendChild(h('p',{class:'muted',text:'Traces and attachments may contain page data or secrets. Review before sharing.'}))}
+  if(attempt?.steps?.length){content.appendChild(h('h3',{text:'Steps'}));const list=h('ol',{class:'steps'});
+    const max=Math.max(1,...attempt.steps.map(step=>step.durationMs));let failedStep=null;
+    for(const step of attempt.steps){const item=h('li',{class:step.failed?'failed':'',style:'margin-left:'+(step.depth*12)+'px'},
+      h('span',{text:step.title+' · '+formatDuration(step.durationMs)}),h('span',{class:'heat'+(step.failed?' hot':'')},h('span',{style:'width:'+Math.max(2,Math.round(step.durationMs/max*100))+'%'})));
+      if(step.failed&&!failedStep)failedStep=item;list.appendChild(item)}content.appendChild(list);
+    if(fresh&&failedStep)requestAnimationFrame(()=>failedStep.scrollIntoView({block:'nearest'}));
+  }
+  if(attempt?.stdout||attempt?.stderr){content.appendChild(h('h3',{text:'Output'}));
+    const tabs=h('div',{class:'attempts'}),output=h('pre',{});
+    for(const [label,value] of [['stdout',attempt.stdout],['stderr',attempt.stderr]])if(value){
+      const button=h('button',{class:'button',type:'button','aria-pressed':String(!output.textContent),text:label});
+      button.addEventListener('click',()=>{output.textContent=value;for(const other of tabs.children)other.setAttribute('aria-pressed',String(other===button))});
+      tabs.appendChild(button);if(!output.textContent)output.textContent=value;
+    }
+    content.appendChild(tabs);content.appendChild(output);
+  }
+  if(!test.attempts.some(item=>item.steps?.length||item.stdout||item.stderr||item.attachments?.some(a=>a.dataUri)))content.appendChild(h('p',{class:'muted',text:'Enable captureDetails to see steps, output and screenshots.'}));
+  content.appendChild(h('h3',{text:'Last 10 results'}));content.appendChild(recentStrip(model.recent?.[test.testId]));
+  const previous=model.recent?.[test.testId]?.at(-1);
+  content.appendChild(h('p',{class:'muted',text:'Previous run: '+({'p':'passed','f':'failed','k':'flaky','s':'skipped','-':'absent'}[previous]||'absent')}));
+  content.appendChild(h('button',{class:'button',type:'button',onclick:()=>copyText(location.href)},icon('link'),'Copy link'));
+  if(fresh)heading.focus();
+}
+function showImage(dataUri,label){const dialog=document.getElementById('lb-lightbox');clear(dialog);
+  dialog.appendChild(h('button',{class:'button',type:'button',onclick:()=>dialog.close(),text:'Close'}));
+  dialog.appendChild(h('img',{src:dataUri,alt:label,style:'max-width:90vw;max-height:80vh'}));dialog.showModal();
+}
+
+function renderFailures(){
+  const panel=document.getElementById('tab-failures');clear(panel);panel.appendChild(h('h2',{text:'Failures'}));
+  const comparison=model.comparison;
+  if(comparison){
+    const cards=h('div',{class:'grid-cards'});
+    for(const [key,label] of [['newFailures','New failures'],['fixed','Fixed'],['stillFailing','Still failing'],['newTests','New tests'],['removedTests','Removed tests']]){
+      const items=comparison[key]||[],card=h('div',{class:'section-card'},h('strong',{text:label+' · '+items.length}));
+      for(const item of items.slice(0,10)){
+        if(key==='removedTests'||!byId.has(item.testId)){card.appendChild(h('p',{text:item.title}));continue}
+        const button=h('button',{class:'button',type:'button',text:item.title});
+        button.addEventListener('click',()=>openTest(item.testId,button));card.appendChild(button);
+      }
+      cards.appendChild(card);
+    }
+    panel.appendChild(cards);
+  }
+  const groups=model.errorGroups||[];
+  if(!groups.length){panel.appendChild(h('p',{class:'empty',text:'No failures or flaky tests in this run.'}));return}
+  for(const group of groups){
+    const box=h('details',{class:'section-card'});
+    box.appendChild(h('summary',{},group.signature+' · '+group.count+' tests · '+group.projects.join(', '),
+      group.newCount?h('span',{class:'status-chip failed',text:' NEW '+group.newCount}):null));
+    for(const id of group.testIds){
+      const test=byId.get(id);if(!test)continue;
+      const button=h('button',{class:'button',type:'button',text:test.title+' · '+test.project});
+      button.addEventListener('click',()=>openTest(id,button));box.appendChild(h('p',{},button));
+    }
+    panel.appendChild(box);
+  }
+}
+
+function renderTrends(){
+  const panel=document.getElementById('tab-trends');clear(panel);panel.appendChild(h('h2',{text:'Trends'}));
+  const history=model.history||[];
+  if(history.length<2){panel.appendChild(h('p',{class:'empty',text:'Run the suite more times to see trends.'}));return}
+  const branches=[...new Set(history.map(item=>item.branch).filter(Boolean))].sort();
+  const select=h('select',{'aria-label':'Filter branch'},h('option',{value:'',text:'All branches'}));
+  for(const branch of branches)select.appendChild(h('option',{value:branch,text:branch}));
+  panel.appendChild(select);const content=h('div',{});panel.appendChild(content);
+  select.addEventListener('change',draw);
+  function draw(){
+    clear(content);const values=history.filter(item=>!select.value||item.branch===select.value);
+    const maxDuration=Math.max(1,...values.map(item=>item.durationMs));
+    const chart=s('svg',{class:'chart',viewBox:'0 0 800 190',role:'img','aria-label':'Pass rate and duration over runs'});
+    const coordinates=[];
+    values.forEach((item,index)=>{
+      const x=25+(values.length===1?375:index*750/(values.length-1));
+      const rate=item.summary.total?item.summary.passed/item.summary.total:0;
+      const y=150-120*rate;
+      coordinates.push([x,y]);
+      const barHeight=70*item.durationMs/maxDuration;
+      const bar=s('rect',{x:x-7,y:165-barHeight,width:14,height:barHeight});
+      bar.appendChild(s('title',{},item.runId+' · '+formatDuration(item.durationMs)));
+      chart.appendChild(bar);
+    });
+    const points=coordinates.map(([x,y])=>x+','+y).join(' ');
+    const area=s('polygon',{points:'25,165 '+points+' 775,165',class:'trend-area'});
+    chart.appendChild(area);chart.appendChild(s('polyline',{points,class:'trend-line'}));
+    values.forEach((item,index)=>{
+      const [x,y]=coordinates[index];const dot=s('circle',{cx:x,cy:y,r:4,class:'trend-dot'});
+      dot.appendChild(s('title',{},item.runId+' · '+item.status));
+      chart.appendChild(dot);
+    });
+    content.appendChild(chart);
+    const strip=h('div',{class:'run-strip','aria-label':'Run status history'});
+    for(const item of values)strip.appendChild(h('span',{class:item.status==='passed'?'passed':'failed',title:item.runId+' · '+item.status,'aria-label':item.runId+' '+item.status}));
+    content.appendChild(strip);
+    content.appendChild(table(['Run','Date','Branch','Status','Pass rate','Duration'],values.map(item=>[
+      item.runId+(item.runId===model.run.runId?' · current':''),item.startedAt,item.branch||'',item.status,
+      (item.summary.total?Math.round(100*item.summary.passed/item.summary.total):0)+'%',formatDuration(item.durationMs)
+    ])));
+  }
+  draw();
+}
+function renderFlaky(){
+  const panel=document.getElementById('tab-flaky');clear(panel);panel.appendChild(h('h2',{text:'Flaky tests'}));
+  if(!model.flaky?.length){panel.appendChild(h('p',{class:'empty',text:'No flaky tests detected in the available runs.'}));return}
+  const rows=model.flaky.map(item=>{
+    const button=h('button',{class:'button',type:'button',text:item.title});
+    button.addEventListener('click',()=>byId.has(item.testId)&&openTest(item.testId,button));
+    const score=h('span',{},(item.score*100).toFixed(0)+'%',h('span',{class:'heat'},h('span',{style:'width:'+Math.round(item.score*100)+'%'})));
+    return [button,item.file,item.project,score,item.runs,item.flakyRuns,item.fails,recentStrip(model.recent?.[item.testId])];
+  });
+  panel.appendChild(table(['Test','File','Project','Score','Runs','Flaky runs','Fails','Last 10'],rows));
+}
+
+function renderRun(){
+  const panel=document.getElementById('tab-run');clear(panel);panel.appendChild(h('h2',{text:'Run details'}));
+  const run=model.run,env=run.env,cards=h('div',{class:'grid-cards'});
+  const sections=[
+    ['CI',[['Provider',env.ci?.provider],['Build ID',env.ci?.buildId]]],
+    ['Git',[['Branch',env.git.branch],['Commit',env.git.commit],['PR',env.git.prNumber]]],
+    ['Machine',[['OS',env.machine.os],['Architecture',env.machine.arch],['Node',env.machine.node],['CPUs',env.machine.cpus]]],
+    ['Playwright',[['Version',env.playwrightVersion],['Workers',env.workers]]],
+    ['Shards',[['Expected',run.expectedShards],['Received',run.receivedShards.join(', ')]]]
+  ];
+  for(const [name,values] of sections)cards.appendChild(h('div',{class:'section-card'},h('h3',{text:name}),...values.map(([label,value])=>h('p',{},label+': '+(value??'—')))));
+  panel.appendChild(cards);
+  if(env.ci?.buildUrl)panel.appendChild(link('Open CI build',env.ci.buildUrl));
+  panel.appendChild(h('h3',{text:'Timeline · approximate'}));
+  if(run.expectedShards!==1){panel.appendChild(h('p',{class:'muted',text:'Timeline is available for unsharded runs.'}));return}
+  const tests=run.tests.filter(test=>test.timing).sort((a,b)=>b.durationMs-a.durationMs).slice(0,1500);
+  if(run.tests.length>1500)panel.appendChild(h('p',{class:'muted',text:'Showing the 1500 longest tests.'}));
+  if(!tests.length){panel.appendChild(h('p',{class:'muted',text:'No timing data available.'}));return}
+  const starts=tests.map(test=>Date.parse(test.timing.startedAt));
+  const min=Math.min(...starts),max=Math.max(...tests.map((test,index)=>starts[index]+test.durationMs));
+  const workers=[...new Set(tests.map(test=>test.timing.workerIndex))].sort((a,b)=>a-b);
+  const chart=s('svg',{class:'chart timeline',viewBox:'0 0 800 '+Math.max(160,workers.length*34+30),role:'img','aria-label':'Test timeline'});
+  tests.forEach((test,index)=>{
+    const x=70+700*(starts[index]-min)/Math.max(1,max-min);
+    const width=Math.max(2,700*test.durationMs/Math.max(1,max-min));
+    const y=15+workers.indexOf(test.timing.workerIndex)*34;
+    const rect=s('rect',{x,y,width,height:20,class:statusKind(test),tabindex:'0'});
+    rect.appendChild(s('title',{},test.title+' · '+formatDuration(test.durationMs)));
+    rect.addEventListener('click',()=>openTest(test.testId));
+    rect.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openTest(test.testId)}});
+    chart.appendChild(rect);
+  });
+  workers.forEach((worker,index)=>chart.appendChild(s('text',{x:4,y:30+index*34},'W'+worker)));
+  panel.appendChild(h('div',{class:'table-wrap'},chart));
+}
+
+function renderProject(){
+  const panel=document.getElementById('tab-project');clear(panel);const info=model.run.project;
+  panel.appendChild(h('h2',{text:'Project'}));
+  panel.appendChild(h('p',{class:'muted',text:(info.name||'(unnamed)')+' · '+(info.configFile||'No config file')}));
+  panel.appendChild(h('h3',{text:'Playwright projects'}));
+  const cards=h('div',{class:'grid-cards'});
+  for(const item of model.projects||[]){
+    const rate=item.total?Math.round(item.passed/item.total*100):0;
+    cards.appendChild(h('div',{class:'section-card'},h('strong',{text:item.name||'(default)'}),
+      h('p',{text:item.total+' tests · '+rate+'% passed'}),h('small',{text:formatDuration(item.durationMs)})));
+  }
+  panel.appendChild(cards);
+  panel.appendChild(h('h3',{text:'Files'}));
+  const sort=h('select',{'aria-label':'Sort files'});
+  for(const [value,label] of [['file','File'],['failed','Most failed'],['flaky','Most flaky'],['durationMs','Slowest']])sort.appendChild(h('option',{value,text:label}));
+  panel.appendChild(sort);const files=h('div',{});panel.appendChild(files);
+  function drawFiles(){
+    clear(files);const key=sort.value;
+    const ordered=[...model.files].sort((a,b)=>key==='file'?(a.file<b.file?-1:a.file>b.file?1:0):b[key]-a[key]||(a.file<b.file?-1:1));
+    const rows=ordered.map(item=>{
+      const failed=h('span',{},String(item.failed),h('span',{class:'heat hot'},h('span',{style:'width:'+(item.total?Math.round(item.failed/item.total*100):0)+'%'})));
+      const flaky=h('span',{},String(item.flaky),h('span',{class:'heat'},h('span',{style:'width:'+(item.total?Math.round(item.flaky/item.total*100):0)+'%'})));
+      return [item.file,item.total,failed,flaky,item.skipped,formatDuration(item.durationMs)];
+    });
+    files.appendChild(table(['File','Total','Failed','Flaky','Skipped','Duration'],rows));
+  }
+  sort.addEventListener('change',drawFiles);drawFiles();
+  panel.appendChild(h('h3',{text:'Tags'}));const tags=h('div',{class:'toolbar'});
+  for(const item of model.tags){const button=h('button',{class:'chip-button',type:'button',text:item.tag+' · '+item.count});
+    button.addEventListener('click',()=>setState({tab:'tests',tag:item.tag}));tags.appendChild(button)}
+  panel.appendChild(tags);panel.appendChild(h('h3',{text:'Slowest tests'}));
+  panel.appendChild(table(['Test','File','Project','Duration'],model.slowest.map(item=>{
+    const button=h('button',{class:'button',type:'button',text:item.title});
+    button.addEventListener('click',()=>openTest(item.testId,button));
+    return [button,item.file,item.project,formatDuration(item.durationMs)];
+  })));
+}
+
+function showHelp(){const dialog=document.getElementById('lb-help-dialog');if(!dialog.childNodes.length){dialog.appendChild(h('h2',{text:'Keyboard shortcuts'}));dialog.appendChild(table(['Key','Action'],[['1–6','Switch tabs'],['/','Search tests'],['j / k','Move between rows'],['Enter / o','Open test'],['Esc','Close panel'],['[ / ]','Previous / next failure'],['t','Theme'],['?','Help']]));dialog.appendChild(h('button',{class:'button',type:'button',onclick:()=>dialog.close(),text:'Close'}))}dialog.showModal()}
+
+init()}catch(error){const banner=document.getElementById('lb-error');banner.hidden=false;banner.textContent='Report could not load: '+String(error)}})();</script></body></html>

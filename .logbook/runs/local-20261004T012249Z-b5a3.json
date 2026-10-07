@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "kind": "run",
+  "runId": "local-20261004T012249Z-b5a3",
+  "title": "pw-test",
+  "startedAt": "2026-10-04T01:22:49.233Z",
+  "endedAt": "2026-10-04T01:22:49.260Z",
+  "durationMs": 27,
+  "status": "passed",
+  "complete": true,
+  "expectedShards": 1,
+  "receivedShards": [
+    1
+  ],
+  "env": {
+    "ci": null,
+    "git": {
+      "commit": null,
+      "branch": null,
+      "prNumber": null,
+      "repository": null
+    },
+    "machine": {
+      "os": "darwin",
+      "arch": "arm64",
+      "node": "24.21.0",
+      "cpus": 10
+    },
+    "playwrightVersion": "1.63.0",
+    "workers": 5
+  },
+  "project": {
+    "name": "pw-test",
+    "configFile": "playwright.config.ts",
+    "projects": [
+      {
+        "name": "api",
+        "testDir": "tests"
+      },
+      {
+        "name": "chromium",
+        "testDir": "tests"
+      }
+    ],
+    "workers": 5
+  },
+  "paths": {
+    "outputDir": ".logbook"
+  },
+  "summary": {
+    "total": 20,
+    "passed": 0,
+    "failed": 0,
+    "flaky": 0,
+    "skipped": 20
+  },
+  "tests": [
+    {
+      "testId": "e64f40b3443be22af6d7-c9593cd9f05738420cef",
+      "title": "login with valid credentials",
+      "titlePath": [
+        "Authentication",
+        "login with valid credentials"
+      ],
+      "file": "tests/auth/web.spec.ts",
+      "line": 6,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "e64f40b3443be22af6d7-d04f143e64a7efbfbfd8",
+      "title": "login with invalid credentials shows error",
+      "titlePath": [
+        "Authentication",
+        "login with invalid credentials shows error"
+      ],
+      "file": "tests/auth/web.spec.ts",
+      "line": 16,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "e64f40b3443be22af6d7-ed144893c166945423c6",
+      "title": "signup with already registered email shows error",
+      "titlePath": [
+        "Authentication",
+        "signup with already registered email shows error"
+      ],
+      "file": "tests/auth/web.spec.ts",
+      "line": 26,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "e64f40b3443be22af6d7-c6396bd5d95c82acca28",
+      "title": "signup with new email navigates to registration",
+      "titlePath": [
+        "Authentication",
+        "signup with new email navigates to registration"
+      ],
+      "file": "tests/auth/web.spec.ts",
+      "line": 36,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "e64f40b3443be22af6d7-0c8a7e0fa6bd3687cf9b",
+      "title": "logout redirects to login page",
+      "titlePath": [
+        "Authentication",
+        "logout redirects to login page"
+      ],
+      "file": "tests/auth/web.spec.ts",
+      "line": 45,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "82c1ea6373a30ca1b50c-2f94e8ae502cadcb08de",
+      "title": "empty cart shows empty message",
+      "titlePath": [
+        "Cart",
+        "empty cart shows empty message"
+      ],
+      "file": "tests/cart/web.spec.ts",
+      "line": 4,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "82c1ea6373a30ca1b50c-481bf2858ec38992d49b",
+      "title": "added product appears in cart",
+      "titlePath": [
+        "Cart",
+        "added product appears in cart"
+      ],
+      "file": "tests/cart/web.spec.ts",
+      "line": 11,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "82c1ea6373a30ca1b50c-77a01a9a720116d3e757",
+      "title": "cart shows product name and price",
+      "titlePath": [
+        "Cart",
+        "cart shows product name and price"
+      ],
+      "file": "tests/cart/web.spec.ts",
+      "line": 22,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "82c1ea6373a30ca1b50c-3fa896886bba8f27d33a",
+      "title": "removing item from cart empties it",
+      "titlePath": [
+        "Cart",
+        "removing item from cart empties it"
+      ],
+      "file": "tests/cart/web.spec.ts",
+      "line": 35,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "82c1ea6373a30ca1b50c-194f7148ec82e70c4c1d",
+      "title": "multiple products can be added to cart",
+      "titlePath": [
+        "Cart",
+        "multiple products can be added to cart"
+      ],
+      "file": "tests/cart/web.spec.ts",
+      "line": 45,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "047e2091e5e9ce4664de-c3df94c7dc0e1668246d",
+      "title": "product search is available through API and web",
+      "titlePath": [
+        "product search is available through API and web"
+      ],
+      "file": "tests/products/api-web.spec.ts",
+      "line": 4,
+      "column": 5,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "4c0ebe0a23f74af8728b-afaab0754729b56e4ded",
+      "title": "lists products with useful identifiers",
+      "titlePath": [
+        "Products API",
+        "lists products with useful identifiers"
+      ],
+      "file": "tests/products/api.spec.ts",
+      "line": 4,
+      "column": 7,
+      "project": "api",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "4c0ebe0a23f74af8728b-519b4ea2419fa67bd71b",
+      "title": "lists brands",
+      "titlePath": [
+        "Products API",
+        "lists brands"
+      ],
+      "file": "tests/products/api.spec.ts",
+      "line": 20,
+      "column": 7,
+      "project": "api",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "4c0ebe0a23f74af8728b-a19620c3ec74b77f7d4a",
+      "title": "intentional failure: product count mismatch @report-demo",
+      "titlePath": [
+        "Report demo failures",
+        "intentional failure: product count mismatch @report-demo"
+      ],
+      "file": "tests/products/api.spec.ts",
+      "line": 37,
+      "column": 7,
+      "project": "api",
+      "tags": [
+        "@report-demo"
+      ],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "4c0ebe0a23f74af8728b-a5917a26f3f39eeb6a31",
+      "title": "intentional failure: brand name mismatch @report-demo",
+      "titlePath": [
+        "Report demo failures",
+        "intentional failure: brand name mismatch @report-demo"
+      ],
+      "file": "tests/products/api.spec.ts",
+      "line": 49,
+      "column": 7,
+      "project": "api",
+      "tags": [
+        "@report-demo"
+      ],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "5c1da7d4de81ee9e535e-82e798593caaffa0ad18",
+      "title": "products page loads with items",
+      "titlePath": [
+        "Products",
+        "products page loads with items"
+      ],
+      "file": "tests/products/web.spec.ts",
+      "line": 9,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "5c1da7d4de81ee9e535e-8b9dc5f37e48034caf6d",
+      "title": "search for dress returns results",
+      "titlePath": [
+        "Products",
+        "search for dress returns results"
+      ],
+      "file": "tests/products/web.spec.ts",
+      "line": 17,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "5c1da7d4de81ee9e535e-933ce2837d4d36997ae6",
+      "title": "search for tshirt returns results",
+      "titlePath": [
+        "Products",
+        "search for tshirt returns results"
+      ],
+      "file": "tests/products/web.spec.ts",
+      "line": 27,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "5c1da7d4de81ee9e535e-e53bf472811a4bca6edb",
+      "title": "search with no match shows empty results",
+      "titlePath": [
+        "Products",
+        "search with no match shows empty results"
+      ],
+      "file": "tests/products/web.spec.ts",
+      "line": 36,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    },
+    {
+      "testId": "5c1da7d4de81ee9e535e-7c6c1b3165266a916ff7",
+      "title": "add product to cart shows modal",
+      "titlePath": [
+        "Products",
+        "add product to cart shows modal"
+      ],
+      "file": "tests/products/web.spec.ts",
+      "line": 45,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 0,
+      "finalDurationMs": 0,
+      "attemptCount": 0,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": []
+    }
+  ],
+  "globalErrors": []
+}

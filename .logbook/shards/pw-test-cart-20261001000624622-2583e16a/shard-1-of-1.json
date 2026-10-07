@@ -1,0 +1,935 @@
+{
+  "schemaVersion": 1,
+  "kind": "shard",
+  "runId": "pw-test-cart-20261001000624622-2583e16a",
+  "title": "pw-test",
+  "shard": null,
+  "startedAt": "2026-10-01T00:06:24.830Z",
+  "endedAt": "2026-10-01T00:06:28.638Z",
+  "status": "passed",
+  "env": {
+    "ci": null,
+    "git": {
+      "commit": null,
+      "branch": null,
+      "prNumber": null,
+      "repository": null
+    },
+    "machine": {
+      "os": "darwin",
+      "arch": "arm64",
+      "node": "24.21.0",
+      "cpus": 10
+    },
+    "playwrightVersion": "1.63.0",
+    "workers": 5
+  },
+  "project": {
+    "name": "pw-test",
+    "configFile": "playwright.config.ts",
+    "projects": [
+      {
+        "name": "api",
+        "testDir": "tests"
+      },
+      {
+        "name": "chromium",
+        "testDir": "tests"
+      }
+    ],
+    "workers": 5
+  },
+  "tests": [
+    {
+      "testId": "82c1ea6373a30ca1b50c-2f94e8ae502cadcb08de",
+      "title": "empty cart shows empty message",
+      "titlePath": [
+        "Cart",
+        "empty cart shows empty message"
+      ],
+      "file": "tests/cart/web.spec.ts",
+      "line": 4,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2275,
+      "finalDurationMs": 2275,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2275,
+          "startedAt": "2026-10-01T00:06:25.032Z",
+          "workerIndex": 0,
+          "errors": [],
+          "attachments": [],
+          "steps": [
+            {
+              "title": "Launch browser",
+              "category": "pw:api",
+              "durationMs": 124,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"browser\"",
+              "category": "fixture",
+              "durationMs": 124,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 8,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 10,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 86,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 86,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 224,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 2067,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBe\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 42,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 89,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 94,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": null,
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "82c1ea6373a30ca1b50c-481bf2858ec38992d49b",
+      "title": "added product appears in cart",
+      "titlePath": [
+        "Cart",
+        "added product appears in cart"
+      ],
+      "file": "tests/cart/web.spec.ts",
+      "line": 9,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 3178,
+      "finalDurationMs": 3178,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 3178,
+          "startedAt": "2026-10-01T00:06:25.058Z",
+          "workerIndex": 1,
+          "errors": [],
+          "attachments": [],
+          "steps": [
+            {
+              "title": "Launch browser",
+              "category": "pw:api",
+              "durationMs": 100,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"browser\"",
+              "category": "fixture",
+              "durationMs": 102,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 14,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 15,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 85,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 85,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 207,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 2476,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 40,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 487,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Query count",
+              "category": "pw:api",
+              "durationMs": 19,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeGreaterThan\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 25,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 44,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 49,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": null,
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "82c1ea6373a30ca1b50c-77a01a9a720116d3e757",
+      "title": "cart shows product name and price",
+      "titlePath": [
+        "Cart",
+        "cart shows product name and price"
+      ],
+      "file": "tests/cart/web.spec.ts",
+      "line": 17,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2219,
+      "finalDurationMs": 2219,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2219,
+          "startedAt": "2026-10-01T00:06:25.051Z",
+          "workerIndex": 2,
+          "errors": [],
+          "attachments": [],
+          "steps": [
+            {
+              "title": "Launch browser",
+              "category": "pw:api",
+              "durationMs": 101,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"browser\"",
+              "category": "fixture",
+              "durationMs": 102,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 18,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 21,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 89,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 90,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 219,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 1709,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 34,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 253,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Evaluate",
+              "category": "pw:api",
+              "durationMs": 21,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Evaluate",
+              "category": "pw:api",
+              "durationMs": 2,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeGreaterThan\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeGreaterThan\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 48,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 82,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 85,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": null,
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "82c1ea6373a30ca1b50c-3fa896886bba8f27d33a",
+      "title": "removing item from cart empties it",
+      "titlePath": [
+        "Cart",
+        "removing item from cart empties it"
+      ],
+      "file": "tests/cart/web.spec.ts",
+      "line": 27,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 3190,
+      "finalDurationMs": 3190,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 3190,
+          "startedAt": "2026-10-01T00:06:25.055Z",
+          "workerIndex": 3,
+          "errors": [],
+          "attachments": [],
+          "steps": [
+            {
+              "title": "Launch browser",
+              "category": "pw:api",
+              "durationMs": 105,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"browser\"",
+              "category": "fixture",
+              "durationMs": 105,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 15,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 17,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 81,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 81,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 209,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 2096,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 41,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 313,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 50,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Wait for timeout",
+              "category": "pw:api",
+              "durationMs": 500,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBe\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 39,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 75,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 79,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": null,
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "82c1ea6373a30ca1b50c-194f7148ec82e70c4c1d",
+      "title": "multiple products can be added to cart",
+      "titlePath": [
+        "Cart",
+        "multiple products can be added to cart"
+      ],
+      "file": "tests/cart/web.spec.ts",
+      "line": 36,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2967,
+      "finalDurationMs": 2967,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2967,
+          "startedAt": "2026-10-01T00:06:25.033Z",
+          "workerIndex": 4,
+          "errors": [],
+          "attachments": [],
+          "steps": [
+            {
+              "title": "Launch browser",
+              "category": "pw:api",
+              "durationMs": 123,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"browser\"",
+              "category": "fixture",
+              "durationMs": 124,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 13,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 15,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 78,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 79,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 223,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 2153,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 44,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 267,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 28,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 268,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Query count",
+              "category": "pw:api",
+              "durationMs": 22,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeGreaterThanOrEqual\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 44,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 76,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 80,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": null,
+          "stderr": null
+        }
+      ]
+    }
+  ],
+  "globalErrors": []
+}

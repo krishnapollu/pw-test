@@ -1,0 +1,773 @@
+{
+  "schemaVersion": 1,
+  "kind": "run",
+  "runId": "pw-test-api-20261004012242488-0091e8fe",
+  "title": "pw-test",
+  "startedAt": "2026-10-04T01:22:42.696Z",
+  "endedAt": "2026-10-04T01:22:43.770Z",
+  "durationMs": 1074,
+  "status": "failed",
+  "complete": true,
+  "expectedShards": 1,
+  "receivedShards": [
+    1
+  ],
+  "env": {
+    "ci": null,
+    "git": {
+      "commit": null,
+      "branch": null,
+      "prNumber": null,
+      "repository": null
+    },
+    "machine": {
+      "os": "darwin",
+      "arch": "arm64",
+      "node": "24.21.0",
+      "cpus": 10
+    },
+    "playwrightVersion": "1.63.0",
+    "workers": 5
+  },
+  "project": {
+    "name": "pw-test",
+    "configFile": "playwright.config.ts",
+    "projects": [
+      {
+        "name": "api",
+        "testDir": "tests"
+      },
+      {
+        "name": "chromium",
+        "testDir": "tests"
+      }
+    ],
+    "workers": 5
+  },
+  "paths": {
+    "outputDir": ".logbook"
+  },
+  "summary": {
+    "total": 4,
+    "passed": 2,
+    "failed": 2,
+    "flaky": 0,
+    "skipped": 0
+  },
+  "tests": [
+    {
+      "testId": "4c0ebe0a23f74af8728b-afaab0754729b56e4ded",
+      "title": "lists products with useful identifiers",
+      "titlePath": [
+        "Products API",
+        "lists products with useful identifiers"
+      ],
+      "file": "tests/products/api.spec.ts",
+      "line": 4,
+      "column": 7,
+      "project": "api",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 845,
+      "finalDurationMs": 845,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 845,
+          "startedAt": "2026-10-04T01:22:42.896Z",
+          "workerIndex": 0,
+          "errors": [],
+          "attachments": [],
+          "steps": [
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create request context",
+              "category": "pw:api",
+              "durationMs": 32,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"request\"",
+              "category": "fixture",
+              "durationMs": 33,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 36,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "GET",
+              "category": "pw:api",
+              "durationMs": 805,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeTruthy\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "GET /api/productsList",
+              "category": "test.step",
+              "durationMs": 808,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBe\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeGreaterThan\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toEqual\"",
+              "category": "expect",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify product response and identifiers",
+              "category": "test.step",
+              "durationMs": 3,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"request\"",
+              "category": "fixture",
+              "durationMs": 2,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 4,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[test:start] lists products with useful identifiers | project=api | attempt=1\n[step:start] GET /api/productsList\nProducts API HTTP status: 200\n[step:pass] GET /api/productsList\n[step:start] Verify product response and identifiers\nProducts response code: 200 | count: 34\n[step:pass] Verify product response and identifiers\n[test:end] lists products with useful identifiers | status=passed\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "4c0ebe0a23f74af8728b-519b4ea2419fa67bd71b",
+      "title": "lists brands",
+      "titlePath": [
+        "Products API",
+        "lists brands"
+      ],
+      "file": "tests/products/api.spec.ts",
+      "line": 20,
+      "column": 7,
+      "project": "api",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 768,
+      "finalDurationMs": 768,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 768,
+          "startedAt": "2026-10-04T01:22:42.905Z",
+          "workerIndex": 1,
+          "errors": [],
+          "attachments": [],
+          "steps": [
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create request context",
+              "category": "pw:api",
+              "durationMs": 16,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"request\"",
+              "category": "fixture",
+              "durationMs": 19,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 29,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "GET",
+              "category": "pw:api",
+              "durationMs": 740,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeTruthy\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "GET /api/brandsList",
+              "category": "test.step",
+              "durationMs": 743,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBe\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeGreaterThan\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify the brands response contains items",
+              "category": "test.step",
+              "durationMs": 2,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"request\"",
+              "category": "fixture",
+              "durationMs": 3,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 7,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[test:start] lists brands | project=api | attempt=1\n[step:start] GET /api/brandsList\nBrands API HTTP status: 200\n[step:pass] GET /api/brandsList\n[step:start] Verify the brands response contains items\nBrands response code: 200 | count: 34\n[step:pass] Verify the brands response contains items\n[test:end] lists brands | status=passed\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "4c0ebe0a23f74af8728b-a19620c3ec74b77f7d4a",
+      "title": "intentional failure: product count mismatch @report-demo",
+      "titlePath": [
+        "Report demo failures",
+        "intentional failure: product count mismatch @report-demo"
+      ],
+      "file": "tests/products/api.spec.ts",
+      "line": 37,
+      "column": 7,
+      "project": "api",
+      "tags": [
+        "@report-demo"
+      ],
+      "annotations": [
+        {
+          "type": "report-demo",
+          "description": "Deliberate assertion failure for report testing"
+        }
+      ],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "unexpected",
+      "status": "failed",
+      "durationMs": 13,
+      "finalDurationMs": 3,
+      "attemptCount": 2,
+      "repeatEachIndex": 0,
+      "firstError": {
+        "message": "Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3",
+        "stack": "Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3\n    at action (tests/products/api.spec.ts:45:72)\n    at fixtures/index.ts:40:28",
+        "snippet": "  43 |     await step('Demonstrate a failed product count assertion', async () => {\n  44 |       console.warn('Intentional report failure: expecting 5 products when the sample contains 3');\n> 45 |       expect(count, 'Intentional report demo: product count mismatch').toBe(5);\n     |                                                                        ^\n  46 |     });\n  47 |   });\n  48 |",
+        "location": {
+          "file": "tests/products/api.spec.ts",
+          "column": 72,
+          "line": 45
+        }
+      },
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "failed",
+          "durationMs": 10,
+          "startedAt": "2026-10-04T01:22:42.903Z",
+          "workerIndex": 2,
+          "errors": [
+            {
+              "message": "Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3",
+              "stack": "Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3\n    at action (tests/products/api.spec.ts:45:72)\n    at fixtures/index.ts:40:28",
+              "snippet": "  43 |     await step('Demonstrate a failed product count assertion', async () => {\n  44 |       console.warn('Intentional report failure: expecting 5 products when the sample contains 3');\n> 45 |       expect(count, 'Intentional report demo: product count mismatch').toBe(5);\n     |                                                                        ^\n  46 |     });\n  47 |   });\n  48 |",
+              "location": {
+                "file": "tests/products/api.spec.ts",
+                "column": 72,
+                "line": 45
+              }
+            }
+          ],
+          "attachments": [
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": ".logbook/artifacts/pw-test-api-20261004012242488-0091e8fe/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api/error-context.md",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 8,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Prepare a sample product count",
+              "category": "test.step",
+              "durationMs": 2,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Intentional report demo: product count mismatch",
+              "category": "expect",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": true
+            },
+            {
+              "title": "Demonstrate a failed product count assertion",
+              "category": "test.step",
+              "durationMs": 6,
+              "depth": 0,
+              "failed": true
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 6,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Worker Cleanup",
+              "category": "hook",
+              "durationMs": 1,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[test:start] intentional failure: product count mismatch @report-demo | project=api | attempt=1\n[step:start] Prepare a sample product count\nReport demo product count: 3\n[step:pass] Prepare a sample product count\n[step:start] Demonstrate a failed product count assertion\n[test:end] intentional failure: product count mismatch @report-demo | status=failed\n",
+          "stderr": "Intentional report failure: expecting 5 products when the sample contains 3\n[step:fail] Demonstrate a failed product count assertion\n"
+        },
+        {
+          "retry": 1,
+          "status": "failed",
+          "durationMs": 3,
+          "startedAt": "2026-10-04T01:22:43.095Z",
+          "workerIndex": 5,
+          "errors": [
+            {
+              "message": "Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3",
+              "stack": "Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3\n    at action (tests/products/api.spec.ts:45:72)\n    at fixtures/index.ts:40:28",
+              "snippet": "  43 |     await step('Demonstrate a failed product count assertion', async () => {\n  44 |       console.warn('Intentional report failure: expecting 5 products when the sample contains 3');\n> 45 |       expect(count, 'Intentional report demo: product count mismatch').toBe(5);\n     |                                                                        ^\n  46 |     });\n  47 |   });\n  48 |",
+              "location": {
+                "file": "tests/products/api.spec.ts",
+                "column": 72,
+                "line": 45
+              }
+            }
+          ],
+          "attachments": [
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": ".logbook/artifacts/pw-test-api-20261004012242488-0091e8fe/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api-retry1/error-context.md",
+              "inline": false,
+              "sizeBytes": null
+            },
+            {
+              "name": "trace",
+              "contentType": "application/zip",
+              "path": ".logbook/artifacts/pw-test-api-20261004012242488-0091e8fe/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api-retry1/trace.zip",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 4,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Prepare a sample product count",
+              "category": "test.step",
+              "durationMs": 0,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Intentional report demo: product count mismatch",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": true
+            },
+            {
+              "title": "Demonstrate a failed product count assertion",
+              "category": "test.step",
+              "durationMs": 2,
+              "depth": 0,
+              "failed": true
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 3,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Worker Cleanup",
+              "category": "hook",
+              "durationMs": 1,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[test:start] intentional failure: product count mismatch @report-demo | project=api | attempt=2\n[step:start] Prepare a sample product count\nReport demo product count: 3\n[step:pass] Prepare a sample product count\n[step:start] Demonstrate a failed product count assertion\n[test:end] intentional failure: product count mismatch @report-demo | status=failed\n",
+          "stderr": "Intentional report failure: expecting 5 products when the sample contains 3\n[step:fail] Demonstrate a failed product count assertion\n"
+        }
+      ]
+    },
+    {
+      "testId": "4c0ebe0a23f74af8728b-a5917a26f3f39eeb6a31",
+      "title": "intentional failure: brand name mismatch @report-demo",
+      "titlePath": [
+        "Report demo failures",
+        "intentional failure: brand name mismatch @report-demo"
+      ],
+      "file": "tests/products/api.spec.ts",
+      "line": 49,
+      "column": 7,
+      "project": "api",
+      "tags": [
+        "@report-demo"
+      ],
+      "annotations": [
+        {
+          "type": "report-demo",
+          "description": "Deliberate assertion failure for report testing"
+        }
+      ],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "unexpected",
+      "status": "failed",
+      "durationMs": 11,
+      "finalDurationMs": 4,
+      "attemptCount": 2,
+      "repeatEachIndex": 0,
+      "firstError": {
+        "message": "Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H&M\"\nReceived: \"Polo\"",
+        "stack": "Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H&M\"\nReceived: \"Polo\"\n    at action (tests/products/api.spec.ts:57:69)\n    at fixtures/index.ts:40:28",
+        "snippet": "  55 |     await step('Demonstrate a failed brand name assertion', async () => {\n  56 |       console.warn('Intentional report failure: expecting H&M when the sample brand is Polo');\n> 57 |       expect(brand, 'Intentional report demo: brand name mismatch').toBe('H&M');\n     |                                                                     ^\n  58 |     });\n  59 |   });\n  60 | });",
+        "location": {
+          "file": "tests/products/api.spec.ts",
+          "column": 69,
+          "line": 57
+        }
+      },
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "failed",
+          "durationMs": 7,
+          "startedAt": "2026-10-04T01:22:42.899Z",
+          "workerIndex": 3,
+          "errors": [
+            {
+              "message": "Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H&M\"\nReceived: \"Polo\"",
+              "stack": "Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H&M\"\nReceived: \"Polo\"\n    at action (tests/products/api.spec.ts:57:69)\n    at fixtures/index.ts:40:28",
+              "snippet": "  55 |     await step('Demonstrate a failed brand name assertion', async () => {\n  56 |       console.warn('Intentional report failure: expecting H&M when the sample brand is Polo');\n> 57 |       expect(brand, 'Intentional report demo: brand name mismatch').toBe('H&M');\n     |                                                                     ^\n  58 |     });\n  59 |   });\n  60 | });",
+              "location": {
+                "file": "tests/products/api.spec.ts",
+                "column": 69,
+                "line": 57
+              }
+            }
+          ],
+          "attachments": [
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": ".logbook/artifacts/pw-test-api-20261004012242488-0091e8fe/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api/error-context.md",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 4,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Prepare a sample brand name",
+              "category": "test.step",
+              "durationMs": 0,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Intentional report demo: brand name mismatch",
+              "category": "expect",
+              "durationMs": 4,
+              "depth": 1,
+              "failed": true
+            },
+            {
+              "title": "Demonstrate a failed brand name assertion",
+              "category": "test.step",
+              "durationMs": 6,
+              "depth": 0,
+              "failed": true
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 12,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Worker Cleanup",
+              "category": "hook",
+              "durationMs": 0,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[test:start] intentional failure: brand name mismatch @report-demo | project=api | attempt=1\n[step:start] Prepare a sample brand name\nReport demo brand: Polo\n[step:pass] Prepare a sample brand name\n[step:start] Demonstrate a failed brand name assertion\n[test:end] intentional failure: brand name mismatch @report-demo | status=failed\n",
+          "stderr": "Intentional report failure: expecting H&M when the sample brand is Polo\n[step:fail] Demonstrate a failed brand name assertion\n"
+        },
+        {
+          "retry": 1,
+          "status": "failed",
+          "durationMs": 4,
+          "startedAt": "2026-10-04T01:22:43.094Z",
+          "workerIndex": 4,
+          "errors": [
+            {
+              "message": "Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H&M\"\nReceived: \"Polo\"",
+              "stack": "Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H&M\"\nReceived: \"Polo\"\n    at action (tests/products/api.spec.ts:57:69)\n    at fixtures/index.ts:40:28",
+              "snippet": "  55 |     await step('Demonstrate a failed brand name assertion', async () => {\n  56 |       console.warn('Intentional report failure: expecting H&M when the sample brand is Polo');\n> 57 |       expect(brand, 'Intentional report demo: brand name mismatch').toBe('H&M');\n     |                                                                     ^\n  58 |     });\n  59 |   });\n  60 | });",
+              "location": {
+                "file": "tests/products/api.spec.ts",
+                "column": 69,
+                "line": 57
+              }
+            }
+          ],
+          "attachments": [
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": ".logbook/artifacts/pw-test-api-20261004012242488-0091e8fe/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api-retry1/error-context.md",
+              "inline": false,
+              "sizeBytes": null
+            },
+            {
+              "name": "trace",
+              "contentType": "application/zip",
+              "path": ".logbook/artifacts/pw-test-api-20261004012242488-0091e8fe/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api-retry1/trace.zip",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 3,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Prepare a sample brand name",
+              "category": "test.step",
+              "durationMs": 0,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Intentional report demo: brand name mismatch",
+              "category": "expect",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": true
+            },
+            {
+              "title": "Demonstrate a failed brand name assertion",
+              "category": "test.step",
+              "durationMs": 3,
+              "depth": 0,
+              "failed": true
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 4,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Worker Cleanup",
+              "category": "hook",
+              "durationMs": 0,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[test:start] intentional failure: brand name mismatch @report-demo | project=api | attempt=2\n[step:start] Prepare a sample brand name\nReport demo brand: Polo\n[step:pass] Prepare a sample brand name\n[step:start] Demonstrate a failed brand name assertion\n[test:end] intentional failure: brand name mismatch @report-demo | status=failed\n",
+          "stderr": "Intentional report failure: expecting H&M when the sample brand is Polo\n[step:fail] Demonstrate a failed brand name assertion\n"
+        }
+      ]
+    }
+  ],
+  "globalErrors": []
+}

@@ -1,0 +1,4310 @@
+{
+  "schemaVersion": 1,
+  "kind": "shard",
+  "runId": "pw-test-all-20261005001522576-c1cc6f16",
+  "title": "pw-test",
+  "shard": null,
+  "startedAt": "2026-10-05T00:15:22.888Z",
+  "endedAt": "2026-10-05T00:15:30.806Z",
+  "status": "failed",
+  "env": {
+    "ci": null,
+    "git": {
+      "commit": null,
+      "branch": null,
+      "prNumber": null,
+      "repository": null
+    },
+    "machine": {
+      "os": "darwin",
+      "arch": "arm64",
+      "node": "24.21.0",
+      "cpus": 10
+    },
+    "playwrightVersion": "1.63.0",
+    "workers": 5
+  },
+  "project": {
+    "name": "pw-test",
+    "configFile": "playwright.config.ts",
+    "projects": [
+      {
+        "name": "api",
+        "testDir": "tests"
+      },
+      {
+        "name": "chromium",
+        "testDir": "tests"
+      }
+    ],
+    "workers": 5
+  },
+  "tests": [
+    {
+      "testId": "e64f40b3443be22af6d7-c9593cd9f05738420cef",
+      "title": "login with valid credentials",
+      "titlePath": [
+        "Authentication",
+        "login with valid credentials"
+      ],
+      "file": "tests/auth/web.spec.ts",
+      "line": 6,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [
+        {
+          "type": "skip",
+          "description": "Set PW_TEST_EMAIL and PW_TEST_PASSWORD for login journeys"
+        }
+      ],
+      "caseIds": [],
+      "expectedStatus": "skipped",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 154,
+      "finalDurationMs": 154,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "skipped",
+          "durationMs": 154,
+          "startedAt": "2026-10-05T00:15:23.109Z",
+          "workerIndex": 4,
+          "errors": [],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/auth-web-Authentication-login-with-valid-credentials-chromium/test-finished-1.png",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Launch browser",
+              "category": "pw:api",
+              "durationMs": 145,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"browser\"",
+              "category": "fixture",
+              "durationMs": 146,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 4,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 6,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 95,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 95,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"authHelper\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"homePage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 254,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"homePage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"authHelper\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 27,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 28,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 54,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][login with valid credentials] [test:start] project=chromium | attempt=1\n[INFO][login with valid credentials] [test:end] status=skipped\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "e64f40b3443be22af6d7-d04f143e64a7efbfbfd8",
+      "title": "login with invalid credentials shows error",
+      "titlePath": [
+        "Authentication",
+        "login with invalid credentials shows error"
+      ],
+      "file": "tests/auth/web.spec.ts",
+      "line": 16,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2465,
+      "finalDurationMs": 2465,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2465,
+          "startedAt": "2026-10-05T00:15:23.581Z",
+          "workerIndex": 7,
+          "errors": [],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/auth-web-Authentication-lo-49b03-lid-credentials-shows-error-chromium/test-finished-1.png",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Launch browser",
+              "category": "pw:api",
+              "durationMs": 71,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"browser\"",
+              "category": "fixture",
+              "durationMs": 72,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 3,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 5,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 39,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 39,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"loginPage\"",
+              "category": "fixture",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 121,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 1988,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Open the login page",
+              "category": "test.step",
+              "durationMs": 1989,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fill \"wrong@email.com\"",
+              "category": "pw:api",
+              "durationMs": 52,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fill \"wrongpassword\"",
+              "category": "pw:api",
+              "durationMs": 34,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 214,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Submit invalid credentials",
+              "category": "test.step",
+              "durationMs": 317,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toContain\"",
+              "category": "expect",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify the invalid credentials error",
+              "category": "test.step",
+              "durationMs": 17,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"loginPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 59,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 64,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 100,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][login with invalid credentials shows error] [test:start] project=chromium | attempt=1\n[step:start] Open the login page\n[step:pass] Open the login page\n[step:start] Submit invalid credentials\n[step:pass] Submit invalid credentials\n[step:start] Verify the invalid credentials error\n[INFO][login with invalid credentials shows error] Login error: Your email or password is incorrect!\n[step:pass] Verify the invalid credentials error\n[INFO][login with invalid credentials shows error] [test:end] status=passed\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "e64f40b3443be22af6d7-ed144893c166945423c6",
+      "title": "signup with already registered email shows error",
+      "titlePath": [
+        "Authentication",
+        "signup with already registered email shows error"
+      ],
+      "file": "tests/auth/web.spec.ts",
+      "line": 26,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2252,
+      "finalDurationMs": 2252,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2252,
+          "startedAt": "2026-10-05T00:15:23.579Z",
+          "workerIndex": 8,
+          "errors": [],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/auth-web-Authentication-si-2be8f-egistered-email-shows-error-chromium/test-finished-1.png",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Launch browser",
+              "category": "pw:api",
+              "durationMs": 73,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"browser\"",
+              "category": "fixture",
+              "durationMs": 74,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 5,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 5,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 39,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 39,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"loginPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 125,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 1800,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Open the signup form",
+              "category": "test.step",
+              "durationMs": 1801,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fill \"Test User\"",
+              "category": "pw:api",
+              "durationMs": 33,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fill \"testuser@automationexercise.com\"",
+              "category": "pw:api",
+              "durationMs": 4,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 233,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Submit an already registered account",
+              "category": "test.step",
+              "durationMs": 276,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toContain\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify the duplicate email error",
+              "category": "test.step",
+              "durationMs": 30,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"loginPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 65,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 68,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 106,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][signup with already registered email shows error] [test:start] project=chromium | attempt=1\n[step:start] Open the signup form\n[step:pass] Open the signup form\n[step:start] Submit an already registered account\n[step:pass] Submit an already registered account\n[step:start] Verify the duplicate email error\n[INFO][signup with already registered email shows error] Signup error: Email Address already exist!\n[step:pass] Verify the duplicate email error\n[INFO][signup with already registered email shows error] [test:end] status=passed\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "e64f40b3443be22af6d7-c6396bd5d95c82acca28",
+      "title": "signup with new email navigates to registration",
+      "titlePath": [
+        "Authentication",
+        "signup with new email navigates to registration"
+      ],
+      "file": "tests/auth/web.spec.ts",
+      "line": 36,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 3603,
+      "finalDurationMs": 3603,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 3603,
+          "startedAt": "2026-10-05T00:15:23.434Z",
+          "workerIndex": 4,
+          "errors": [],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/auth-web-Authentication-si-d90e2-l-navigates-to-registration-chromium/test-finished-1.png",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 8,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 8,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 28,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 28,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"loginPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 46,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 1974,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Open the signup form",
+              "category": "test.step",
+              "durationMs": 1975,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fill \"Diana\"",
+              "category": "pw:api",
+              "durationMs": 45,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fill \"testuser_1791159325455@mailtest.com\"",
+              "category": "pw:api",
+              "durationMs": 13,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 240,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Submit generated signup details",
+              "category": "test.step",
+              "durationMs": 303,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Wait for load state \"load\"",
+              "category": "pw:api",
+              "durationMs": 1212,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toContain\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify navigation to registration",
+              "category": "test.step",
+              "durationMs": 1215,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"loginPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 54,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 56,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 76,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][signup with new email navigates to registration] [test:start] project=chromium | attempt=1\n[step:start] Open the signup form\n[step:pass] Open the signup form\n[step:start] Submit generated signup details\n[step:pass] Submit generated signup details\n[step:start] Verify navigation to registration\n[INFO][signup with new email navigates to registration] Navigated to: https://automationexercise.com/signup\n[step:pass] Verify navigation to registration\n[INFO][signup with new email navigates to registration] [test:end] status=passed\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "e64f40b3443be22af6d7-0c8a7e0fa6bd3687cf9b",
+      "title": "logout redirects to login page",
+      "titlePath": [
+        "Authentication",
+        "logout redirects to login page"
+      ],
+      "file": "tests/auth/web.spec.ts",
+      "line": 46,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [
+        {
+          "type": "skip",
+          "description": "Set PW_TEST_EMAIL and PW_TEST_PASSWORD for login journeys"
+        }
+      ],
+      "caseIds": [],
+      "expectedStatus": "skipped",
+      "outcome": "skipped",
+      "status": "skipped",
+      "durationMs": 111,
+      "finalDurationMs": 111,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "skipped",
+          "durationMs": 111,
+          "startedAt": "2026-10-05T00:15:23.681Z",
+          "workerIndex": 9,
+          "errors": [],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/auth-web-Authentication-logout-redirects-to-login-page-chromium/test-finished-1.png",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Launch browser",
+              "category": "pw:api",
+              "durationMs": 76,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"browser\"",
+              "category": "fixture",
+              "durationMs": 77,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 3,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 5,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 31,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 32,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"authHelper\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"loginPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 124,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"loginPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"authHelper\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 28,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 30,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 75,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][logout redirects to login page] [test:start] project=chromium | attempt=1\n[INFO][logout redirects to login page] [test:end] status=skipped\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "82c1ea6373a30ca1b50c-2f94e8ae502cadcb08de",
+      "title": "empty cart shows empty message",
+      "titlePath": [
+        "Cart",
+        "empty cart shows empty message"
+      ],
+      "file": "tests/cart/web.spec.ts",
+      "line": 4,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2182,
+      "finalDurationMs": 2182,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2182,
+          "startedAt": "2026-10-05T00:15:23.739Z",
+          "workerIndex": 10,
+          "errors": [],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/cart-web-Cart-empty-cart-shows-empty-message-chromium/test-finished-1.png",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Launch browser",
+              "category": "pw:api",
+              "durationMs": 83,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"browser\"",
+              "category": "fixture",
+              "durationMs": 84,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 3,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 5,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 29,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 29,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 122,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 2024,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Open an empty cart",
+              "category": "test.step",
+              "durationMs": 2025,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBe\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify the empty cart message",
+              "category": "test.step",
+              "durationMs": 17,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 74,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 77,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 110,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][empty cart shows empty message] [test:start] project=chromium | attempt=1\n[step:start] Open an empty cart\n[step:pass] Open an empty cart\n[step:start] Verify the empty cart message\n[step:pass] Verify the empty cart message\n[INFO][empty cart shows empty message] [test:end] status=passed\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "82c1ea6373a30ca1b50c-481bf2858ec38992d49b",
+      "title": "added product appears in cart",
+      "titlePath": [
+        "Cart",
+        "added product appears in cart"
+      ],
+      "file": "tests/cart/web.spec.ts",
+      "line": 11,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2264,
+      "finalDurationMs": 2264,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2264,
+          "startedAt": "2026-10-05T00:15:23.902Z",
+          "workerIndex": 9,
+          "errors": [],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/cart-web-Cart-added-product-appears-in-cart-chromium/test-finished-1.png",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 1,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 30,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 31,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 34,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 1577,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Open the products page",
+              "category": "test.step",
+              "durationMs": 1579,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 63,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Add the first product to cart",
+              "category": "test.step",
+              "durationMs": 66,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 494,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "View the cart",
+              "category": "test.step",
+              "durationMs": 495,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Query count",
+              "category": "pw:api",
+              "durationMs": 19,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeGreaterThan\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify the cart contains an item",
+              "category": "test.step",
+              "durationMs": 24,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 40,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 41,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 70,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][added product appears in cart] [test:start] project=chromium | attempt=1\n[step:start] Open the products page\n[step:pass] Open the products page\n[step:start] Add the first product to cart\n[step:pass] Add the first product to cart\n[step:start] View the cart\n[step:pass] View the cart\n[step:start] Verify the cart contains an item\n[INFO][added product appears in cart] Cart item count: 1\n[step:pass] Verify the cart contains an item\n[INFO][added product appears in cart] [test:end] status=passed\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "82c1ea6373a30ca1b50c-77a01a9a720116d3e757",
+      "title": "cart shows product name and price",
+      "titlePath": [
+        "Cart",
+        "cart shows product name and price"
+      ],
+      "file": "tests/cart/web.spec.ts",
+      "line": 22,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2355,
+      "finalDurationMs": 2355,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2355,
+          "startedAt": "2026-10-05T00:15:25.932Z",
+          "workerIndex": 8,
+          "errors": [],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/cart-web-Cart-cart-shows-product-name-and-price-chromium/test-finished-1.png",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 2,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 3,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 45,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 45,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 51,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 1673,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Open the products page",
+              "category": "test.step",
+              "durationMs": 1679,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 43,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Add the first product to cart",
+              "category": "test.step",
+              "durationMs": 43,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 410,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "View the cart",
+              "category": "test.step",
+              "durationMs": 411,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Evaluate",
+              "category": "pw:api",
+              "durationMs": 27,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Evaluate",
+              "category": "pw:api",
+              "durationMs": 2,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeGreaterThan\"",
+              "category": "expect",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeGreaterThan\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify product names and prices",
+              "category": "test.step",
+              "durationMs": 40,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 101,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 103,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 134,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][cart shows product name and price] [test:start] project=chromium | attempt=1\n[step:start] Open the products page\n[step:pass] Open the products page\n[step:start] Add the first product to cart\n[step:pass] Add the first product to cart\n[step:start] View the cart\n[step:pass] View the cart\n[step:start] Verify product names and prices\n[INFO][cart shows product name and price] Cart products: Blue Top | prices: Rs. 500\n[step:pass] Verify product names and prices\n[INFO][cart shows product name and price] [test:end] status=passed\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "82c1ea6373a30ca1b50c-3fa896886bba8f27d33a",
+      "title": "removing item from cart empties it",
+      "titlePath": [
+        "Cart",
+        "removing item from cart empties it"
+      ],
+      "file": "tests/cart/web.spec.ts",
+      "line": 35,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2474,
+      "finalDurationMs": 2474,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2474,
+          "startedAt": "2026-10-05T00:15:26.030Z",
+          "workerIndex": 10,
+          "errors": [],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/cart-web-Cart-removing-item-from-cart-empties-it-chromium/test-finished-1.png",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 5,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 6,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 32,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 34,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 45,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 1862,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Open the products page",
+              "category": "test.step",
+              "durationMs": 1863,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 36,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Add the first product to cart",
+              "category": "test.step",
+              "durationMs": 38,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 278,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "View the cart",
+              "category": "test.step",
+              "durationMs": 278,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 52,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Remove the first cart item",
+              "category": "test.step",
+              "durationMs": 53,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeVisible\"",
+              "category": "expect",
+              "durationMs": 130,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify the cart becomes empty",
+              "category": "test.step",
+              "durationMs": 131,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 47,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 48,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 73,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][removing item from cart empties it] [test:start] project=chromium | attempt=1\n[step:start] Open the products page\n[step:pass] Open the products page\n[step:start] Add the first product to cart\n[step:pass] Add the first product to cart\n[step:start] View the cart\n[step:pass] View the cart\n[step:start] Remove the first cart item\n[step:pass] Remove the first cart item\n[step:start] Verify the cart becomes empty\n[step:pass] Verify the cart becomes empty\n[INFO][removing item from cart empties it] [test:end] status=passed\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "82c1ea6373a30ca1b50c-194f7148ec82e70c4c1d",
+      "title": "multiple products can be added to cart",
+      "titlePath": [
+        "Cart",
+        "multiple products can be added to cart"
+      ],
+      "file": "tests/cart/web.spec.ts",
+      "line": 45,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2181,
+      "finalDurationMs": 2181,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2181,
+          "startedAt": "2026-10-05T00:15:26.141Z",
+          "workerIndex": 7,
+          "errors": [],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/cart-web-Cart-multiple-products-can-be-added-to-cart-chromium/test-finished-1.png",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 1,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 2,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 24,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 25,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 30,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 1322,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Open the products page",
+              "category": "test.step",
+              "durationMs": 1323,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 43,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Add the first product to cart",
+              "category": "test.step",
+              "durationMs": 44,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 375,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Continue shopping",
+              "category": "test.step",
+              "durationMs": 376,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 33,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Add the second product to cart",
+              "category": "test.step",
+              "durationMs": 35,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 255,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "View the cart",
+              "category": "test.step",
+              "durationMs": 255,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Query count",
+              "category": "pw:api",
+              "durationMs": 21,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeGreaterThanOrEqual\"",
+              "category": "expect",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify the cart contains both products",
+              "category": "test.step",
+              "durationMs": 29,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"cartPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 53,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 57,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 96,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][multiple products can be added to cart] [test:start] project=chromium | attempt=1\n[step:start] Open the products page\n[step:pass] Open the products page\n[step:start] Add the first product to cart\n[step:pass] Add the first product to cart\n[step:start] Continue shopping\n[step:pass] Continue shopping\n[step:start] Add the second product to cart\n[step:pass] Add the second product to cart\n[step:start] View the cart\n[step:pass] View the cart\n[step:start] Verify the cart contains both products\n[INFO][multiple products can be added to cart] Cart item count: 2\n[step:pass] Verify the cart contains both products\n[INFO][multiple products can be added to cart] [test:end] status=passed\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "047e2091e5e9ce4664de-c3df94c7dc0e1668246d",
+      "title": "product search is available through API and web",
+      "titlePath": [
+        "product search is available through API and web"
+      ],
+      "file": "tests/products/api-web.spec.ts",
+      "line": 4,
+      "column": 5,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 3079,
+      "finalDurationMs": 3079,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 3079,
+          "startedAt": "2026-10-05T00:15:26.174Z",
+          "workerIndex": 9,
+          "errors": [],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/products-api-web-product-s-a63bd-ailable-through-API-and-web-chromium/test-finished-1.png",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 1,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 2,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 23,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 23,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 27,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "POST",
+              "category": "pw:api",
+              "durationMs": 245,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeTruthy\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Search for dresses through the API",
+              "category": "test.step",
+              "durationMs": 247,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBe\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBe\"",
+              "category": "expect",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify the API returns matching products",
+              "category": "test.step",
+              "durationMs": 18,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 2171,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Open the products page",
+              "category": "test.step",
+              "durationMs": 2172,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fill \"dress\"",
+              "category": "pw:api",
+              "durationMs": 14,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 530,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Search for dresses through the web",
+              "category": "test.step",
+              "durationMs": 547,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Evaluate",
+              "category": "pw:api",
+              "durationMs": 22,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBe\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify the web returns matching products",
+              "category": "test.step",
+              "durationMs": 24,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 25,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 26,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 50,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][product search is available through API and web] [test:start] project=chromium | attempt=1\n[step:start] Search for dresses through the API\n[INFO][product search is available through API and web] Search API HTTP status: 200\n[step:pass] Search for dresses through the API\n[step:start] Verify the API returns matching products\n[INFO][product search is available through API and web] API search results: 9\n[step:pass] Verify the API returns matching products\n[step:start] Open the products page\n[step:pass] Open the products page\n[step:start] Search for dresses through the web\n[step:pass] Search for dresses through the web\n[step:start] Verify the web returns matching products\n[INFO][product search is available through API and web] Web search results: 9\n[step:pass] Verify the web returns matching products\n[INFO][product search is available through API and web] [test:end] status=passed\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "4c0ebe0a23f74af8728b-afaab0754729b56e4ded",
+      "title": "lists products with useful identifiers",
+      "titlePath": [
+        "Products API",
+        "lists products with useful identifiers"
+      ],
+      "file": "tests/products/api.spec.ts",
+      "line": 4,
+      "column": 7,
+      "project": "api",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 383,
+      "finalDurationMs": 383,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 383,
+          "startedAt": "2026-10-05T00:15:23.108Z",
+          "workerIndex": 0,
+          "errors": [],
+          "attachments": [],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create request context",
+              "category": "pw:api",
+              "durationMs": 14,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"request\"",
+              "category": "fixture",
+              "durationMs": 15,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 23,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "GET",
+              "category": "pw:api",
+              "durationMs": 360,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeTruthy\"",
+              "category": "expect",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "GET /api/productsList",
+              "category": "test.step",
+              "durationMs": 363,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBe\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeGreaterThan\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toEqual\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify product response and identifiers",
+              "category": "test.step",
+              "durationMs": 1,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"request\"",
+              "category": "fixture",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 4,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][lists products with useful identifiers] [test:start] project=api | attempt=1\n[step:start] GET /api/productsList\n[INFO][lists products with useful identifiers] Products API HTTP status: 200\n[step:pass] GET /api/productsList\n[step:start] Verify product response and identifiers\n[INFO][lists products with useful identifiers] Products response code: 200 | count: 34\n[step:pass] Verify product response and identifiers\n[INFO][lists products with useful identifiers] [test:end] status=passed\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "4c0ebe0a23f74af8728b-519b4ea2419fa67bd71b",
+      "title": "lists brands",
+      "titlePath": [
+        "Products API",
+        "lists brands"
+      ],
+      "file": "tests/products/api.spec.ts",
+      "line": 20,
+      "column": 7,
+      "project": "api",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 347,
+      "finalDurationMs": 347,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 347,
+          "startedAt": "2026-10-05T00:15:23.110Z",
+          "workerIndex": 1,
+          "errors": [],
+          "attachments": [],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Create request context",
+              "category": "pw:api",
+              "durationMs": 16,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"request\"",
+              "category": "fixture",
+              "durationMs": 17,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 23,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "GET",
+              "category": "pw:api",
+              "durationMs": 322,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeTruthy\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "GET /api/brandsList",
+              "category": "test.step",
+              "durationMs": 325,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBe\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeGreaterThan\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify the brands response contains items",
+              "category": "test.step",
+              "durationMs": 2,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"request\"",
+              "category": "fixture",
+              "durationMs": 2,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 6,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][lists brands] [test:start] project=api | attempt=1\n[step:start] GET /api/brandsList\n[INFO][lists brands] Brands API HTTP status: 200\n[step:pass] GET /api/brandsList\n[step:start] Verify the brands response contains items\n[INFO][lists brands] Brands response code: 200 | count: 34\n[step:pass] Verify the brands response contains items\n[INFO][lists brands] [test:end] status=passed\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "4c0ebe0a23f74af8728b-a19620c3ec74b77f7d4a",
+      "title": "intentional failure: product count mismatch @report-demo",
+      "titlePath": [
+        "Report demo failures",
+        "intentional failure: product count mismatch @report-demo"
+      ],
+      "file": "tests/products/api.spec.ts",
+      "line": 37,
+      "column": 7,
+      "project": "api",
+      "tags": [
+        "@report-demo"
+      ],
+      "annotations": [
+        {
+          "type": "report-demo",
+          "description": "Deliberate assertion failure for report testing"
+        }
+      ],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "unexpected",
+      "status": "failed",
+      "durationMs": 7,
+      "finalDurationMs": 3,
+      "attemptCount": 2,
+      "repeatEachIndex": 0,
+      "firstError": {
+        "message": "Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3",
+        "stack": "Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3\n    at action (tests/products/api.spec.ts:45:72)\n    at fixtures/index.ts:44:28",
+        "snippet": "  43 |     await step('Demonstrate a failed product count assertion', async () => {\n  44 |       logger.warn('Intentional report failure: expecting 5 products when the sample contains 3');\n> 45 |       expect(count, 'Intentional report demo: product count mismatch').toBe(5);\n     |                                                                        ^\n  46 |     });\n  47 |   });\n  48 |",
+        "location": {
+          "file": "tests/products/api.spec.ts",
+          "column": 72,
+          "line": 45
+        }
+      },
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "failed",
+          "durationMs": 4,
+          "startedAt": "2026-10-05T00:15:23.103Z",
+          "workerIndex": 2,
+          "errors": [
+            {
+              "message": "Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3",
+              "stack": "Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3\n    at action (tests/products/api.spec.ts:45:72)\n    at fixtures/index.ts:44:28",
+              "snippet": "  43 |     await step('Demonstrate a failed product count assertion', async () => {\n  44 |       logger.warn('Intentional report failure: expecting 5 products when the sample contains 3');\n> 45 |       expect(count, 'Intentional report demo: product count mismatch').toBe(5);\n     |                                                                        ^\n  46 |     });\n  47 |   });\n  48 |",
+              "location": {
+                "file": "tests/products/api.spec.ts",
+                "column": 72,
+                "line": 45
+              }
+            }
+          ],
+          "attachments": [
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api/error-context.md",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 4,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Prepare a sample product count",
+              "category": "test.step",
+              "durationMs": 0,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Intentional report demo: product count mismatch",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": true
+            },
+            {
+              "title": "Demonstrate a failed product count assertion",
+              "category": "test.step",
+              "durationMs": 3,
+              "depth": 0,
+              "failed": true
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 4,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Worker Cleanup",
+              "category": "hook",
+              "durationMs": 0,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][intentional failure: product count mismatch @report-demo] [test:start] project=api | attempt=1\n[step:start] Prepare a sample product count\n[INFO][intentional failure: product count mismatch @report-demo] Report demo product count: 3\n[step:pass] Prepare a sample product count\n[step:start] Demonstrate a failed product count assertion\n[INFO][intentional failure: product count mismatch @report-demo] [test:end] status=failed\n",
+          "stderr": "[WARN][intentional failure: product count mismatch @report-demo] Intentional report failure: expecting 5 products when the sample contains 3\n[step:fail] Demonstrate a failed product count assertion\n"
+        },
+        {
+          "retry": 1,
+          "status": "failed",
+          "durationMs": 3,
+          "startedAt": "2026-10-05T00:15:23.343Z",
+          "workerIndex": 5,
+          "errors": [
+            {
+              "message": "Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3",
+              "stack": "Error: Intentional report demo: product count mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 5\nReceived: 3\n    at action (tests/products/api.spec.ts:45:72)\n    at fixtures/index.ts:44:28",
+              "snippet": "  43 |     await step('Demonstrate a failed product count assertion', async () => {\n  44 |       logger.warn('Intentional report failure: expecting 5 products when the sample contains 3');\n> 45 |       expect(count, 'Intentional report demo: product count mismatch').toBe(5);\n     |                                                                        ^\n  46 |     });\n  47 |   });\n  48 |",
+              "location": {
+                "file": "tests/products/api.spec.ts",
+                "column": 72,
+                "line": 45
+              }
+            }
+          ],
+          "attachments": [
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api-retry1/error-context.md",
+              "inline": false,
+              "sizeBytes": null
+            },
+            {
+              "name": "trace",
+              "contentType": "application/zip",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/products-api-Report-demo-f-98078--count-mismatch-report-demo-api-retry1/trace.zip",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 4,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Prepare a sample product count",
+              "category": "test.step",
+              "durationMs": 0,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Intentional report demo: product count mismatch",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": true
+            },
+            {
+              "title": "Demonstrate a failed product count assertion",
+              "category": "test.step",
+              "durationMs": 2,
+              "depth": 0,
+              "failed": true
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 3,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Worker Cleanup",
+              "category": "hook",
+              "durationMs": 1,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][intentional failure: product count mismatch @report-demo] [test:start] project=api | attempt=2\n[step:start] Prepare a sample product count\n[INFO][intentional failure: product count mismatch @report-demo] Report demo product count: 3\n[step:pass] Prepare a sample product count\n[step:start] Demonstrate a failed product count assertion\n[INFO][intentional failure: product count mismatch @report-demo] [test:end] status=failed\n",
+          "stderr": "[WARN][intentional failure: product count mismatch @report-demo] Intentional report failure: expecting 5 products when the sample contains 3\n[step:fail] Demonstrate a failed product count assertion\n"
+        }
+      ]
+    },
+    {
+      "testId": "4c0ebe0a23f74af8728b-a5917a26f3f39eeb6a31",
+      "title": "intentional failure: brand name mismatch @report-demo",
+      "titlePath": [
+        "Report demo failures",
+        "intentional failure: brand name mismatch @report-demo"
+      ],
+      "file": "tests/products/api.spec.ts",
+      "line": 49,
+      "column": 7,
+      "project": "api",
+      "tags": [
+        "@report-demo"
+      ],
+      "annotations": [
+        {
+          "type": "report-demo",
+          "description": "Deliberate assertion failure for report testing"
+        }
+      ],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "unexpected",
+      "status": "failed",
+      "durationMs": 9,
+      "finalDurationMs": 4,
+      "attemptCount": 2,
+      "repeatEachIndex": 0,
+      "firstError": {
+        "message": "Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H&M\"\nReceived: \"Polo\"",
+        "stack": "Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H&M\"\nReceived: \"Polo\"\n    at action (tests/products/api.spec.ts:57:69)\n    at fixtures/index.ts:44:28",
+        "snippet": "  55 |     await step('Demonstrate a failed brand name assertion', async () => {\n  56 |       logger.warn('Intentional report failure: expecting H&M when the sample brand is Polo');\n> 57 |       expect(brand, 'Intentional report demo: brand name mismatch').toBe('H&M');\n     |                                                                     ^\n  58 |     });\n  59 |   });\n  60 | });",
+        "location": {
+          "file": "tests/products/api.spec.ts",
+          "column": 69,
+          "line": 57
+        }
+      },
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "failed",
+          "durationMs": 5,
+          "startedAt": "2026-10-05T00:15:23.116Z",
+          "workerIndex": 3,
+          "errors": [
+            {
+              "message": "Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H&M\"\nReceived: \"Polo\"",
+              "stack": "Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H&M\"\nReceived: \"Polo\"\n    at action (tests/products/api.spec.ts:57:69)\n    at fixtures/index.ts:44:28",
+              "snippet": "  55 |     await step('Demonstrate a failed brand name assertion', async () => {\n  56 |       logger.warn('Intentional report failure: expecting H&M when the sample brand is Polo');\n> 57 |       expect(brand, 'Intentional report demo: brand name mismatch').toBe('H&M');\n     |                                                                     ^\n  58 |     });\n  59 |   });\n  60 | });",
+              "location": {
+                "file": "tests/products/api.spec.ts",
+                "column": 69,
+                "line": 57
+              }
+            }
+          ],
+          "attachments": [
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api/error-context.md",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 6,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Prepare a sample brand name",
+              "category": "test.step",
+              "durationMs": 0,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Intentional report demo: brand name mismatch",
+              "category": "expect",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": true
+            },
+            {
+              "title": "Demonstrate a failed brand name assertion",
+              "category": "test.step",
+              "durationMs": 3,
+              "depth": 0,
+              "failed": true
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 5,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Worker Cleanup",
+              "category": "hook",
+              "durationMs": 1,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][intentional failure: brand name mismatch @report-demo] [test:start] project=api | attempt=1\n[step:start] Prepare a sample brand name\n[INFO][intentional failure: brand name mismatch @report-demo] Report demo brand: Polo\n[step:pass] Prepare a sample brand name\n[step:start] Demonstrate a failed brand name assertion\n[INFO][intentional failure: brand name mismatch @report-demo] [test:end] status=failed\n",
+          "stderr": "[WARN][intentional failure: brand name mismatch @report-demo] Intentional report failure: expecting H&M when the sample brand is Polo\n[step:fail] Demonstrate a failed brand name assertion\n"
+        },
+        {
+          "retry": 1,
+          "status": "failed",
+          "durationMs": 4,
+          "startedAt": "2026-10-05T00:15:23.345Z",
+          "workerIndex": 6,
+          "errors": [
+            {
+              "message": "Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H&M\"\nReceived: \"Polo\"",
+              "stack": "Error: Intentional report demo: brand name mismatch\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"H&M\"\nReceived: \"Polo\"\n    at action (tests/products/api.spec.ts:57:69)\n    at fixtures/index.ts:44:28",
+              "snippet": "  55 |     await step('Demonstrate a failed brand name assertion', async () => {\n  56 |       logger.warn('Intentional report failure: expecting H&M when the sample brand is Polo');\n> 57 |       expect(brand, 'Intentional report demo: brand name mismatch').toBe('H&M');\n     |                                                                     ^\n  58 |     });\n  59 |   });\n  60 | });",
+              "location": {
+                "file": "tests/products/api.spec.ts",
+                "column": 69,
+                "line": 57
+              }
+            }
+          ],
+          "attachments": [
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api-retry1/error-context.md",
+              "inline": false,
+              "sizeBytes": null
+            },
+            {
+              "name": "trace",
+              "contentType": "application/zip",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/products-api-Report-demo-f-91700-d-name-mismatch-report-demo-api-retry1/trace.zip",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 4,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Prepare a sample brand name",
+              "category": "test.step",
+              "durationMs": 0,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Intentional report demo: brand name mismatch",
+              "category": "expect",
+              "durationMs": 2,
+              "depth": 1,
+              "failed": true
+            },
+            {
+              "title": "Demonstrate a failed brand name assertion",
+              "category": "test.step",
+              "durationMs": 3,
+              "depth": 0,
+              "failed": true
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 4,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Worker Cleanup",
+              "category": "hook",
+              "durationMs": 1,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][intentional failure: brand name mismatch @report-demo] [test:start] project=api | attempt=2\n[step:start] Prepare a sample brand name\n[INFO][intentional failure: brand name mismatch @report-demo] Report demo brand: Polo\n[step:pass] Prepare a sample brand name\n[step:start] Demonstrate a failed brand name assertion\n[INFO][intentional failure: brand name mismatch @report-demo] [test:end] status=failed\n",
+          "stderr": "[WARN][intentional failure: brand name mismatch @report-demo] Intentional report failure: expecting H&M when the sample brand is Polo\n[step:fail] Demonstrate a failed brand name assertion\n"
+        }
+      ]
+    },
+    {
+      "testId": "5c1da7d4de81ee9e535e-82e798593caaffa0ad18",
+      "title": "products page loads with items",
+      "titlePath": [
+        "Products",
+        "products page loads with items"
+      ],
+      "file": "tests/products/web.spec.ts",
+      "line": 9,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 1522,
+      "finalDurationMs": 1522,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 1522,
+          "startedAt": "2026-10-05T00:15:27.052Z",
+          "workerIndex": 4,
+          "errors": [],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/products-web-Products-products-page-loads-with-items-chromium/test-finished-1.png",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 1,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 1,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 28,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 28,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 1395,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Open the products page",
+              "category": "test.step",
+              "durationMs": 1396,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "beforeEach hook",
+              "category": "hook",
+              "durationMs": 1428,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 1428,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Query count",
+              "category": "pw:api",
+              "durationMs": 11,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeGreaterThan\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify the product catalogue contains items",
+              "category": "test.step",
+              "durationMs": 13,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 43,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 45,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 87,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][products page loads with items] [test:start] project=chromium | attempt=1\n[step:start] Open the products page\n[step:pass] Open the products page\n[step:start] Verify the product catalogue contains items\n[INFO][products page loads with items] Product count: 34\n[step:pass] Verify the product catalogue contains items\n[INFO][products page loads with items] [test:end] status=passed\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "5c1da7d4de81ee9e535e-8b9dc5f37e48034caf6d",
+      "title": "search for dress returns results",
+      "titlePath": [
+        "Products",
+        "search for dress returns results"
+      ],
+      "file": "tests/products/web.spec.ts",
+      "line": 17,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 1988,
+      "finalDurationMs": 1988,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 1988,
+          "startedAt": "2026-10-05T00:15:28.298Z",
+          "workerIndex": 8,
+          "errors": [],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/products-web-Products-search-for-dress-returns-results-chromium/test-finished-1.png",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 1,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 2,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 46,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 47,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 1,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 1614,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Open the products page",
+              "category": "test.step",
+              "durationMs": 1614,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "beforeEach hook",
+              "category": "hook",
+              "durationMs": 1667,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 1667,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fill \"dress\"",
+              "category": "pw:api",
+              "durationMs": 19,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 195,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Search for dresses",
+              "category": "test.step",
+              "durationMs": 216,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Evaluate",
+              "category": "pw:api",
+              "durationMs": 26,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeGreaterThan\"",
+              "category": "expect",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBe\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify matching dress results",
+              "category": "test.step",
+              "durationMs": 27,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 1,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 42,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 46,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 83,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][search for dress returns results] [test:start] project=chromium | attempt=1\n[step:start] Open the products page\n[step:pass] Open the products page\n[step:start] Search for dresses\n[step:pass] Search for dresses\n[step:start] Verify matching dress results\n[INFO][search for dress returns results] Dress results: 9\n[step:pass] Verify matching dress results\n[INFO][search for dress returns results] [test:end] status=passed\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "5c1da7d4de81ee9e535e-933ce2837d4d36997ae6",
+      "title": "search for tshirt returns results",
+      "titlePath": [
+        "Products",
+        "search for tshirt returns results"
+      ],
+      "file": "tests/products/web.spec.ts",
+      "line": 27,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 1908,
+      "finalDurationMs": 1908,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 1908,
+          "startedAt": "2026-10-05T00:15:28.334Z",
+          "workerIndex": 7,
+          "errors": [],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/products-web-Products-search-for-tshirt-returns-results-chromium/test-finished-1.png",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 1,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 2,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 4,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 44,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 45,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 1601,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Open the products page",
+              "category": "test.step",
+              "durationMs": 1601,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "beforeEach hook",
+              "category": "hook",
+              "durationMs": 1656,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 1658,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fill \"tshirt\"",
+              "category": "pw:api",
+              "durationMs": 13,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 162,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Search for tshirts",
+              "category": "test.step",
+              "durationMs": 176,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Query count",
+              "category": "pw:api",
+              "durationMs": 11,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeGreaterThan\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify tshirt search returns items",
+              "category": "test.step",
+              "durationMs": 16,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 42,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 45,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 66,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][search for tshirt returns results] [test:start] project=chromium | attempt=1\n[step:start] Open the products page\n[step:pass] Open the products page\n[step:start] Search for tshirts\n[step:pass] Search for tshirts\n[step:start] Verify tshirt search returns items\n[INFO][search for tshirt returns results] Tshirt results: 6\n[step:pass] Verify tshirt search returns items\n[INFO][search for tshirt returns results] [test:end] status=passed\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "5c1da7d4de81ee9e535e-e53bf472811a4bca6edb",
+      "title": "search with no match shows empty results",
+      "titlePath": [
+        "Products",
+        "search with no match shows empty results"
+      ],
+      "file": "tests/products/web.spec.ts",
+      "line": 36,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 1881,
+      "finalDurationMs": 1881,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 1881,
+          "startedAt": "2026-10-05T00:15:28.532Z",
+          "workerIndex": 10,
+          "errors": [],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/products-web-Products-sear-72bfa-o-match-shows-empty-results-chromium/test-finished-1.png",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 1,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 1,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 34,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 34,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 1601,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Open the products page",
+              "category": "test.step",
+              "durationMs": 1602,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "beforeEach hook",
+              "category": "hook",
+              "durationMs": 1640,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 1641,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fill \"xyznonexistentproduct123\"",
+              "category": "pw:api",
+              "durationMs": 15,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 156,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Search for a nonexistent product",
+              "category": "test.step",
+              "durationMs": 173,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Query count",
+              "category": "pw:api",
+              "durationMs": 18,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBe\"",
+              "category": "expect",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify search results are empty",
+              "category": "test.step",
+              "durationMs": 20,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 25,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 26,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 50,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][search with no match shows empty results] [test:start] project=chromium | attempt=1\n[step:start] Open the products page\n[step:pass] Open the products page\n[step:start] Search for a nonexistent product\n[step:pass] Search for a nonexistent product\n[step:start] Verify search results are empty\n[INFO][search with no match shows empty results] Unmatched search results: 0\n[step:pass] Verify search results are empty\n[INFO][search with no match shows empty results] [test:end] status=passed\n",
+          "stderr": null
+        }
+      ]
+    },
+    {
+      "testId": "5c1da7d4de81ee9e535e-7c6c1b3165266a916ff7",
+      "title": "add product to cart shows modal",
+      "titlePath": [
+        "Products",
+        "add product to cart shows modal"
+      ],
+      "file": "tests/products/web.spec.ts",
+      "line": 45,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2198,
+      "finalDurationMs": 2198,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2198,
+          "startedAt": "2026-10-05T00:15:28.581Z",
+          "workerIndex": 4,
+          "errors": [],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": ".logbook/artifacts/pw-test-all-20261005001522576-c1cc6f16/test-results/products-web-Products-add-product-to-cart-shows-modal-chromium/test-finished-1.png",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ],
+          "steps": [
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Create context",
+              "category": "pw:api",
+              "durationMs": 10,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 10,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Create page",
+              "category": "pw:api",
+              "durationMs": 25,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 26,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Navigate",
+              "category": "pw:api",
+              "durationMs": 1810,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Open the products page",
+              "category": "test.step",
+              "durationMs": 1810,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "beforeEach hook",
+              "category": "hook",
+              "durationMs": 1848,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Before Hooks",
+              "category": "hook",
+              "durationMs": 1848,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Click",
+              "category": "pw:api",
+              "durationMs": 34,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Add the first product to cart",
+              "category": "test.step",
+              "durationMs": 35,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Expect \"toBeVisible\"",
+              "category": "expect",
+              "durationMs": 217,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Verify the cart confirmation modal",
+              "category": "test.step",
+              "durationMs": 217,
+              "depth": 0,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"productsPage\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"page\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Close context",
+              "category": "pw:api",
+              "durationMs": 35,
+              "depth": 2,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"context\"",
+              "category": "fixture",
+              "durationMs": 36,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"reportLifecycle\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "Fixture \"logger\"",
+              "category": "fixture",
+              "durationMs": 0,
+              "depth": 1,
+              "failed": false
+            },
+            {
+              "title": "After Hooks",
+              "category": "hook",
+              "durationMs": 102,
+              "depth": 0,
+              "failed": false
+            }
+          ],
+          "stdout": "[INFO][add product to cart shows modal] [test:start] project=chromium | attempt=1\n[step:start] Open the products page\n[step:pass] Open the products page\n[step:start] Add the first product to cart\n[step:pass] Add the first product to cart\n[step:start] Verify the cart confirmation modal\n[step:pass] Verify the cart confirmation modal\n[INFO][add product to cart shows modal] [test:end] status=passed\n",
+          "stderr": null
+        }
+      ]
+    }
+  ],
+  "globalErrors": []
+}

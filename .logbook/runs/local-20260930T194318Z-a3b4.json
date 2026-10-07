@@ -1,0 +1,696 @@
+{
+  "schemaVersion": 1,
+  "kind": "run",
+  "runId": "local-20260930T194318Z-a3b4",
+  "title": null,
+  "startedAt": "2026-09-30T19:43:18.598Z",
+  "endedAt": "2026-09-30T19:43:49.416Z",
+  "durationMs": 30818,
+  "status": "failed",
+  "complete": true,
+  "expectedShards": 1,
+  "receivedShards": [
+    1
+  ],
+  "env": {
+    "ci": null,
+    "git": {
+      "commit": null,
+      "branch": null,
+      "prNumber": null,
+      "repository": null
+    },
+    "machine": {
+      "os": "darwin",
+      "arch": "arm64",
+      "node": "24.21.0",
+      "cpus": 10
+    },
+    "playwrightVersion": "1.63.0",
+    "workers": 5
+  },
+  "project": {
+    "name": "pw-test",
+    "configFile": "playwright.config.ts",
+    "projects": [
+      {
+        "name": "chromium",
+        "testDir": "tests"
+      }
+    ],
+    "workers": 5
+  },
+  "paths": {
+    "outputDir": ".logbook"
+  },
+  "summary": {
+    "total": 15,
+    "passed": 12,
+    "failed": 3,
+    "flaky": 0,
+    "skipped": 0
+  },
+  "tests": [
+    {
+      "testId": "d748ac400d08b85935ef-454752f10430ff89d2c8",
+      "title": "login with valid credentials",
+      "titlePath": [
+        "Authentication",
+        "login with valid credentials"
+      ],
+      "file": "tests/auth.spec.ts",
+      "line": 6,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "unexpected",
+      "status": "timedOut",
+      "durationMs": 30332,
+      "finalDurationMs": 30332,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": {
+        "message": "Test timeout of 30000ms exceeded.",
+        "stack": "Test timeout of 30000ms exceeded.",
+        "snippet": null,
+        "location": null
+      },
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "timedOut",
+          "durationMs": 30332,
+          "startedAt": "2026-09-30T19:43:18.824Z",
+          "workerIndex": 6,
+          "errors": [
+            {
+              "message": "Test timeout of 30000ms exceeded.",
+              "stack": "Test timeout of 30000ms exceeded.",
+              "snippet": null,
+              "location": null
+            },
+            {
+              "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation to \"**/\" until \"load\"\n============================================================",
+              "stack": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation to \"**/\" until \"load\"\n============================================================\n    at AuthHelper.loginAs (helpers/AuthHelper.ts:17:21)\n    at tests/auth.spec.ts:7:5",
+              "snippet": "   at ../helpers/AuthHelper.ts:17\n\n  15 |     await this.loginPage.goto();\n  16 |     await this.loginPage.login(email, password);\n> 17 |     await this.page.waitForURL('**/');\n     |                     ^\n  18 |   }\n  19 |\n  20 |   async logout(): Promise<void> {",
+              "location": {
+                "file": "helpers/AuthHelper.ts",
+                "column": 21,
+                "line": 17
+              }
+            }
+          ],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "test-results/auth-Authentication-login-with-valid-credentials-chromium/test-failed-1.png",
+              "inline": false,
+              "sizeBytes": null
+            },
+            {
+              "name": "video",
+              "contentType": "video/webm",
+              "path": "test-results/auth-Authentication-login-with-valid-credentials-chromium/video.webm",
+              "inline": false,
+              "sizeBytes": null
+            },
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": "test-results/auth-Authentication-login-with-valid-credentials-chromium/error-context.md",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "testId": "d748ac400d08b85935ef-96c2824cd60a845e753d",
+      "title": "login with invalid credentials shows error",
+      "titlePath": [
+        "Authentication",
+        "login with invalid credentials shows error"
+      ],
+      "file": "tests/auth.spec.ts",
+      "line": 11,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2953,
+      "finalDurationMs": 2953,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2953,
+          "startedAt": "2026-09-30T19:43:18.818Z",
+          "workerIndex": 7,
+          "errors": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "testId": "d748ac400d08b85935ef-4b6f6fd3021ba0a95d2d",
+      "title": "signup with already registered email shows error",
+      "titlePath": [
+        "Authentication",
+        "signup with already registered email shows error"
+      ],
+      "file": "tests/auth.spec.ts",
+      "line": 18,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2996,
+      "finalDurationMs": 2996,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2996,
+          "startedAt": "2026-09-30T19:43:18.828Z",
+          "workerIndex": 8,
+          "errors": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "testId": "d748ac400d08b85935ef-2d1f388246f263490799",
+      "title": "signup with new email navigates to registration",
+      "titlePath": [
+        "Authentication",
+        "signup with new email navigates to registration"
+      ],
+      "file": "tests/auth.spec.ts",
+      "line": 25,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 4766,
+      "finalDurationMs": 4766,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 4766,
+          "startedAt": "2026-09-30T19:43:18.846Z",
+          "workerIndex": 9,
+          "errors": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "testId": "d748ac400d08b85935ef-ac6fd6f0d543f13f9410",
+      "title": "logout redirects to login page",
+      "titlePath": [
+        "Authentication",
+        "logout redirects to login page"
+      ],
+      "file": "tests/auth.spec.ts",
+      "line": 32,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "unexpected",
+      "status": "timedOut",
+      "durationMs": 30346,
+      "finalDurationMs": 30346,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": {
+        "message": "Test timeout of 30000ms exceeded.",
+        "stack": "Test timeout of 30000ms exceeded.",
+        "snippet": null,
+        "location": null
+      },
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "timedOut",
+          "durationMs": 30346,
+          "startedAt": "2026-09-30T19:43:18.821Z",
+          "workerIndex": 10,
+          "errors": [
+            {
+              "message": "Test timeout of 30000ms exceeded.",
+              "stack": "Test timeout of 30000ms exceeded.",
+              "snippet": null,
+              "location": null
+            },
+            {
+              "message": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation to \"**/\" until \"load\"\n============================================================",
+              "stack": "Error: page.waitForURL: Test timeout of 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation to \"**/\" until \"load\"\n============================================================\n    at AuthHelper.loginAs (helpers/AuthHelper.ts:17:21)\n    at tests/auth.spec.ts:33:5",
+              "snippet": "   at ../helpers/AuthHelper.ts:17\n\n  15 |     await this.loginPage.goto();\n  16 |     await this.loginPage.login(email, password);\n> 17 |     await this.page.waitForURL('**/');\n     |                     ^\n  18 |   }\n  19 |\n  20 |   async logout(): Promise<void> {",
+              "location": {
+                "file": "helpers/AuthHelper.ts",
+                "column": 21,
+                "line": 17
+              }
+            }
+          ],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "test-results/auth-Authentication-logout-redirects-to-login-page-chromium/test-failed-1.png",
+              "inline": false,
+              "sizeBytes": null
+            },
+            {
+              "name": "video",
+              "contentType": "video/webm",
+              "path": "test-results/auth-Authentication-logout-redirects-to-login-page-chromium/video.webm",
+              "inline": false,
+              "sizeBytes": null
+            },
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": "test-results/auth-Authentication-logout-redirects-to-login-page-chromium/error-context.md",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "testId": "1981448f0b79506fb670-91be60397aa35dd60ec3",
+      "title": "empty cart shows empty message",
+      "titlePath": [
+        "Cart",
+        "empty cart shows empty message"
+      ],
+      "file": "tests/cart.spec.ts",
+      "line": 4,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2016,
+      "finalDurationMs": 2016,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2016,
+          "startedAt": "2026-09-30T19:43:22.012Z",
+          "workerIndex": 7,
+          "errors": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "testId": "1981448f0b79506fb670-dcba40d6f3fa7f61a310",
+      "title": "added product appears in cart",
+      "titlePath": [
+        "Cart",
+        "added product appears in cart"
+      ],
+      "file": "tests/cart.spec.ts",
+      "line": 9,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2445,
+      "finalDurationMs": 2445,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2445,
+          "startedAt": "2026-09-30T19:43:22.061Z",
+          "workerIndex": 8,
+          "errors": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "testId": "1981448f0b79506fb670-2e2c37b4e09c276b898b",
+      "title": "cart shows product name and price",
+      "titlePath": [
+        "Cart",
+        "cart shows product name and price"
+      ],
+      "file": "tests/cart.spec.ts",
+      "line": 17,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2165,
+      "finalDurationMs": 2165,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2165,
+          "startedAt": "2026-09-30T19:43:23.822Z",
+          "workerIndex": 9,
+          "errors": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "testId": "1981448f0b79506fb670-7c80aafa778126838ecd",
+      "title": "removing item from cart empties it",
+      "titlePath": [
+        "Cart",
+        "removing item from cart empties it"
+      ],
+      "file": "tests/cart.spec.ts",
+      "line": 27,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 3291,
+      "finalDurationMs": 3291,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 3291,
+          "startedAt": "2026-09-30T19:43:24.036Z",
+          "workerIndex": 7,
+          "errors": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "testId": "1981448f0b79506fb670-cdf708efb3860bf711f4",
+      "title": "multiple products can be added to cart",
+      "titlePath": [
+        "Cart",
+        "multiple products can be added to cart"
+      ],
+      "file": "tests/cart.spec.ts",
+      "line": 36,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2614,
+      "finalDurationMs": 2614,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2614,
+          "startedAt": "2026-09-30T19:43:24.518Z",
+          "workerIndex": 8,
+          "errors": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "testId": "000c94276132c4f97581-cc053dca479f424b9696",
+      "title": "products page loads with items",
+      "titlePath": [
+        "Products",
+        "products page loads with items"
+      ],
+      "file": "tests/products.spec.ts",
+      "line": 9,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2404,
+      "finalDurationMs": 2404,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2404,
+          "startedAt": "2026-09-30T19:43:26.003Z",
+          "workerIndex": 9,
+          "errors": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "testId": "000c94276132c4f97581-7584457ff1bffa3daac4",
+      "title": "search for dress returns results",
+      "titlePath": [
+        "Products",
+        "search for dress returns results"
+      ],
+      "file": "tests/products.spec.ts",
+      "line": 14,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "unexpected",
+      "status": "failed",
+      "durationMs": 2232,
+      "finalDurationMs": 2232,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": {
+        "message": "Error: expect(received).toContain(expected) // indexOf\n\nExpected substring: \"dress\"\nReceived string:    \"sleeves top and short - blue & pink\"",
+        "stack": "Error: expect(received).toContain(expected) // indexOf\n\nExpected substring: \"dress\"\nReceived string:    \"sleeves top and short - blue & pink\"\n    at forEach (tests/products.spec.ts:18:54)\n    at tests/products.spec.ts:18:11",
+        "snippet": "  16 |     const names = await productsPage.getProductNames();\n  17 |     expect(names.length).toBeGreaterThan(0);\n> 18 |     names.forEach(name => expect(name.toLowerCase()).toContain(SEARCH_TERMS.dress));\n     |                                                      ^\n  19 |   });\n  20 |\n  21 |   test('search for tshirt returns results', async ({ productsPage }) => {",
+        "location": {
+          "file": "tests/products.spec.ts",
+          "column": 54,
+          "line": 18
+        }
+      },
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "failed",
+          "durationMs": 2232,
+          "startedAt": "2026-09-30T19:43:27.137Z",
+          "workerIndex": 8,
+          "errors": [
+            {
+              "message": "Error: expect(received).toContain(expected) // indexOf\n\nExpected substring: \"dress\"\nReceived string:    \"sleeves top and short - blue & pink\"",
+              "stack": "Error: expect(received).toContain(expected) // indexOf\n\nExpected substring: \"dress\"\nReceived string:    \"sleeves top and short - blue & pink\"\n    at forEach (tests/products.spec.ts:18:54)\n    at tests/products.spec.ts:18:11",
+              "snippet": "  16 |     const names = await productsPage.getProductNames();\n  17 |     expect(names.length).toBeGreaterThan(0);\n> 18 |     names.forEach(name => expect(name.toLowerCase()).toContain(SEARCH_TERMS.dress));\n     |                                                      ^\n  19 |   });\n  20 |\n  21 |   test('search for tshirt returns results', async ({ productsPage }) => {",
+              "location": {
+                "file": "tests/products.spec.ts",
+                "column": 54,
+                "line": 18
+              }
+            }
+          ],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "test-results/products-Products-search-for-dress-returns-results-chromium/test-failed-1.png",
+              "inline": false,
+              "sizeBytes": null
+            },
+            {
+              "name": "video",
+              "contentType": "video/webm",
+              "path": "test-results/products-Products-search-for-dress-returns-results-chromium/video.webm",
+              "inline": false,
+              "sizeBytes": null
+            },
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": "test-results/products-Products-search-for-dress-returns-results-chromium/error-context.md",
+              "inline": false,
+              "sizeBytes": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "testId": "000c94276132c4f97581-08ff6271ec7ac4aa4305",
+      "title": "search for tshirt returns results",
+      "titlePath": [
+        "Products",
+        "search for tshirt returns results"
+      ],
+      "file": "tests/products.spec.ts",
+      "line": 21,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 1960,
+      "finalDurationMs": 1960,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 1960,
+          "startedAt": "2026-09-30T19:43:27.334Z",
+          "workerIndex": 7,
+          "errors": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "testId": "000c94276132c4f97581-2bef653de3c980373107",
+      "title": "search with no match shows empty results",
+      "titlePath": [
+        "Products",
+        "search with no match shows empty results"
+      ],
+      "file": "tests/products.spec.ts",
+      "line": 27,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 1989,
+      "finalDurationMs": 1989,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 1989,
+          "startedAt": "2026-09-30T19:43:28.421Z",
+          "workerIndex": 9,
+          "errors": [],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "testId": "000c94276132c4f97581-de9cfa7184d670e17fd0",
+      "title": "add product to cart shows modal",
+      "titlePath": [
+        "Products",
+        "add product to cart shows modal"
+      ],
+      "file": "tests/products.spec.ts",
+      "line": 33,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2612,
+      "finalDurationMs": 2612,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2612,
+          "startedAt": "2026-09-30T19:43:29.301Z",
+          "workerIndex": 7,
+          "errors": [],
+          "attachments": []
+        }
+      ]
+    }
+  ],
+  "globalErrors": []
+}

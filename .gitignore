@@ -1,5 +1,5 @@
-.logbook/
 node_modules/
 test-results/
 playwright-report/
 dist/
+dev-article-screenshots/

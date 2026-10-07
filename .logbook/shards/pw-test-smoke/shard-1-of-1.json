@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "kind": "shard",
+  "runId": "pw-test-smoke",
+  "title": null,
+  "shard": null,
+  "startedAt": "2026-09-30T17:39:46.679Z",
+  "endedAt": "2026-09-30T17:39:50.512Z",
+  "status": "passed",
+  "env": {
+    "ci": null,
+    "git": {
+      "commit": null,
+      "branch": null,
+      "prNumber": null,
+      "repository": null
+    },
+    "machine": {
+      "os": "darwin",
+      "arch": "arm64",
+      "node": "24.21.0",
+      "cpus": 10
+    },
+    "playwrightVersion": "1.63.0",
+    "workers": 1
+  },
+  "project": {
+    "name": "pw-test",
+    "configFile": "playwright.config.ts",
+    "projects": [
+      {
+        "name": "chromium",
+        "testDir": "tests"
+      }
+    ],
+    "workers": 1
+  },
+  "tests": [
+    {
+      "testId": "000c94276132c4f97581-cc053dca479f424b9696",
+      "title": "products page loads with items",
+      "titlePath": [
+        "Products",
+        "products page loads with items"
+      ],
+      "file": "tests/products.spec.ts",
+      "line": 9,
+      "column": 7,
+      "project": "chromium",
+      "tags": [],
+      "annotations": [],
+      "caseIds": [],
+      "expectedStatus": "passed",
+      "outcome": "expected",
+      "status": "passed",
+      "durationMs": 2394,
+      "finalDurationMs": 2394,
+      "attemptCount": 1,
+      "repeatEachIndex": 0,
+      "firstError": null,
+      "attempts": [
+        {
+          "retry": 0,
+          "status": "passed",
+          "durationMs": 2394,
+          "startedAt": "2026-09-30T17:39:46.849Z",
+          "workerIndex": 0,
+          "errors": [],
+          "attachments": []
+        }
+      ]
+    }
+  ],
+  "globalErrors": []
+}
