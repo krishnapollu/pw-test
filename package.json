@@ -22,7 +22,7 @@
   "devDependencies": {
     "@playwright/test": "^1.63.0",
     "@types/node": "^26.6.3",
-    "playwright-logbook": "file:vendor/playwright-logbook-0.2.0.tgz",
+    "playwright-logbook": "^0.3.1",
     "typescript": "^7.0.2"
   }
 }
